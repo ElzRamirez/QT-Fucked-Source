@@ -4789,39 +4789,69 @@ class PlayState extends MusicBeatState
 				}
 
 			case 'Hey!':
-				var value:Int = 2;
-				switch(value1.toLowerCase().trim()) {
-					case 'bf' | 'boyfriend' | '0':
-						value = 0;
-					case 'gf' | 'girlfriend' | '1':
-						value = 1;
-				}
-
-				var time:Float = Std.parseFloat(value2);
-				if(Math.isNaN(time) || time <= 0) time = 0.6;
-
-				if(value != 0) {
-					if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
-						dad.playAnim('cheer', true);
-						dad.specialAnim = true;
-						dad.heyTimer = time;
-					} else {
-						gf.playAnim('cheer', true);
-						gf.specialAnim = true;
-						gf.heyTimer = time;
+					var value:Int = 3;
+					switch(value1.toLowerCase().trim()) {
+						case 'bf' | 'boyfriend' | '0':
+							value = 0;
+						case 'gf' | 'girlfriend' | '1':
+							value = 1;
+						case 'dad'| 'opponent' | '2':
+							value = 2;
 					}
-
-					if(curStage == 'mall') {
-						bottomBoppers.animation.play('hey', true);
-						heyTimer = time;
+	
+					var time:Float = Std.parseFloat(value2);
+					if(Math.isNaN(time) || time <= 0) time = 0.6;
+		
+					switch (value)
+					{
+						case 0:
+							boyfriend.playAnim('hey', true);
+							boyfriend.specialAnim = true;
+							boyfriend.heyTimer = time;
+						case 1:
+							if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
+								dad.playAnim('cheer', true);
+								dad.specialAnim = true;
+								dad.heyTimer = time;
+							} else if (gf != null) {
+								gf.playAnim('cheer', true);
+								gf.specialAnim = true;
+								gf.heyTimer = time;
+							}
+			
+							if(curStage == 'mall') {
+								bottomBoppers.animation.play('hey', true);
+								heyTimer = time;
+							}
+						case 2:
+							dad.playAnim('hey', true);
+							dad.specialAnim = true;
+							dad.heyTimer = time;
+						default:
+							boyfriend.playAnim('hey', true);
+							boyfriend.specialAnim = true;
+							boyfriend.heyTimer = time;
+		
+							if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
+								dad.playAnim('cheer', true);
+								dad.specialAnim = true;
+								dad.heyTimer = time;
+							} else if (gf != null) {
+								gf.playAnim('cheer', true);
+								gf.specialAnim = true;
+								gf.heyTimer = time;
+							}
+			
+							if(curStage == 'mall') {
+								bottomBoppers.animation.play('hey', true);
+								heyTimer = time;
+							}
+		
+							dad.playAnim('hey', true);
+							dad.specialAnim = true;
+							dad.heyTimer = time;
 					}
-				}
-				if(value != 1 && !boyfriend.stunned && !bfDodging) { //Boyfriend dodge/stun take priority.
-					boyfriend.playAnim('hey', true);
-					boyfriend.specialAnim = true;
-					boyfriend.heyTimer = time;
-				}
-
+					
 			case 'Set GF Speed':
 				var value:Int = Std.parseInt(value1);
 				if(Math.isNaN(value)) value = 1;
