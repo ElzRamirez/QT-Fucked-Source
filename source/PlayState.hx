@@ -569,6 +569,11 @@ class PlayState extends MusicBeatState
 					discordDifficultyOverride = "Future";
 				}
 
+				if (SONG.song.toLowerCase()=='fuckinfree'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Fucked";
+				}
+
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBackCute', -750, -145, 0.95, 0.95);
 				add(hazardBG);
 
@@ -612,6 +617,11 @@ class PlayState extends MusicBeatState
 				dadDrainHealth=0.011;
 				healthLossMultiplier=1.1;
 
+				if (SONG.song.toLowerCase()=='fuckinfree'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Fucked";
+				}
+
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBackCute', -750, -145, 0.95, 0.95);
 				add(hazardBG);
 
@@ -631,6 +641,11 @@ class PlayState extends MusicBeatState
 			case 'street-real':
 				dadDrainHealth=0.0115;
 				healthLossMultiplier=1.125;
+
+				if (SONG.song.toLowerCase()=='fuckedless'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Fucked";
+				}
 
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBack', -750, -145, 0.95, 0.95);
 				add(hazardBG);
@@ -671,6 +686,16 @@ class PlayState extends MusicBeatState
 			case 'street-kb':
 				dadDrainHealth=0.01185;
 				healthLossMultiplier=1.075;
+
+				if (SONG.song.toLowerCase()=='fuckedless'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Fucked";
+				}
+				
+				if (SONG.song.toLowerCase()=='censory-fuckedload'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Fucked";
+				}
 
 				if(!ClientPrefs.lowQuality){
 					//Far Back Layer - Error (blue screen)
@@ -753,6 +778,11 @@ class PlayState extends MusicBeatState
 						healthGainMultiplier=1.081;
 						dadDrainHealth=0.01195;
 					}
+				}
+
+				if (SONG.song.toLowerCase()=='fuckedminate'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Very Fucked";
 				}
 
 				if(!ClientPrefs.lowQuality){

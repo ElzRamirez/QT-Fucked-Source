@@ -32,7 +32,7 @@ class Achievements {
 		//Set unlock after to "null" if it doesnt unlock after a week!!
 		["Freaky on a Friday Night",	"Play on a Friday... Night.",								'friday_night_play',	null, 			true],
 		["Press space to dodge!",		"Beat Tutorial on Hard?",									'tutorial_hard',		null, 			false],
-		["You really Sick...",					"Complete QT week on Fucked difficulty.",			'qtweek_fucked',			null, 			false],
+		["You r really Sick...",					"Complete QT week on Fucked difficulty.",			'qtweek_fucked',			null, 			false],
 		["IMPOSSIBLE!!!",				"Beat Fuckedmination on Very Fucked.",					'fuckedmination_beat',		null, 			false],
 		["Get a life, Freaky!",	"Beat Fuckedminatio on Fuck You. (Please, Get a life man)",			'fuckedmination_old',		null, 			false],
 		["See you next time...",					"Beat No Cessation.",											'cessation_beat',		null, 			false],
