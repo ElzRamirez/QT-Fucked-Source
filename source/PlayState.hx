@@ -771,12 +771,12 @@ class PlayState extends MusicBeatState
 						discordDifficultyOverride = "Fuck You";
 						healthLossMultiplier=2.175; //That's alotta damage!
 						healthGainMultiplier=1.085;
-						dadDrainHealth=0.023;
+						dadDrainHealth=0.020;
 					}else{
 						discordDifficultyOverride = "Very Fucked";
 						healthLossMultiplier=1.288;
 						healthGainMultiplier=1.081;
-						dadDrainHealth=0.01195;
+						dadDrainHealth=0.01595;
 					}
 				}
 
@@ -785,6 +785,11 @@ class PlayState extends MusicBeatState
 					discordDifficultyOverride = "Very Fucked";
 				}
 
+				if (SONG.song.toLowerCase()=='tutorial'){
+					dadDrainHealth=0.011;
+					healthLossMultiplier=1.0;
+				}
+				
 				if(!ClientPrefs.lowQuality){
 					//Far Back Layer - Error (blue screen)
 					var errorBG:FlxSprite = new FlxSprite(-600, -150).loadGraphic(Paths.image('hazard/qt-port/stage/streetError'));
@@ -4851,7 +4856,7 @@ class PlayState extends MusicBeatState
 							dad.specialAnim = true;
 							dad.heyTimer = time;
 					}
-					
+
 			case 'Set GF Speed':
 				var value:Int = Std.parseInt(value1);
 				if(Math.isNaN(value)) value = 1;
