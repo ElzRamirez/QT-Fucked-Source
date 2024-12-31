@@ -564,8 +564,10 @@ class PlayState extends MusicBeatState
 			case 'street-cessation':
 				dadDrainHealth=0.0116;
 				healthLossMultiplier=1.125;
-				discordDifficultyOverrideShouldUse = true;
-				discordDifficultyOverride = "Future";
+				if (SONG.song.toLowerCase()=='cessation'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Future";
+				}
 
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBackCute', -750, -145, 0.95, 0.95);
 				add(hazardBG);
@@ -1516,6 +1518,8 @@ class PlayState extends MusicBeatState
 				//Careless, Cessation, and Terminate all have ending dialogue.
 
 				case 'censory-fuckedload':
+					FlxG.sound.playMusic(Paths.music('spooky_ambience'), 0);
+					FlxG.sound.music.fadeIn(1, 0, 0.75);
 					startDialogue(dialogueJson);
 
 				default:
