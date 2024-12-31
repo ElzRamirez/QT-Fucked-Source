@@ -9,7 +9,7 @@ import Controls;
 class ClientPrefs {
 	public static var hitsoundVolume:Float = 0;		//Here to make Interlope a bit easier, plus why not?
 	public static var qtOldVocals:Bool = false;		//Here because some people (such as myself) prefer the old vocals from the original mod.
-	public static var qtSkipCutscene:Bool = false; 	//Because the cutscene caused problems in the original mod. This is here in case it causes problems still.
+	public static var qtSkipCutscene:Bool = true; 	//Because the cutscene caused problems in the original mod. This is here in case it causes problems still.
 	public static var qtBonk:Bool = false;			//Switches the sawblade sound back to the original placeholder I was using because the Bonk is fucking hilarious.
 	public static var hurtNoteAlpha:Float = 0.5; 	//Hurt notes transparency. Useful to allow your brain to focus on the more opaque, non-hurt notes.
 	public static var noShaders:Bool = true; 		//V2.2 added shaders to Interlope, however these shaders cause crashes. As a result, they now start disabled in the hotfix update.
@@ -101,7 +101,6 @@ class ClientPrefs {
 	public static function saveSettings() {
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
 		FlxG.save.data.qtOldVocals = qtOldVocals;
-		FlxG.save.data.qtSkipCutscene = qtSkipCutscene;
 		FlxG.save.data.qtBonk = qtBonk;
 		FlxG.save.data.hurtNoteAlpha = hurtNoteAlpha;
 		FlxG.save.data.noShaders = noShaders;
@@ -154,8 +153,8 @@ class ClientPrefs {
 		if(FlxG.save.data.qtOldVocals != null){
 			qtOldVocals = FlxG.save.data.qtOldVocals;
 		}
-		if(FlxG.save.data.qtSkipCutscene != null){
-			qtSkipCutscene = FlxG.save.data.qtSkipCutscene;
+		if(FlxG.save.data.qtSkipCutscene != null || FlxG.save.data.qtSkipCutscene != true){
+			qtSkipCutscene = true;
 		}
 		if(FlxG.save.data.qtBonk != null){
 			qtBonk = FlxG.save.data.qtBonk;

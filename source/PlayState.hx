@@ -6091,7 +6091,8 @@ class PlayState extends MusicBeatState
 		//Dad Health Drain Code. It's scuffed, but gets the job done -Haz
 		//Only works on Hard difficulty.
 		//v2.2: Updated to support Harder difficulty.
-		if((storyDifficulty == 2 || storyDifficulty == 3 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
+		//QT FUCKED updated to support Fucked difficulty
+		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
 			//prevents health drain if the drain would kill the player.
 			if(health - dadDrainHealth - 0.1 > maxHealth){
 				//And here I thought that this code couldn't get any worse. What is wrong with me?

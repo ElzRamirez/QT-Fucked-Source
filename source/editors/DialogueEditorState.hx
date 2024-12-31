@@ -397,6 +397,14 @@ class DialogueEditorState extends MusicBeatState
 				whoTheFuck = 'qt';
 			case 'kb':
 				whoTheFuck = 'kb';
+			case 'kb2':
+				whoTheFuck = 'kb';
+			case 'zr':
+				whoTheFuck = "zRamirez";
+			case 'zramirez':
+				whoTheFuck = "zRamirez";
+			case 'angy':
+				whoTheFuck = "Angy";
 			case 'gf':
 				whoTheFuck = 'gf';
 			case 'bf':
