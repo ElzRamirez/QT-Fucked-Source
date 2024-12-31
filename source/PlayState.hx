@@ -1516,7 +1516,7 @@ class PlayState extends MusicBeatState
 				//Careless, Cessation, and Terminate all have ending dialogue.
 
 				case 'censory-fuckedload':
-					kbWakesUp();
+					startDialogue(dialogueJson);
 
 				default:
 					startCountdown();
