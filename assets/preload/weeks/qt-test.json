@@ -1,0 +1,26 @@
+{
+	"storyName": "Cutie TESTING",
+	"difficulties": "Fucked",
+	"hideFreeplay": true,
+	"weekBackground": "alleyway",
+	"weekBefore": "qt",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"qt",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Fuckedminate",
+			"qt",
+			[
+				165,
+				0,
+				77
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Tutorial"
+}

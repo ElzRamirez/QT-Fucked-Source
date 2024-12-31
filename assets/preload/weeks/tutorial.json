@@ -1,0 +1,26 @@
+{
+	"storyName": "",
+	"difficulties": "Easy, Normal, Hard, Harder, Fucked, Very Fucked",
+	"hideFreeplay": false,
+	"weekBackground": "howtoplay",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Tutorial",
+			"gf",
+			[
+				165,
+				0,
+				77
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "Tutorial"
+}

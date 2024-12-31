@@ -1,0 +1,53 @@
+{
+	"storyName": "So... Do you wanna die?",
+	"difficulties": "fucked",
+	"hideFreeplay": true,
+	"weekBackground": "noqt",
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Fuckinfree",
+			"qtkbold",
+			[
+				215,
+				0,
+				0
+			]
+		],
+		[
+			"Fuckedless",
+			"qtkbold",
+			[
+				186,
+				0,
+				0
+			]
+		],
+		[
+			"Censory-Fuckedload",
+			"kbangry",
+			[
+				146,
+				0,
+				0
+			]
+		],
+		[
+			"Fuckedminate",
+			"kbangry",
+			[
+				130,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "QT FUCKED DIFFICULTY"
+}

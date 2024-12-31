@@ -1,0 +1,155 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				224,
+				268
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "singLeftKB"
+		},
+		{
+			"offsets": [
+				173,
+				139
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "danceLeftNormal"
+		},
+		{
+			"offsets": [
+				132,
+				148
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "danceRightNormal"
+		},
+		{
+			"offsets": [
+				121,
+				127
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft-alt",
+			"indices": [],
+			"name": "danceLeftKB"
+		},
+		{
+			"offsets": [
+				80,
+				136
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight-alt",
+			"indices": [],
+			"name": "danceRightKB"
+		},
+		{
+			"offsets": [
+				138,
+				283
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "singUpKB"
+		},
+		{
+			"offsets": [
+				-151,
+				70
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "singRightKB"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				149,
+				47
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "singDownKB",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				221,
+				268
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "singLeftTogether",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				146,
+				53
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "singDownTogether",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				161,
+				296
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "singUpTogether",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-152,
+				75
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "singRightTogether",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/qt-kb-angry-old",
+	"position": [
+		-140,
+		210
+	],
+	"healthicon": "qtkbold",
+	"flip_x": false,
+	"healthbar_colors": [
+		150,
+		150,
+		255
+	],
+	"camera_position": [
+		-185,
+		-50
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

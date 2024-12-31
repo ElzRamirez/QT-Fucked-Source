@@ -1,0 +1,60 @@
+{
+	"dialogue": [
+		{
+			"expression": "angry",
+			"text": "...",
+			"boxState": "normal",
+			"portrait": "kb",
+			"speed": 0.5
+		},
+		{
+			"expression": "angry",
+			"text": "Why.....",
+			"boxState": "normal",
+			"portrait": "kb",
+			"speed": 0.15
+		},
+		{
+			"expression": "angry",
+			"text": "Why not....",
+			"boxState": "normal",
+			"speed": 0.15,
+			"portrait": "kb"
+		},
+		{
+			"expression": "angry",
+			"text": "WHY DONT YOU DIE NOWWWWW!!!!!",
+			"boxState": "angry",
+			"speed": 0.035,
+			"portrait": "kb"
+		},
+		{
+			"speed": 0.1,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "Listen me..."
+		},
+		{
+			"speed": 0.2,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "Legends..."
+		},
+		{
+			"speed": 0.3,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "Never..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "angry",
+			"expression": "Mad",
+			"text": "DIE!!!"
+		}
+	]
+}

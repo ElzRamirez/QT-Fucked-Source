@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				281,
+				252
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "KB_angry_Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-92,
+				57
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "KB_angry_Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				210,
+				39
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "KB_angry_Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				193,
+				267
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "KB_angry_Up",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				176,
+				82
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "KB_angryALT_idleBabyRage",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				109,
+				99
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "KB_angryALT_idleTired",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/kb-angry_404",
+	"position": [
+		-50,
+		210
+	],
+	"healthicon": "kbangry404",
+	"flip_x": false,
+	"healthbar_colors": [
+		128,
+		128,
+		128
+	],
+	"camera_position": [
+		-160,
+		-50
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"expression": "Mad",
+			"text": "WHAT'S WRONG WITH YOU DAMN?!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "zramirez"
+		},
+		{
+			"expression": "Mad",
+			"text": "YOU WERE ABOUT TO KILL ME DUMBASS!",
+			"boxState": "angry",
+			"speed": 0.05,
+			"portrait": "zramirez"
+		},
+		{
+			"expression": "bruh",
+			"text": "Kiddo kiddo...",
+			"boxState": "normal",
+			"speed": 0.095,
+			"portrait": "kb"
+		},
+		{
+			"speed": 0.06,
+			"portrait": "kb",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "You asked for a real battle, you have a real battle"
+		},
+		{
+			"speed": 0.5,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "..."
+		},
+		{
+			"speed": 0.5,
+			"portrait": "angy",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "..."
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"dialogue": [
+		{
+			"expression": "q",
+			"text": "Lmao, get fucked you stupid robot",
+			"boxState": "normal",
+			"speed": 0.25,
+			"portrait": "zramirez"
+		},
+		{
+			"speed": 0.25,
+			"portrait": "angy",
+			"boxState": "normal",
+			"expression": "q",
+			"text": "LOL XD"
+		},
+		{
+			"expression": "Neutral",
+			"text": "Let's leave",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "Angy"
+		},
+		{
+			"expression": "Neutral",
+			"text": "Okay",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "zramirez"
+		}
+	]
+}

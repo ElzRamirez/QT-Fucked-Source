@@ -1,0 +1,4233 @@
+{
+	"song": {
+		"sectionLengths": [],
+		"player1": "bf",
+		"events": [
+			[
+				0,
+				[
+					[
+						"newDodgeDuration",
+						"0.3",
+						""
+					],
+					[
+						"TerminationIntro",
+						"0",
+						""
+					],
+					[
+						"TerminationIntro",
+						"3",
+						"player"
+					],
+					[
+						"streetTV state",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				150,
+				[
+					[
+						"newDodgeDuration",
+						"0.199",
+						""
+					],
+					[
+						"newDodgeCooldown",
+						"0.07345",
+						""
+					]
+				]
+			],
+			[
+				600,
+				[
+					[
+						"KB_AttackPrepare",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				900,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				1200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				2400,
+				[
+					[
+						"TerminationIntro",
+						"1",
+						""
+					],
+					[
+						"TerminationIntro",
+						"2",
+						"player"
+					],
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				2700,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3243.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				3300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				3600,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				3900,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				4200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				4800,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"TerminationIntro",
+						"2",
+						""
+					],
+					[
+						"TerminationIntro",
+						"1",
+						"player"
+					],
+					[
+						"streetTV state",
+						"3",
+						""
+					],
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				5100,
+				[
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				5400,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				5700,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				6000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				6217.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				6300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				6517.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				6600,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				7200,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"TerminationIntro",
+						"3",
+						""
+					],
+					[
+						"TerminationIntro",
+						"0",
+						"player"
+					],
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				7500,
+				[
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				7800,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				8100,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				8400,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				8606.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				8700,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				8913.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				9000,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				9195,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				9300,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				9600,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				9900,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				10200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				10398.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				10500,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					],
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				10706.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				10800,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				11002.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				11100,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				11306.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				11400,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				11617.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				11700,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				11887.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				12000,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				12300,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				12600,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				12821.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				12900,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					],
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				13128.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				13200,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				13402.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				13500,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				13710,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				13800,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				13995,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				14100,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				14306.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				14400,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				15000,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				15300,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				15600,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				15840,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				15900,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				16200,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				16500,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				16800,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				17100,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				17400,
+				[
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				17700,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				17943.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				18000,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				18300,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				18600,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				18900,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				19200,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				19500,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				19800,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				20100,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				20400,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				20613.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				20700,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				20898.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				21000,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				21600,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				21900,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				22200,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				22500,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				22800,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				23010,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				23100,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				23343.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				23400,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				23643.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				23700,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				24000,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				24300,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				24600,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				24900,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				25200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				25413.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				25500,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				25698.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				25800,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				26400,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				26700,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				27000,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				27300,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				27600,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				27813.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				27900,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				28098.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				28200,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				28800,
+				[
+					[
+						"KB_Pincer",
+						"12",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				29100,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				29400,
+				[
+					[
+						"KB_Pincer",
+						"13",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				29700,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				30000,
+				[
+					[
+						"KB_Pincer",
+						"14",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"",
+						""
+					],
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				30217.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				30300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					],
+					[
+						"KB_Alert",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				30506.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				30600,
+				[
+					[
+						"KB_Pincer",
+						"15",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				30795,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				30900,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				31113.75,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				31200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					],
+					[
+						"KB_Pincer",
+						"16",
+						""
+					]
+				]
+			],
+			[
+				31432.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				31500,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				31721.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				31800,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Pincer",
+						"17",
+						""
+					]
+				]
+			],
+			[
+				32021.25,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				32100,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				32400,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					],
+					[
+						"KB_Pincer",
+						"18",
+						""
+					]
+				]
+			],
+			[
+				32700,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				33000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					],
+					[
+						"KB_Pincer",
+						"19",
+						""
+					]
+				]
+			],
+			[
+				33217.5,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				33300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				33600,
+				[
+					[
+						"KB_Pincer",
+						"20",
+						""
+					]
+				]
+			],
+			[
+				34200,
+				[
+					[
+						"KB_Pincer",
+						"22",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				34500,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				34800,
+				[
+					[
+						"KB_Pincer",
+						"23",
+						""
+					],
+					[
+						"Rotating",
+						"2",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				36000,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				36300,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				36600,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				36900,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				37200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				37350,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				37500,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				37650,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				37800,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				37950,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				38100,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				38400,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"5",
+						""
+					]
+				]
+			],
+			[
+				38700,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				39000,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				39300,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				39600,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				39750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				39900,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				40050,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				40200,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				40350,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				40500,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				40650,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				40800,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				40950,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				41100,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				41250,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				41400,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				41550,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				41700,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				41850,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				42000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				42150,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				42300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				42450,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"6",
+						""
+					]
+				]
+			],
+			[
+				42600,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				42750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				42900,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				43200,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"5",
+						""
+					]
+				]
+			],
+			[
+				43500,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				43800,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				44100,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				44400,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				44550,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				44700,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				44850,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				45000,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				45150,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				45300,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				45450,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				45600,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				45750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				45900,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				46050,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				46200,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				46350,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				46500,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					],
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				46650,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				46800,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				46950,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				47100,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				47250,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"6",
+						""
+					]
+				]
+			],
+			[
+				47400,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				47550,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				47700,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				48600,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				48750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				48900,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				49200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				49350,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				49500,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				49650,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				49800,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				49950,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				50100,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				51600,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				51900,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				52200,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				52800,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				53100,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				53400,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				54000,
+				[
+					[
+						"KB_AttackPrepare",
+						"",
+						""
+					]
+				]
+			],
+			[
+				54300,
+				[
+					[
+						"KB_Alert",
+						"",
+						""
+					]
+				]
+			],
+			[
+				54600,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				55800,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				56100,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				56400,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				56700,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				57000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				57150,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				57300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				57450,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				57600,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					],
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				57750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				57900,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			],
+			[
+				58350,
+				[
+					[
+						"KB_Pincer",
+						"24",
+						""
+					],
+					[
+						"Rotating",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				62400,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				62700,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				63000,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				63300,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				63600,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				63900,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				64200,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				64500,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				64800,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					],
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"8",
+						""
+					]
+				]
+			],
+			[
+				65100,
+				[
+					[
+						"KB_AlertDouble",
+						"",
+						""
+					]
+				]
+			],
+			[
+				65400,
+				[
+					[
+						"KB_Alert",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				65700,
+				[
+					[
+						"KB_Alert",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				66000,
+				[
+					[
+						"KB_AttackFire",
+						"",
+						""
+					]
+				]
+			],
+			[
+				66150,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				66300,
+				[
+					[
+						"KB_AttackFire",
+						"double",
+						""
+					]
+				]
+			],
+			[
+				66450,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				66600,
+				[
+					[
+						"KB_AttackFire",
+						"triple",
+						""
+					]
+				]
+			],
+			[
+				66750,
+				[
+					[
+						"KB_AttackPrepare",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				66900,
+				[
+					[
+						"KB_AttackFire",
+						"quadruple",
+						""
+					]
+				]
+			]
+		],
+		"gfVersion": "gf",
+		"player2": "gf",
+		"notes": [
+			{
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						9600,
+						0,
+						0
+					],
+					[
+						10800,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						12000,
+						0,
+						0
+					],
+					[
+						13200,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						14400,
+						0,
+						0
+					],
+					[
+						15600,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						16800,
+						0,
+						0
+					],
+					[
+						18000,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						19200,
+						2,
+						0
+					],
+					[
+						20400,
+						1,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						22800,
+						1,
+						0
+					],
+					[
+						21600,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						24000,
+						2,
+						0
+					],
+					[
+						25200,
+						1,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						26400,
+						2,
+						0
+					],
+					[
+						27600,
+						1,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						28800,
+						0,
+						0
+					],
+					[
+						30000,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						31200,
+						1,
+						0
+					],
+					[
+						32400,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						33600,
+						0,
+						0
+					],
+					[
+						34800,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						36000,
+						1,
+						0
+					],
+					[
+						37200,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						38400,
+						1,
+						0
+					],
+					[
+						39000,
+						1,
+						0
+					],
+					[
+						39600,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						40800,
+						1,
+						0
+					],
+					[
+						41400,
+						1,
+						0
+					],
+					[
+						42000,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						43200,
+						1,
+						0
+					],
+					[
+						43800,
+						1,
+						0
+					],
+					[
+						44400,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						45600,
+						1,
+						0
+					],
+					[
+						46200,
+						1,
+						0
+					],
+					[
+						46800,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						48000,
+						1,
+						0
+					],
+					[
+						48300,
+						2,
+						0
+					],
+					[
+						48600,
+						3,
+						0
+					],
+					[
+						48900,
+						2,
+						0
+					],
+					[
+						49800,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"gfSection": false,
+				"mustHitSection": false
+			},
+			{
+				"sectionNotes": [
+					[
+						50400,
+						1,
+						0
+					],
+					[
+						50700,
+						2,
+						0
+					],
+					[
+						51000,
+						3,
+						0
+					],
+					[
+						51300,
+						2,
+						0
+					],
+					[
+						52200,
+						3,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						52800,
+						3,
+						0
+					],
+					[
+						53400,
+						1,
+						0
+					],
+					[
+						54000,
+						0,
+						0
+					],
+					[
+						54600,
+						1,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						55200,
+						2,
+						0
+					],
+					[
+						55800,
+						3,
+						0
+					],
+					[
+						56400,
+						0,
+						0
+					],
+					[
+						57000,
+						2,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						57600,
+						1,
+						750
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [
+					[
+						62400,
+						0,
+						0
+					],
+					[
+						62550,
+						1,
+						0
+					],
+					[
+						62700,
+						2,
+						0
+					],
+					[
+						62850,
+						3,
+						0
+					],
+					[
+						63000,
+						2,
+						0
+					],
+					[
+						63150,
+						1,
+						0
+					],
+					[
+						63300,
+						0,
+						0
+					],
+					[
+						63450,
+						1,
+						0
+					],
+					[
+						63600,
+						2,
+						0
+					],
+					[
+						63750,
+						3,
+						0
+					],
+					[
+						63900,
+						2,
+						0
+					],
+					[
+						64050,
+						3,
+						0
+					],
+					[
+						64200,
+						2,
+						0
+					],
+					[
+						64350,
+						3,
+						0
+					],
+					[
+						64650,
+						0,
+						0
+					],
+					[
+						64500,
+						1,
+						0
+					]
+				],
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"mustHitSection": true
+			},
+			{
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"lengthInSteps": 16,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 100
+			},
+			{
+				"gfSection": false,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"gfSection": false,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"gfSection": false,
+				"lengthInSteps": 16,
+				"altAnim": false,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"bpm": 100,
+				"changeBPM": false,
+				"mustHitSection": true
+			}
+		],
+		"dodgeEnabled": true,
+		"player3": null,
+		"song": "Tutorial",
+		"stage": "street-termination",
+		"arrowSkin": "",
+		"validScore": true,
+		"sections": 0,
+		"needsVoices": false,
+		"speed": 1.2,
+		"bpm": 100
+	}
+}

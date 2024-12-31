@@ -1,0 +1,74 @@
+{
+	"dialogue": [
+		{
+			"expression": "Neutral",
+			"text": "That was... fun?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "zramirez"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "Anyway, Whats happen with you fucking robot?"
+		},
+		{
+			"expression": "nervous",
+			"text": "I-I'm sorry, I don't know what is happening to KB, he never attacks with his sawblades unless they anger him...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "qt"
+		},
+		{
+			"expression": "Angry",
+			"text": "Sure...",
+			"boxState": "normal",
+			"speed": 0.1,
+			"portrait": "zramirez"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "angy",
+			"boxState": "normal",
+			"expression": "Think",
+			"text": "Ramirez, don't you think this is something dangerous?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Nah, it's ok"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Hey QT, do you want another song?"
+		},
+		{
+			"expression": "excited",
+			"text": "Sure!",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "qt"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "angy",
+			"boxState": "normal",
+			"expression": "Mad",
+			"text": "It's okay, do what you want"
+		},
+		{
+			"expression": "angry",
+			"text": "(I gonna kill you kiddo....)",
+			"boxState": "normal",
+			"speed": 0.09,
+			"portrait": "kb"
+		}
+	]
+}

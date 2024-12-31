@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="kb-variant.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="KB_DanceLeft0000" x="8" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0001" x="966" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0002" x="1924" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0003" x="2882" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0004" x="3840" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0005" x="4798" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0006" x="5756" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0007" x="6714" y="8" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0008" x="8" y="689" width="953" height="676"/>
+	<SubTexture name="KB_DanceLeft0009" x="966" y="689" width="953" height="676"/>
+	<SubTexture name="KB_DanceRight0000" x="1924" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0001" x="2806" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0002" x="3688" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0003" x="4570" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0004" x="5452" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0005" x="6334" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0006" x="7216" y="689" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0007" x="8" y="1379" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0008" x="890" y="1379" width="877" height="685"/>
+	<SubTexture name="KB_DanceRight0009" x="1772" y="1379" width="877" height="685"/>
+	<SubTexture name="KB_Down0000" x="2654" y="1379" width="876" height="602"/>
+	<SubTexture name="KB_Down0001" x="3535" y="1379" width="876" height="602"/>
+	<SubTexture name="KB_Down0002" x="4416" y="1379" width="876" height="602"/>
+	<SubTexture name="KB_Down0003" x="5297" y="1379" width="876" height="602"/>
+	<SubTexture name="KB_Down0004" x="6178" y="1379" width="876" height="602"/>
+	<SubTexture name="KB_Left0000" x="7059" y="1379" width="814" height="826"/>
+	<SubTexture name="KB_Left0001" x="8" y="2210" width="814" height="826"/>
+	<SubTexture name="KB_Left0002" x="827" y="2210" width="814" height="826"/>
+	<SubTexture name="KB_Left0003" x="1646" y="2210" width="814" height="826"/>
+	<SubTexture name="KB_Left0004" x="2465" y="2210" width="814" height="826"/>
+	<SubTexture name="KB_Right0000" x="3284" y="2210" width="667" height="648"/>
+	<SubTexture name="KB_Right0001" x="3956" y="2210" width="667" height="648"/>
+	<SubTexture name="KB_Right0002" x="4628" y="2210" width="667" height="648"/>
+	<SubTexture name="KB_Right0003" x="5300" y="2210" width="667" height="648"/>
+	<SubTexture name="KB_Right0004" x="5972" y="2210" width="667" height="648"/>
+	<SubTexture name="KB_Up0000" x="6644" y="2210" width="904" height="830"/>
+	<SubTexture name="KB_Up0001" x="8" y="3045" width="904" height="830"/>
+	<SubTexture name="KB_Up0002" x="917" y="3045" width="904" height="830"/>
+	<SubTexture name="KB_Up0003" x="1826" y="3045" width="904" height="830"/>
+	<SubTexture name="KB_Up0004" x="2735" y="3045" width="904" height="830"/>
+	<SubTexture name="KB_idleBabyRage0000" x="3644" y="3045" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0001" x="4525" y="3045" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0002" x="5406" y="3045" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0003" x="6287" y="3045" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0004" x="7168" y="3045" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0005" x="8" y="3880" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0006" x="889" y="3880" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0007" x="1770" y="3880" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0008" x="2651" y="3880" width="876" height="645"/>
+	<SubTexture name="KB_idleBabyRage0009" x="3532" y="3880" width="876" height="645"/>
+	<SubTexture name="KB_idleTired0000" x="4413" y="3880" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0001" x="5209" y="3880" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0002" x="6005" y="3880" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0003" x="6801" y="3880" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0004" x="8" y="4547" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0005" x="804" y="4547" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0006" x="1600" y="4547" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0007" x="2396" y="4547" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0008" x="3192" y="4547" width="791" height="662"/>
+	<SubTexture name="KB_idleTired0009" x="3988" y="4547" width="791" height="662"/>
+</TextureAtlas>
