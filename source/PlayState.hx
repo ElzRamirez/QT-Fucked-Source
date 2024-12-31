@@ -786,9 +786,19 @@ class PlayState extends MusicBeatState
 				}
 
 				if (SONG.song.toLowerCase()=='tutorial'){
-					dadDrainHealth=0.011;
-					healthLossMultiplier=1.0;
+					if(storyDifficulty==4){
+						discordDifficultyOverride = "Fucked";
+						healthLossMultiplier=1.2;
+						healthGainMultiplier=1.085;
+						dadDrainHealth=0.011;
+					}else if(storyDifficulty==5){
+						discordDifficultyOverride = "Very Fucked";
+						healthLossMultiplier=1.4;
+						healthGainMultiplier=1.081;
+						dadDrainHealth=0.01595;
+					}
 				}
+
 				
 				if(!ClientPrefs.lowQuality){
 					//Far Back Layer - Error (blue screen)
@@ -6161,7 +6171,7 @@ class PlayState extends MusicBeatState
 		//Only works on Hard difficulty.
 		//v2.2: Updated to support Harder difficulty.
 		//QT FUCKED updated to support Fucked difficulty
-		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
+		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || storyDifficulty == 5 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
 			//prevents health drain if the drain would kill the player.
 			if(health - dadDrainHealth - 0.1 > maxHealth){
 				//And here I thought that this code couldn't get any worse. What is wrong with me?

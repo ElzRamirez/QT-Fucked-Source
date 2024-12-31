@@ -21,7 +21,8 @@ class CoolUtil
 		'Normal',
 		'Hard',
 		'Harder',
-		'Fucked'
+		'Fucked',
+		'Very Fucked'
 	];
 	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
