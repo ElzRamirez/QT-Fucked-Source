@@ -7190,20 +7190,12 @@ class PlayState extends MusicBeatState
 			if(!Achievements.isAchievementUnlocked(achievementName) && !cpuControlled && !unlock) {
 				switch(achievementName)
 				{
-					case 'sawblade_death':
-						if(Achievements.sawbladeDeath >= 24){
-							unlock = true;
-						}
-					case 'sawblade_hell':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && sawbladeHits >=3) {
-							unlock = true;
-						}
 					case 'taunter_master':
 						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && tauntCounter > 25) {
 							unlock = true;
 						}
-					case 'tutorial_veryfucked':
-						if(Paths.formatToSongPath(SONG.song) == 'tutorial' && !usedPractice && CoolUtil.difficultyString() == 'VERY-FUCKED') {
+					case 'tutorial_fucked':
+						if(Paths.formatToSongPath(SONG.song) == 'tutorial' && !usedPractice && CoolUtil.difficultyString() == 'VERY FUCKED') {
 							unlock = true;
 						}
 					case 'qtweek_fucked':
