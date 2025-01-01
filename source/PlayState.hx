@@ -7238,6 +7238,10 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'bad-battle' && !usedPractice) {
 							unlock = true;
 						}
+					case 'long_time':
+						if(Paths.formatToSongPath(SONG.song) == 'redacted' && !usedPractice) {
+							unlock = true;
+						}
 					case 'freeplay_depths':
 						if(Paths.formatToSongPath(SONG.song) == 'interlope' && !usedPractice) {
 							unlock = true;
