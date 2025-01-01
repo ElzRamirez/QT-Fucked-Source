@@ -30,17 +30,20 @@ typedef AchievementFile =
 class Achievements {
 	public static var achievementShits:Array<Dynamic> = [//Name, Description, Achievement save tag, Unlocks after, Hidden achievement
 		//Set unlock after to "null" if it doesnt unlock after a week!!
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",								'friday_night_play',	null, 			true],
-		["do you need help?",		"Beat Tutorial on Very Fucked",									'tutorial_fucked',		null, 			false],
-		["You r really Sick...",					"Complete QT week on Fucked difficulty.",			'qtweek_fucked',			null, 			false],
-		["IMPOSSIBLE!!!",				"Beat Fuckedmination on Very Fucked.",					'fuckedmination_beat',		null, 			false],
-		["Get a life, Freaky!",	"Beat Fuckedmination on Fuck You. (Please, Get a life man)",			'fuckedmination_old',		null, 			false],
-		["See you next time...",					"Beat No Cessation.",											'cessation_beat',		null, 			false],
-		["Playing with fire",			"Try to taunt over 30 times or more in Fuckedmination and win.",				'taunter_master',				null, 			false],
-		["Just kidding lol",			"Get the 1/5 chance in Cessation.",							'cessation_troll',		null, 			true],
-		["Inhuman",						"Went into the depths of Freeplay...",						'freeplay_depths',		null, 			true],
-		["What a Funkin' Disaster!",	"Complete a Song with a rating lower than 20%.",			'ur_bad',				null, 			false],
-		["Perfectionist",				"Complete a Song with a rating of 100%.",					'ur_good',				null,			false]
+		["Freaky on a Friday Night",			"Play on a Friday... Night.",											'friday_night_play',		null, 			true],
+		["do you need help?",					"Beat Tutorial on Very Fucked",											'tutorial_fucked',			null, 			false],
+		["You r really Sick...",				"Complete QT week on Fucked difficulty.",								'qtweek_fucked',			null, 			false],
+		["IMPOSSIBLE!!!",						"Beat Fuckedmination on Very Fucked.",									'fuckedmination_beat',		null, 			false],
+		["Get a life, Freaky!",					"Beat Fuckedmination on Fuck You. (Please, Get a life man)",			'fuckedmination_old',		null, 			false],
+		["See you next time...",				"Beat No Cessation.",													'cessation_beat',			null, 			false],
+		["Try Vs zRamirez man :)",				"Beat Bad Battle. (Please, try Vs zRamirez)",							'badbattle_beat',			null, 			false],
+		["Alertastic!",							"Beat Alertmination from the legacy modpack.",							'alert_beat',				null, 			true],
+		["Master of the style",					"Beat Censory SuperDrip on any difficulty from the legacy modpack.",	'drip_beat',				null, 			true],
+		["EXTREME LIMITS!",						"Beat Fuckedmination Corrupted from the legacy modpack.",				'fuckedcorrupted_beat',		null, 			true],
+		["Inhuman",								"Went into the depths of Freeplay...",									'freeplay_depths',			null, 			true],
+		["Playing with fire!",					"Try to taunt over 30 times or more in Fuckedmination and win.",		'taunter_master',			null, 			false],
+		["What a Funkin' Disaster!",			"Complete a Song with a rating lower than 20%.",						'ur_bad',					null, 			false],
+		["Perfectionist",						"Complete a Song with a rating of 100%.",								'ur_good',					null,			false]
 	];
 
 	public static var achievementsStuff:Array<Dynamic> = [ 

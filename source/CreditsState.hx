@@ -90,6 +90,7 @@ class CreditsState extends MusicBeatState
 			[''],
 			['Extra Mod Credits'],
 			['Iandee',				'iandee',			'Creator of the Original Design of the BF and GF Sprites from the VS Impostor Dialogues',								'https://www.youtube.com/channel/UCnoOhpnxHWtayIJUCutfP7w',			'B0B0B0'],
+			['MtH',					'mth',				'Creator of the Original Voices from da song test',																		'https://x.com/emmnyaa',											'B0B0B0'],
 			[''],
 			['Discord Server'],
 			['zRamirez Discord Server',		'discord',	'zRamírez Official Discord Server, There are Announcements about the Mod, Spoilers and Many Other Things! (Spanish and English Supported)',  	   'https://discord.gg/g2mCEc9rH5',			'4C5CE4'],

@@ -7222,10 +7222,21 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'cessation' && !usedPractice) {
 							unlock = true;
 						}
-					case 'cessation_troll':
-						if(Paths.formatToSongPath(SONG.song) == 'cessation' && cessationTrollDone == true){ //Can still be gotten even if you used practise
+					case 'alert_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'alertmination' && !usedPractice) {
 							unlock = true;
-							//cessationTrollDone
+						}
+					case 'drip_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'censory-superdrip' && !usedPractice) {
+							unlock = true;
+						}
+					case 'fuckedcorrupted_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-corrupted' && !usedPractice) {
+							unlock = true;
+						}
+					case 'badbattle_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'bad-battle' && !usedPractice) {
+							unlock = true;
 						}
 					case 'freeplay_depths':
 						if(Paths.formatToSongPath(SONG.song) == 'interlope' && !usedPractice) {
