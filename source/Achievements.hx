@@ -31,16 +31,13 @@ class Achievements {
 	public static var achievementShits:Array<Dynamic> = [//Name, Description, Achievement save tag, Unlocks after, Hidden achievement
 		//Set unlock after to "null" if it doesnt unlock after a week!!
 		["Freaky on a Friday Night",	"Play on a Friday... Night.",								'friday_night_play',	null, 			true],
-		["Press space to dodge!",		"Beat Tutorial on Hard?",									'tutorial_hard',		null, 			false],
+		["do you need help?",		"Beat Tutorial on Very Fucked",									'tutorial_veryfucked',		null, 			false],
 		["You r really Sick...",					"Complete QT week on Fucked difficulty.",			'qtweek_fucked',			null, 			false],
 		["IMPOSSIBLE!!!",				"Beat Fuckedmination on Very Fucked.",					'fuckedmination_beat',		null, 			false],
-		["Get a life, Freaky!",	"Beat Fuckedminatio on Fuck You. (Please, Get a life man)",			'fuckedmination_old',		null, 			false],
-		["See you next time...",					"Beat No Cessation.",											'cessation_beat',		null, 			false],
-		["Ouch!",						"Get hit by a sawblade 24 times.",								'sawblade_death',		null, 			false],
-		["Too close for comfort",		"Beat Fuckedmination after being hit 3 times by sawblades.",	'sawblade_hell',		 null, 			false],
-		["Playing with fire",			"Taunt over 100 times in Fuckedmination and win.",				'taunter',				null, 			false],
-		["Just kidding lol",			"Get the 1/5 chance in Cessation.",							'cessation_troll',		null, 			true],
-		["Inhuman",						"Went into the depths of Freeplay...",						'freeplay_depths',		null, 			true],
+		["Get a life, Freaky!",		"Beat Fuckedmination on Fuck You. (Please, Get a life man)",			'fuckedmination_old',		null, 			false],
+		["See you next time...",					"Beat Cessation.",											'cessation_beat',		null, 			false],
+		["Is it really possible?",			"Try to taunt over 25 times or more in Fuckedmination and win.",				'taunter_master',				null, 			false],
+		["Inhuman Fucked",						"Went into the depths of Freeplay...",						'freeplay_depths',		null, 			true],
 		["What a Funkin' Disaster!",	"Complete a Song with a rating lower than 20%.",			'ur_bad',				null, 			false],
 		["Perfectionist",				"Complete a Song with a rating of 100%.",					'ur_good',				null,			false]
 	];

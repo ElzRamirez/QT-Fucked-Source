@@ -596,14 +596,14 @@ class TitleState extends MusicBeatState
 			sickBeats++;
 			switch (sickBeats)
 			{
-				case 2:
+				case 1:
 					#if PSYCH_WATERMARKS
 					createCoolText(['Psych Engine by'], 15);
 					#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
 				// credTextShit.visible = true;
-				case 3:
+				case 2:
 					#if PSYCH_WATERMARKS
 					addMoreText('Shadow Mario', 15);
 					addMoreText('RiverOaken', 15);
@@ -613,55 +613,55 @@ class TitleState extends MusicBeatState
 					#end
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 5:
+				case 4:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 6:
+				case 5:
 					#if PSYCH_WATERMARKS
 					createCoolText(['Not associated', 'with'], -40);
 					#else
 					createCoolText(['In association', 'with'], -40);
 					#end
-				case 7:
+				case 6:
 					addMoreText('newgrounds', -40);
 				// credTextShit.text += '\nNewgrounds';
-				case 8:
+				case 7:
 					ngSpr.visible = true;
-				case 9:
+				case 8:
 					deleteCoolText();
 					ngSpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts to Simpleflips';
 				// credTextShit.screenCenter();
-				case 10:
-					createCoolText(['Hazard24 and Nightshade']);
+				case 9:
+					createCoolText(['Hazard24 and Nightshade OGs']);
 				// credTextShit.visible = true;
-				case 11:
-					addMoreText('Proudly');
+				case 10:
+					addMoreText('zRamirez and DrkFon376');
 				// credTextShit.text += '\nlmao';
-				case 12:
+				case 11:
 					addMoreText('Presents');
-				case 13:
+				case 12:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
-				case 14:
+				case 13:
 					addMoreText("Friday Night Funkin'");
 				// credTextShit.visible = true;
-				case 15:
-					addMoreText('QT');
+				case 14:
+					addMoreText('QT Mod');
 				// credTextShit.text += '\nNight';
-				case 16:
-					addMoreText('Mod'); // credTextShit.text += '\nFunkin';
+				case 15:
+					addMoreText('On Fucked Difficulty'); // credTextShit.text += '\nFunkin';
 
-				case 17:
+				case 16:
 					if (!skippedIntro){
 						FlxG.camera.fade(FlxColor.WHITE, 0.435, false);}
-				case 18:
+				case 17:
 					skipIntro();
 			}
 		}

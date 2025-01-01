@@ -7198,12 +7198,12 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && sawbladeHits >=3) {
 							unlock = true;
 						}
-					case 'taunter':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && tauntCounter > 100) {
+					case 'taunter_master':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && tauntCounter > 25) {
 							unlock = true;
 						}
-					case 'tutorial_hard':
-						if(Paths.formatToSongPath(SONG.song) == 'tutorial' && !usedPractice && CoolUtil.difficultyString() == 'HARD') {
+					case 'tutorial_veryfucked':
+						if(Paths.formatToSongPath(SONG.song) == 'tutorial' && !usedPractice && CoolUtil.difficultyString() == 'VERY-FUCKED') {
 							unlock = true;
 						}
 					case 'qtweek_fucked':
