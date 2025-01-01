@@ -1675,7 +1675,7 @@
 		"song": "Tutorial",
 		"validScore": true,
 		"sections": 0,
-		"needsVoices": false,
+		"needsVoices": true,
 		"speed": 1.2,
 		"bpm": 100
 	}

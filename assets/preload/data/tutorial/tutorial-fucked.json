@@ -3017,7 +3017,7 @@
 		"player3": null,
 		"dodgeEnabled": true,
 		"song": "Tutorial",
-		"needsVoices": false,
+		"needsVoices": true,
 		"sections": 0,
 		"validScore": true,
 		"arrowSkin": "",
