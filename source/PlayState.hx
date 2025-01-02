@@ -4329,17 +4329,23 @@ class PlayState extends MusicBeatState
 						if(value == 0){
 							add(kb_attack_alert);
 							add(kb_attack_saw);
-							kbATTACK_ALERT(1);
+							kbATTACK_ALERT(2);
 							KBATTACK(false);
 						}
 						else if (value == 1){
+							kbATTACK_ALERT(2);
+						}
+						else if (value == 2){
+							kbATTACK_ALERT(3);
+						}
+						else if (value == 3){
 							kbATTACK_ALERT(4);
 						}
-						else if(value == 2){
+						else if(value == 4){
 							FlxG.sound.play(Paths.sound('hazard/bruh'),0.75);
 							add(cessationTroll);
 						}
-						else if(value == 3){
+						else if(value == 5){
 							remove(cessationTroll);
 							remove(kb_attack_saw);
 						}
