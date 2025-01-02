@@ -31,8 +31,8 @@ class Achievements {
 	public static var achievementShits:Array<Dynamic> = [//Name, Description, Achievement save tag, Unlocks after, Hidden achievement
 		//Set unlock after to "null" if it doesnt unlock after a week!!
 		["Freaky on a Friday Night",			"Play on a Friday... Night.",											'friday_night_play',		null, 			true],
-		["Do you need help?",					"Beat Tutorial on Very Fucked",											'tutorial_fucked',			null, 			false],
-		["You r really sick...",				"Complete QT week on Fucked difficulty.",								'qtweek_fucked',			null, 			false],
+		["Do you need help?",					"Beat Tutorial on Very Fucked.",											'tutorial_fucked',			null, 			false],
+		["You r really sick...",				"Complete QT week on Fucked Difficulty.",								'qtweek_fucked',			null, 			false],
 		["IMPOSSIBLE!!!",						"Beat Fuckedmination on Very Fucked.",									'fuckedmination_beat',		null, 			false],
 		["Get a life, freaky!",					"Beat Fuckedmination on Fuck You. (Please, get a life bro)",			'fuckedmination_old',		null, 			false],
 		["See you next time...",				"Beat Cessation.",														'cessation_beat',			null, 			false],

@@ -34,7 +34,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		title = 'Gameplay Settings';
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
 
-		var option:Option = new Option('Classic Voices', //Name
+		var option:Option = new Option('Boyfriend Voices', //Name
 			'If checked, will use the BF voices from the original QT FD.', //Description
 			'qtOldVocals', //Save data variable name
 			'bool', //Variable type
