@@ -80,8 +80,8 @@ class CreditsState extends MusicBeatState
 		#end
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['QT FUCKED DIFFICULTY DEVS'],
-			['zRamirez',			'zramirez',			'Head Coder, Musician, Artist, Charter and Fucking Loser',			'https://www.youtube.com/channel/UCPvBcpUxgtJpcJUZEiRPK_g',			'FFE800'],
-			['DrkFon376',			'drkfon',			'Helping in Coding, Bugfix, QT Extreme Creator',					'https://www.youtube.com/channel/UCCVTns4b43V8Q5EON8xuSUQ',			'0A5DAF'],
+			['zRamirez',			'zramirez',			'Owner Dev, Musician, Artist, Charter and Fucking Loser',			'https://www.youtube.com/channel/UCPvBcpUxgtJpcJUZEiRPK_g',			'FFE800'],
+			['DrkFon376',			'drkfon',			'Co-Owner Dev, Bugfix, New Title Screen Programer',					'https://www.youtube.com/channel/UCCVTns4b43V8Q5EON8xuSUQ',			'0A5DAF'],
 			[''],
 			['QT FUCKED CONTRIBUTORS'],
 			['Imanol',				'ima',				'Beta Tester',														'https://www.youtube.com/channel/UCs9dXV0B7uKACyyW9PBFYCA',			'583627'],
