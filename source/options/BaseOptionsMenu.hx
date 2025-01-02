@@ -135,6 +135,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	var holdValue:Float = 0;
 	override function update(elapsed:Float)
 	{
+		if (FlxG.sound.music != null)
+			Conductor.songPosition = FlxG.sound.music.time;
+
 		if (controls.UI_UP_P)
 		{
 			changeSelection(-1);
@@ -259,9 +262,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			}
 		}
 
-		if(boyfriend != null && boyfriend.animation.curAnim.finished) {
+		/*if(boyfriend != null && boyfriend.animation.curAnim.finished) {
 			boyfriend.dance();
-		}
+		}*/
 
 		if(nextAccept > 0) {
 			nextAccept -= 1;
@@ -337,10 +340,9 @@ class BaseOptionsMenu extends MusicBeatSubstate
 			boyfriend.destroy();
 		}
 
-		boyfriend = new Character(840, 170, 'bf', true);
+		boyfriend = new Character(840, 170, 'zRamirez', true);
 		boyfriend.setGraphicSize(Std.int(boyfriend.width * 0.75));
 		boyfriend.updateHitbox();
-		boyfriend.dance();
 		insert(1, boyfriend);
 		boyfriend.visible = wasVisible;
 	}
@@ -349,5 +351,15 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		for (checkbox in checkboxGroup) {
 			checkbox.daValue = (optionsArray[checkbox.ID].getValue() == true);
 		}
+	}
+
+	override function beatHit()
+	{
+		//trace("Beat hit!");
+		
+		super.beatHit();
+
+		if (boyfriend != null)
+			boyfriend.dance();
 	}
 }
