@@ -218,6 +218,7 @@ class TitleState extends MusicBeatState
 	var titleText:FlxSprite;
 	var qt:FlxSprite;
 	var swagShader:ColorSwap = null;
+	var pulse:FlxSprite;
 
 	function startIntro()
 	{
@@ -265,15 +266,18 @@ class TitleState extends MusicBeatState
 		
 		// bg.antialiasing = ClientPrefs.globalAntialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
-		// bg.updateHitbox();
-		
-		
-		
+		// bg.updateHitbox();	
 		
 		add(bg);
 
+		//New cool pulse effect in bg also ported from QT Extreme v2.5, mod which I don't want to talk about lol -Drkfon
+		pulse = new FlxSprite().loadGraphic(Paths.image('TitlePulse'));
+		pulse.screenCenter();
+		pulse.updateHitbox();
+		pulse.alpha = 0;
+		add(pulse);
+
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
-		
 		
 		#if (desktop && MODS_ALLOWED)
 		var path = "mods/" + Paths.currentModDirectory + "/images/logoBumpin.png";
@@ -325,8 +329,9 @@ class TitleState extends MusicBeatState
 		add(gfDance);
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
-		//logoBl.shader = swagShader.shader;
-
+		logoBl.shader = swagShader.shader;
+		
+		pulse.shader = swagShader.shader;
 
 		//hi QT
 		qt = new FlxSprite(FlxG.width * -0.4, FlxG.height * 0.035);
@@ -336,7 +341,7 @@ class TitleState extends MusicBeatState
 		qt.antialiasing = true;
 		qt.y-=200;
 		add(qt);
-
+		qt.shader = swagShader.shader;
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
 		#if (desktop && MODS_ALLOWED)
@@ -451,6 +456,15 @@ class TitleState extends MusicBeatState
 			#end
 		}
 
+		if (skippedIntro)
+		{
+			if(pulse != null)
+			{
+				if(pulse.alpha > 0)
+					pulse.alpha -= 0.9 * elapsed;
+			}
+		}
+
 		// EASTER EGG
 
 		if (!transitioning && skippedIntro)
@@ -526,6 +540,8 @@ class TitleState extends MusicBeatState
 			skipIntro();
 		}
 
+		spawnParticle();
+
 		if(swagShader != null)
 		{
 			if(controls.UI_LEFT) swagShader.hue -= elapsed * 0.1;
@@ -591,19 +607,24 @@ class TitleState extends MusicBeatState
 			qt.animation.play('idle');
 		}
 
+		if(skippedIntro)
+		{
+			if(pulse != null)
+				pulse.alpha = 0.6;
+		}
 
 		if(!closedState) {
 			sickBeats++;
 			switch (sickBeats)
 			{
-				case 3:
+				case 2:
 					#if PSYCH_WATERMARKS
 					createCoolText(['Psych Engine by'], 15);
 					#else
 					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 					#end
 				// credTextShit.visible = true;
-				case 4:
+				case 3:
 					#if PSYCH_WATERMARKS
 					addMoreText('Shadow Mario', 15);
 					addMoreText('RiverOaken', 15);
@@ -613,55 +634,55 @@ class TitleState extends MusicBeatState
 					#end
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 6:
+				case 5:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 7:
+				case 6:
 					#if PSYCH_WATERMARKS
 					createCoolText(['Not associated', 'with'], -40);
 					#else
 					createCoolText(['In association', 'with'], -40);
 					#end
-				case 8:
+				case 7:
 					addMoreText('newgrounds', -40);
 				// credTextShit.text += '\nNewgrounds';
-				case 9:
+				case 8:
 					ngSpr.visible = true;
-				case 10:
+				case 9:
 					deleteCoolText();
 					ngSpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts to Simpleflips';
 				// credTextShit.screenCenter();
-				case 11:
+				case 10:
 					createCoolText(['Hazard24 and Nightshade OGs']);
 				// credTextShit.visible = true;
-				case 12:
+				case 11:
 					addMoreText('zRamirez and DrkFon376');
 				// credTextShit.text += '\nlmao';
-				case 13:
+				case 12:
 					addMoreText('Presents');
-				case 14:
+				case 13:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
-				case 15:
+				case 14:
 					addMoreText("Friday Night Funkin'");
 				// credTextShit.visible = true;
-				case 16:
+				case 15:
 					addMoreText('QT Mod');
 				// credTextShit.text += '\nNight';
-				case 17:
+				case 16:
 					addMoreText('On Fucked Difficulty'); // credTextShit.text += '\nFunkin';
 
-				case 18:
+				case 17:
 					if (!skippedIntro){
 						FlxG.camera.fade(FlxColor.WHITE, 0.705, false);}
-				case 19:
+				case 18:
 					skipIntro();
 			}
 		}
@@ -678,5 +699,37 @@ class TitleState extends MusicBeatState
 			remove(credGroup);
 			skippedIntro = true;
 		}
+	}
+
+	//Ported from QT Extreme v2.5, yea, probably a build that will never see the light of day -Drkfon
+	var interval:Float = 0;
+	function spawnParticle():Void //New cool particles effect! (yea, I hardcoded this from a Psych lua script lol)
+	{
+		var quartStep:Float = Conductor.stepCrochet / 4;
+		var songPos:Float = Conductor.songPosition;
+
+		if (Conductor.songPosition <= 0)
+			interval = 0;
+		
+		if (songPos >= interval)
+		{
+			var rarr:Float = songPos/500;
+
+			var particle:FlxSprite = new FlxSprite(FlxG.random.int(500, 2000), 1600).loadGraphic(Paths.image('Particle'));
+			particle.setGraphicSize(Std.int(particle.width * 0.5));
+			particle.updateHitbox();
+			particle.antialiasing = true;
+
+       		var endX:Float = -900 * Math.sin((rarr + 1 * 0.1) * Math.PI);
+			var endY:Float = -900 * Math.tan((rarr + 1 * 0.1) * Math.PI);
+
+			add(particle);
+
+			FlxTween.tween(particle, {x: endX, y: endY}, 6, {type: FlxTweenType.PERSIST, onComplete: function(twn:FlxTween){
+				particle.destroy();
+			}});
+
+			interval += quartStep;
+		}			
 	}
 }
