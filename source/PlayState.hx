@@ -3761,12 +3761,13 @@ class PlayState extends MusicBeatState
 		reloadHealthBarColors();
 	}
 
-	public function kbATTACK_ALERT(alertType:Int = 1, playSound:Bool = true):Void
+	public function kbATTACK_ALERT(alertType:Int = 1, playSound:Bool = true, customSound:Null<String> = ""):Void
 	{
 		//Feel free to add your own alert types in here. Make sure that the alert sprite has the animation and the sound is also available.
 		switch(alertType){
 			case 2:
-				if(playSound) FlxG.sound.play(Paths.sound('hazard/alertDouble'), 1);
+				if(playSound)
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertDouble'), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.55,'alertDOUBLE');
@@ -3777,7 +3778,8 @@ class PlayState extends MusicBeatState
 				}	
 				
 			case 3:
-				if(playSound) FlxG.sound.play(Paths.sound('hazard/alertTriple'), 1);
+				if(playSound)
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertTriple'), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE');
@@ -3788,7 +3790,8 @@ class PlayState extends MusicBeatState
 				}		
 				
 			case 4:
-				if(playSound) FlxG.sound.play(Paths.sound('hazard/alertQuadruple'), 1);
+				if(playSound)
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertQuadruple'), 1);
 				
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.6,'alertQUAD');
@@ -3799,7 +3802,8 @@ class PlayState extends MusicBeatState
 				}		
 				
 			default:
-				if(playSound) FlxG.sound.play(Paths.sound('hazard/alert'), 1);
+				if(playSound)
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alert'), 1);
 				
 				//Not the best way to do offset since I fear lag can lead to an offsync sawblade, but hey I tried at least and it's better then no support at all. -Haz
 				if(ClientPrefs.noteOffset <= 0) {
@@ -4541,9 +4545,13 @@ class PlayState extends MusicBeatState
 
 			case 'KB_Alert':
 				var alertType:Int = Std.parseInt(value1);
-				if(Math.isNaN(alertType)){ 
+				var soundToPlay:String = value2.toLowerCase();
+
+				if (Math.isNaN(alertType))
+				{ 
 					//If value 1 isn't a number, checks if the player wrote it as words instead
-					switch(value1){
+					switch (value1)
+					{
 						case "double":
 							alertType = 2;
 						case "triple":
@@ -4554,7 +4562,12 @@ class PlayState extends MusicBeatState
 							alertType = 1;
 					}
 				}
-				kbATTACK_ALERT(alertType);
+
+				if (soundToPlay == null || soundToPlay == " "  || soundToPlay == "")
+					soundToPlay = "";
+
+				kbATTACK_ALERT(alertType, true, soundToPlay);
+
 			case 'KB_AlertDouble':
 				//Kept for legacy support
 				kbATTACK_ALERT(2);
