@@ -189,6 +189,9 @@ class BrutalityGameOverSubstate extends MusicBeatSubstate
 				MusicBeatState.switchState(new FreeplayState());
 
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			Conductor.changeBPM(83);
+			if (FlxG.sound.music != null)
+				Conductor.songPosition = FlxG.sound.music.time;
 			PlayState.instance.callOnLuas('onGameOverConfirm', [false]);
 		}
 

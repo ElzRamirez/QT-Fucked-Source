@@ -3474,54 +3474,56 @@ class PlayState extends MusicBeatState
 		}
 		
 		#if debug
-		if(!endingSong && !startingSong) {
-			if (FlxG.keys.justPressed.FIVE){
+		if(!endingSong) {
+			if (FlxG.keys.justPressed.FIVE) {
 				godMode = !godMode;
 				if(godMode)
 					scoreTxt.color = FlxColor.CYAN;
 				else
 					scoreTxt.color = FlxColor.WHITE;
 			}
-			if (FlxG.keys.justPressed.ONE) {
-				KillNotes();
-				FlxG.sound.music.onComplete();
-			}
-			if(FlxG.keys.justPressed.TWO) { //Go 10 seconds into the future :O
-				FlxG.sound.music.pause();
-				vocals.pause();
-				Conductor.songPosition += 10000;
-				notes.forEachAlive(function(daNote:Note)
-				{
-					if(daNote.strumTime + 800 < Conductor.songPosition) {
+			if (!startingSong) {
+				if (FlxG.keys.justPressed.ONE) {
+					KillNotes();
+					FlxG.sound.music.onComplete();
+				}
+				if(FlxG.keys.justPressed.TWO) { //Go 10 seconds into the future :O
+					FlxG.sound.music.pause();
+					vocals.pause();
+					Conductor.songPosition += 10000;
+					notes.forEachAlive(function(daNote:Note)
+					{
+						if(daNote.strumTime + 800 < Conductor.songPosition) {
+							daNote.active = false;
+							daNote.visible = false;
+
+							daNote.kill();
+							notes.remove(daNote, true);
+							daNote.destroy();
+						}
+					});
+					for (i in 0...unspawnNotes.length) {
+						var daNote:Note = unspawnNotes[0];
+						if(daNote.strumTime + 800 >= Conductor.songPosition) {
+							break;
+						}
+
 						daNote.active = false;
 						daNote.visible = false;
 
 						daNote.kill();
-						notes.remove(daNote, true);
+						unspawnNotes.splice(unspawnNotes.indexOf(daNote), 1);
 						daNote.destroy();
 					}
-				});
-				for (i in 0...unspawnNotes.length) {
-					var daNote:Note = unspawnNotes[0];
-					if(daNote.strumTime + 800 >= Conductor.songPosition) {
-						break;
-					}
 
-					daNote.active = false;
-					daNote.visible = false;
+					health = 1.8; //Restores health?
 
-					daNote.kill();
-					unspawnNotes.splice(unspawnNotes.indexOf(daNote), 1);
-					daNote.destroy();
+					FlxG.sound.music.time = Conductor.songPosition;
+					FlxG.sound.music.play();
+
+					vocals.time = Conductor.songPosition;
+					vocals.play();
 				}
-
-				health = 1.8; //Restores health?
-
-				FlxG.sound.music.time = Conductor.songPosition;
-				FlxG.sound.music.play();
-
-				vocals.time = Conductor.songPosition;
-				vocals.play();
 			}
 		}
 		#end
@@ -5521,6 +5523,9 @@ class PlayState extends MusicBeatState
 						CustomFadeTransition.nextCamera = null;
 					}
 					MusicBeatState.switchState(new StoryMenuState());
+					Conductor.changeBPM(83);
+					if (FlxG.sound.music != null)
+						Conductor.songPosition = FlxG.sound.music.time;
 
 					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {
@@ -5585,9 +5590,15 @@ class PlayState extends MusicBeatState
 				MusicBeatState.switchState(new FreeplayState());
 				if(Paths.formatToSongPath(SONG.song) == 'cessation') {
 					trace("Play Cessation end music.");
-					FlxG.sound.playMusic(Paths.music('thanks'));
+					FlxG.sound.playMusic(Paths.music('QT_Fucked_Difficulty_thanks'));
+					Conductor.changeBPM(70);
+					if (FlxG.sound.music != null)
+						Conductor.songPosition = FlxG.sound.music.time;
 				}else{
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+					Conductor.changeBPM(83);
+					if (FlxG.sound.music != null)
+						Conductor.songPosition = FlxG.sound.music.time;
 				}
 				changedDifficulty = false;
 			}
