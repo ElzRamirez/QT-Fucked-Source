@@ -12,7 +12,7 @@
 			"text": "Ramirez, are you sure we're in the right place?",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "angy"
+			"portrait": "ara"
 		},
 		{
 			"speed": 0.05,
@@ -37,7 +37,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Happy",
 			"text": "Hello"
@@ -89,14 +89,14 @@
 			"portrait": "zramirez",
 			"boxState": "normal",
 			"expression": "Happy",
-			"text": "Angy, did you bring the speakers?"
+			"text": "Ara, did you bring the speakers?"
 		},
 		{
 			"speed": 0.05,
-			"portrait": "angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Happy",
-			"text": "and do you still doubt it cosi?"
+			"text": "and do you still doubt it Rami?"
 		},
 		{
 			"expression": "Happy",

@@ -1687,7 +1687,7 @@
 					[
 						"Change Character OPTIONAL",
 						"gf",
-						"angy-404"
+						"Ara-404"
 					]
 				]
 			],
@@ -2122,7 +2122,7 @@
 					[
 						"Change Character OPTIONAL",
 						"gf",
-						"angy"
+						"Ara"
 					],
 					[
 						"streetTV state",
@@ -2995,7 +2995,7 @@
 		"notes": [],
 		"splashSkin": null,
 		"validScore": false,
-		"gfVersion": "angy",
+		"gfVersion": "Ara",
 		"bpm": 222,
 		"arrowSkin": "",
 		"needsVoices": true,

@@ -9,7 +9,7 @@
 		},
 		{
 			"speed": 0.25,
-			"portrait": "angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "q",
 			"text": "LOL XD"
@@ -19,7 +19,7 @@
 			"text": "Let's leave",
 			"boxState": "normal",
 			"speed": 0.05,
-			"portrait": "Angy"
+			"portrait": "ara"
 		},
 		{
 			"expression": "Neutral",

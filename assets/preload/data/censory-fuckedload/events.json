@@ -1167,7 +1167,7 @@
 					[
 						"Change Character OPTIONAL",
 						"gf",
-						"angy-404"
+						"Ara-404"
 					]
 				]
 			],
@@ -1187,7 +1187,7 @@
 					[
 						"Change Character OPTIONAL",
 						"gf",
-						"angy"
+						"Ara"
 					],
 					[
 						"Change Character OPTIONAL",
@@ -1265,7 +1265,7 @@
 		"notes": [],
 		"splashSkin": null,
 		"validScore": false,
-		"gfVersion": "angy",
+		"gfVersion": "Ara",
 		"bpm": 190,
 		"arrowSkin": null,
 		"needsVoices": true,

@@ -9,7 +9,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "Angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Mad",
 			"text": "And did you just notice it? After he almost killed you with a FUCKING SAW?!"
@@ -19,7 +19,7 @@
 			"portrait": "zRamirez",
 			"boxState": "normal",
 			"expression": "Sad",
-			"text": "Sorry Angy, I was a dumbass"
+			"text": "Sorry Ara, I was a dumbass"
 		},
 		{
 			"speed": 0.05,
@@ -30,10 +30,10 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "Angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Happy",
-			"text": "Nah, don't worry cosi, maybe i would have done the same LOLXD"
+			"text": "Nah, don't worry Rami, maybe i would have done the same LOLXD"
 		},
 		{
 			"speed": 0.075,
@@ -79,7 +79,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "Angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "q",
 			"text": "WTF?"
@@ -96,11 +96,11 @@
 			"portrait": "zRamirez",
 			"boxState": "normal",
 			"expression": "Neutral",
-			"text": "Ok?... Let's get out of here Angy"
+			"text": "Ok?... Let's get out of here Ara"
 		},
 		{
 			"speed": 0.05,
-			"portrait": "Angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Neutral",
 			"text": "And very fast"

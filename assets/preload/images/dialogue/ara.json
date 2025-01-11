@@ -1,0 +1,89 @@
+{
+	"position": [
+		35,
+		155
+	],
+	"dialogue_pos": "center",
+	"scale": 1.6,
+	"image": "Ara_dialogue",
+	"animations": [
+		{
+			"loop_offsets": [
+				0,
+				41
+			],
+			"anim": "Happy",
+			"idle_offsets": [
+				0,
+				41
+			],
+			"loop_name": "GF happy",
+			"idle_name": "GF happy0000"
+		},
+		{
+			"loop_offsets": [
+				4,
+				43
+			],
+			"anim": "Angry",
+			"idle_offsets": [
+				4,
+				43
+			],
+			"loop_name": "GF mad",
+			"idle_name": "GF mad0000"
+		},
+		{
+			"loop_offsets": [
+				10,
+				39
+			],
+			"anim": "Neutral",
+			"idle_offsets": [
+				10,
+				39
+			],
+			"loop_name": "GF neutral",
+			"idle_name": "GF neutral0000"
+		},
+		{
+			"loop_offsets": [
+				32,
+				42
+			],
+			"anim": "q",
+			"idle_offsets": [
+				32,
+				42
+			],
+			"loop_name": "GF q",
+			"idle_name": "GF q0000"
+		},
+		{
+			"loop_offsets": [
+				0,
+				41
+			],
+			"anim": "Mad",
+			"idle_offsets": [
+				0,
+				41
+			],
+			"loop_name": "GF glint",
+			"idle_name": "GF glint0000"
+		},
+		{
+			"loop_offsets": [
+				2,
+				40
+			],
+			"anim": "Think",
+			"idle_offsets": [
+				2,
+				40
+			],
+			"loop_name": "GF suspect",
+			"idle_name": "GF suspect0000"
+		}
+	]
+}

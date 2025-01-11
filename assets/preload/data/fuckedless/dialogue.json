@@ -30,7 +30,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Think",
 			"text": "Ramirez, don't you think this is something dangerous?"
@@ -58,7 +58,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "angy",
+			"portrait": "ara",
 			"boxState": "normal",
 			"expression": "Mad",
 			"text": "It's okay, do what you want"

@@ -506,8 +506,9 @@ class DialogueBoxPsych extends FlxSpriteGroup
 				whoTheFuck = "zRamirez";
 			case 'zramirez':
 				whoTheFuck = "zRamirez";
-			case 'angy':
-				whoTheFuck = "Angy";
+			case 'ara':
+				whoTheFuck = "Ara";
+			//gracias por hacerme reescribr todo este codigo Angy maldita sea
 			case 'gf':
 				whoTheFuck = 'gf';
 			case 'bf':
