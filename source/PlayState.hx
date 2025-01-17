@@ -146,6 +146,8 @@ class PlayState extends MusicBeatState
 	private static var prevCamFollow:FlxPoint;
 	private static var prevCamFollowPos:FlxObject;
 
+	private var camFollowReal:FlxPoint;
+
 	public var strumLineNotes:FlxTypedGroup<StrumNote>;
 	public var opponentStrums:FlxTypedGroup<StrumNote>;
 	public var playerStrums:FlxTypedGroup<StrumNote>;
@@ -250,6 +252,10 @@ class PlayState extends MusicBeatState
 	public var inCutscene:Bool = false;
 	public var skipCountdown:Bool = false;
 	var songLength:Float = 0;
+
+	public var cameraOffsetWhenSinging:Array<Float> = null;
+	//var moveCameraWhenSingingBool:Bool = false;
+	var cameraOffsetWhenSingingValue:Float = 25;
 
 	#if desktop
 	// Discord RPC variables
@@ -527,6 +533,9 @@ class PlayState extends MusicBeatState
 		GF_Y = stageData.girlfriend[1];
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
+
+		if(cameraOffsetWhenSinging == null)
+			cameraOffsetWhenSinging = [0, 0];
 
 		boyfriendGroup = new FlxSpriteGroup(BF_X, BF_Y);
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
@@ -1369,6 +1378,8 @@ class PlayState extends MusicBeatState
 
 		camFollow = new FlxPoint();
 		camFollowPos = new FlxObject(0, 0, 1, 1);
+
+		camFollowReal = new FlxPoint();
 
 		snapCamFollowToPos(camPos.x, camPos.y);
 		if (prevCamFollow != null)
@@ -4828,6 +4839,9 @@ class PlayState extends MusicBeatState
 				}
 
 			case 'Hey!':
+					var curSection:Int = Math.floor(curStep / 16);
+					var char:Character = boyfriend;
+					
 					var value:Int = 3;
 					switch(value1.toLowerCase().trim()) {
 						case 'bf' | 'boyfriend' | '0':
@@ -4847,15 +4861,18 @@ class PlayState extends MusicBeatState
 							boyfriend.playAnim('hey', true);
 							boyfriend.specialAnim = true;
 							boyfriend.heyTimer = time;
+							char = boyfriend;
 						case 1:
 							if(dad.curCharacter.startsWith('gf')) { //Tutorial GF is actually Dad! The GF is an imposter!! ding ding ding ding ding ding ding, dindinding, end my suffering
 								dad.playAnim('cheer', true);
 								dad.specialAnim = true;
 								dad.heyTimer = time;
+								char = dad;
 							} else if (gf != null) {
 								gf.playAnim('cheer', true);
 								gf.specialAnim = true;
 								gf.heyTimer = time;
+								char = gf;
 							}
 			
 							if(curStage == 'mall') {
@@ -4866,6 +4883,7 @@ class PlayState extends MusicBeatState
 							dad.playAnim('hey', true);
 							dad.specialAnim = true;
 							dad.heyTimer = time;
+							char = dad;
 						default:
 							boyfriend.playAnim('hey', true);
 							boyfriend.specialAnim = true;
@@ -4889,6 +4907,19 @@ class PlayState extends MusicBeatState
 							dad.playAnim('hey', true);
 							dad.specialAnim = true;
 							dad.heyTimer = time;
+
+							if (SONG.notes[curSection].mustHitSection)
+								char = boyfriend;
+							else if (!SONG.notes[curSection].mustHitSection)
+								char = dad;
+							else if (SONG.notes[curSection].gfSection)
+								char = gf;
+					}
+
+					if (SONG.notes[curSection] != null)
+					{
+						if (((SONG.notes[curSection].mustHitSection && char == boyfriend) || (!SONG.notes[curSection].mustHitSection && char == dad) || (SONG.notes[curSection].gfSection && char == gf)) && ClientPrefs.moveCameraWhenSing)
+							handleCameraOffset(char, char == dad ? true : false, ((char == gf || dad.curCharacter.startsWith('gf')) ? 'cheer' : 'hey'), cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
 					}
 
 			case 'Set GF Speed':
@@ -5023,6 +5054,27 @@ class PlayState extends MusicBeatState
 					camHUD.zoom += hudZoom;
 				}
 
+			case 'Move Camera When Singing':
+				var value:Float = Std.parseFloat(value1);
+
+				/*switch(value1.toLowerCase().trim())
+				{
+					case 'true' | '1':
+						moveCameraWhenSingingBool = true;
+					case 'false' | '0':
+						moveCameraWhenSingingBool = false;
+				}*/
+
+				/*if (!moveCameraWhenSingingBool)
+					cameraOffsetWhenSingingValue = 0;
+				else
+				{*/
+					if (Math.isNaN(value))
+						cameraOffsetWhenSingingValue = 25;
+					else
+						cameraOffsetWhenSingingValue = Math.abs(value);
+				//}
+
 			case 'Play Animation':
 				//trace('Anim to play: ' + value1);
 				var char:Character = dad;
@@ -5053,6 +5105,8 @@ class PlayState extends MusicBeatState
 				if(!Math.isNaN(Std.parseFloat(value1)) || !Math.isNaN(Std.parseFloat(value2))) {
 					camFollow.x = val1;
 					camFollow.y = val2;
+					camFollowReal.x = val1;
+					camFollowReal.y = val2;
 					isCameraOnForcedPos = true;
 				}
 
@@ -5310,6 +5364,47 @@ class PlayState extends MusicBeatState
 						cameraTwn = null;
 					}
 				});
+			}
+		}
+	}
+
+	public function moveCameraWhenSinging(isDad:Bool, ?isGf:Bool = false)
+	{
+		var curSection:Int = Math.floor(curStep / 16);
+
+		if (isCameraOnForcedPos)
+			camFollow.set(camFollowReal.x + cameraOffsetWhenSinging[0], camFollowReal.y + cameraOffsetWhenSinging[1]);
+		else
+		{
+			if(isDad)
+			{
+				if (isGf && gf != null && SONG.notes[curSection].gfSection)
+				{
+					camFollow.set(gf.getMidpoint().x + cameraOffsetWhenSinging[0], gf.getMidpoint().y + cameraOffsetWhenSinging[1]);
+					camFollow.x += gf.cameraPosition[0];
+					camFollow.y += gf.cameraPosition[1];
+				}
+				else
+				{
+					camFollow.set(dad.getMidpoint().x + 150 + cameraOffsetWhenSinging[0], dad.getMidpoint().y - 100 + cameraOffsetWhenSinging[1]);
+					camFollow.x += dad.cameraPosition[0];
+					camFollow.y += dad.cameraPosition[1];
+				}
+			}
+			else
+			{
+				if (isGf && gf != null && SONG.notes[curSection].gfSection)
+				{
+					camFollow.set(gf.getMidpoint().x + cameraOffsetWhenSinging[0], gf.getMidpoint().y + cameraOffsetWhenSinging[1]);
+					camFollow.x += gf.cameraPosition[0];
+					camFollow.y += gf.cameraPosition[1];
+				}
+				else
+				{
+					camFollow.set(boyfriend.getMidpoint().x - 100 + cameraOffsetWhenSinging[0], boyfriend.getMidpoint().y - 100 + cameraOffsetWhenSinging[1]);
+					camFollow.x -= boyfriend.cameraPosition[0];
+					camFollow.y += boyfriend.cameraPosition[1];
+				}
 			}
 		}
 	}
@@ -5987,6 +6082,8 @@ class PlayState extends MusicBeatState
 	//Dodge code, yes it's bad but oh well. -Haz
 	//var dodgeButton = controls.ACCEPT; //I have no idea how to add custom controls so fuck it. -Haz
 	function bfDodge():Void{
+		var curSection:Int = Math.floor(curStep / 16);
+
 		//trace('DODGE START!');
 		bfDodging = true;
 		bfCanDodge = false;
@@ -5996,6 +6093,12 @@ class PlayState extends MusicBeatState
 		//else
 		boyfriend.playAnim('dodge');
 
+		if (SONG.notes[curSection] != null)
+		{
+			if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+				handleCameraOffset(boyfriend, false, 'dodge', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
+		}
+
 		FlxG.sound.play(Paths.sound('hazard/dodge01'));
 
 		//Wait, then set bfDodging back to false. -Haz
@@ -6004,6 +6107,11 @@ class PlayState extends MusicBeatState
 		{
 			bfDodging=false;
 			boyfriend.dance(); //V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
+			if (SONG.notes[curSection] != null)
+			{
+				if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+					handleCameraOffset(boyfriend, false, 'idle', 0, 0);
+			}
 			//trace('DODGE END!');
 			//Cooldown timer so you can't keep spamming it.
 			//V1.3 = Incremented this by a little (0.005)
@@ -6021,6 +6129,8 @@ class PlayState extends MusicBeatState
 	// Hold notes
 	private function keyShit():Void
 	{
+		var curSection:Int = Math.floor(curStep / 16);
+
 		if(SONG.dodgeEnabled){
 			// FlxG.keys.justPressed.SPACE
 			if(FlxG.keys.anyJustPressed(dodgeKey) && !bfDodging && bfCanDodge){
@@ -6068,6 +6178,13 @@ class PlayState extends MusicBeatState
 			if(!inhumanSong && FlxG.keys.anyJustPressed(tauntKey) && !bfDodging && !controlHoldArray.contains(true) && !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
+
+				if (SONG.notes[curSection] != null)
+				{
+					if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+						handleCameraOffset(boyfriend, false, 'hey', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
+				}
+				
 				boyfriend.heyTimer = 0.59;
 				FlxG.sound.play(Paths.sound('hey'));
 				tauntCounter++;
@@ -6204,7 +6321,7 @@ class PlayState extends MusicBeatState
 		//Only works on Hard difficulty.
 		//v2.2: Updated to support Harder difficulty.
 		//QT FUCKED updated to support Fucked difficulty
-		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || storyDifficulty == 5 || SONG.song.toLowerCase()=="tutorial" || SONG.song.toLowerCase()=="fuckinfree" || SONG.song.toLowerCase()=="fuckedless" || SONG.song.toLowerCase()=="censory-fuckedload" || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
+		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || storyDifficulty == 5 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
 			//prevents health drain if the drain would kill the player.
 			if(health - dadDrainHealth - 0.1 > maxHealth){
 				//And here I thought that this code couldn't get any worse. What is wrong with me?
@@ -6345,11 +6462,7 @@ class PlayState extends MusicBeatState
 				}*/
 		}
 
-		if(note.noteType == 'Hey!' && dad.animOffsets.exists('hey')) {
-			dad.playAnim('hey', true);
-			dad.specialAnim = true;
-			dad.heyTimer = 0.6;
-		} else if(!note.noAnimation && !note.ignoreNote && !note.hitCausesMiss) { //Added ignoreNote and hitMiss check to stop animations from playing from hurt notes. -Haz
+		if (!note.noAnimation && !note.ignoreNote && !note.hitCausesMiss) { //Added ignoreNote and hitMiss check to stop animations from playing from hurt notes. -Haz
 			var altAnim:String = "";
 
 			//Makes KB's strums move back a bit to show his power... or something idfk it looks cool okay? -Haz
@@ -6403,8 +6516,36 @@ class PlayState extends MusicBeatState
 				char = gf;
 			}
 
-			char.playAnim(animToPlay, true);
-			char.holdTimer = 0;
+			if (char != null)
+			{
+				char.playAnim(animToPlay, true);
+
+				if (SONG.notes[curSection] != null)
+				{
+					if (!SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+					{
+						handleCameraOffset(char, true, 'singLEFT', -cameraOffsetWhenSingingValue, 0);
+						handleCameraOffset(char, true, 'singDOWN', 0, cameraOffsetWhenSingingValue);
+						handleCameraOffset(char, true, 'singUP', 0, -cameraOffsetWhenSingingValue);
+						handleCameraOffset(char, true, 'singRIGHT', cameraOffsetWhenSingingValue, 0);
+					}
+				}
+
+				char.holdTimer = 0;
+			}
+
+			if(note.noteType == 'Hey!' && dad.animOffsets.exists('hey')) {
+				dad.playAnim('hey', true);
+				dad.specialAnim = true;
+	
+				if (SONG.notes[curSection] != null)
+				{
+					if (!SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+						handleCameraOffset(dad, true, 'hey', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
+				}
+	
+				dad.heyTimer = 0.6;
+			}
 		}
 
 		if (SONG.needsVoices && !inhumanSong) //Player2/Opponent can't restore vocals, only player1 can.
@@ -6483,44 +6624,63 @@ class PlayState extends MusicBeatState
 				health += note.hitHealth * healthGain * healthGainMultiplier; 
 			}
 
-			if(!note.noAnimation && !bfDodging && !boyfriend.stunned) {
+			if (!note.noAnimation && !bfDodging && !boyfriend.stunned)
+			{
+				var curSection:Int = Math.floor(curStep / 16);
+
 				var daAlt = '';
 				if(note.noteType == 'Alt Animation') daAlt = '-alt';
 	
+				var char:Character = boyfriend;
+
 				var animToPlay:String = singAnimations[Std.int(Math.abs(note.noteData))];
 
-				//if (note.isSustainNote){ wouldn't this be fun : P. i think it would be swell
+				if(note.gfNote) {
+					char = gf;
+				}
+
+				if(char != null)
+				{
+					char.playAnim(animToPlay + daAlt, true);
 					
-					//if(note.gfNote) {
-					//  var anim = animToPlay +"-hold" + daAlt;
-					//	if(gf.animation.getByName(anim) == null)anim = animToPlay + daAlt;
-					//	gf.playAnim(anim, true);
-					//	gf.holdTimer = 0;
-					//} else {
-					//  var anim = animToPlay +"-hold" + daAlt;
-					//	if(boyfriend.animation.getByName(anim) == null)anim = animToPlay + daAlt;
-					//	boyfriend.playAnim(anim, true);
-					//	boyfriend.holdTimer = 0;
-					//}
-				//}else{
-					if(note.gfNote) {
-						gf.playAnim(animToPlay + daAlt, true);
-						gf.holdTimer = 0;
-					} else {
-						boyfriend.playAnim(animToPlay + daAlt, true);
-						boyfriend.holdTimer = 0;
+					if (SONG.notes[curSection] != null)
+					{
+						if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+						{
+							handleCameraOffset(char, false, 'singLEFT', -cameraOffsetWhenSingingValue, 0);
+							handleCameraOffset(char, false, 'singDOWN', 0, cameraOffsetWhenSingingValue);
+							handleCameraOffset(char, false, 'singUP', 0, -cameraOffsetWhenSingingValue);
+							handleCameraOffset(char, false, 'singRIGHT', cameraOffsetWhenSingingValue, 0);
+						}
 					}
-				//}
+					
+					char.holdTimer = 0;
+				}
+
 				if(note.noteType == 'Hey!') {
 					if(boyfriend.animOffsets.exists('hey')) {
 						boyfriend.playAnim('hey', true);
 						boyfriend.specialAnim = true;
+						
+						if (SONG.notes[curSection] != null)
+						{
+							if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
+								handleCameraOffset(boyfriend, false, 'hey', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
+						}
+
 						boyfriend.heyTimer = 0.6;
 					}
 	
 					if(gf.animOffsets.exists('cheer')) {
 						gf.playAnim('cheer', true);
 						gf.specialAnim = true;
+
+						if (SONG.notes[curSection] != null)
+						{
+							if (SONG.notes[curSection].gfSection && ClientPrefs.moveCameraWhenSing)
+								handleCameraOffset(gf, false, 'cheer', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
+						}
+						
 						gf.heyTimer = 0.6;
 					}
 				}
@@ -6554,6 +6714,20 @@ class PlayState extends MusicBeatState
 				note.kill();
 				notes.remove(note, true);
 				note.destroy();
+			}
+		}
+	}
+
+	function handleCameraOffset(char:Character, isOpponent:Bool, animName:String, offsetX:Float, offsetY:Float):Void
+	{
+		var curSection:Int = Math.floor(curStep / 16);
+		
+		if (char != null)
+		{
+			if (char.animation.curAnim.name.startsWith(animName))
+			{
+				cameraOffsetWhenSinging = [offsetX, offsetY];
+				gf != null && SONG.notes[curSection].gfSection ? moveCameraWhenSinging(isOpponent ? true : false, true) : moveCameraWhenSinging(isOpponent ? true : false);
 			}
 		}
 	}
