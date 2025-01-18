@@ -1113,6 +1113,16 @@
 						"Gas Effect",
 						"burstFASTER",
 						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						"-alt"
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.00525",
+						""
 					]
 				]
 			],
@@ -1222,6 +1232,16 @@
 					[
 						"PantallaYesHud",
 						"hola",
+						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.01185",
 						""
 					]
 				]

@@ -1613,6 +1613,11 @@
 						"Gas Effect",
 						"burst",
 						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						"-alt"
 					]
 				]
 			],
@@ -2167,6 +2172,11 @@
 					[
 						"Flash White",
 						"",
+						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
 						""
 					]
 				]

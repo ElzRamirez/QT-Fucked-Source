@@ -7,9 +7,20 @@
 			],
 			"indices": [],
 			"fps": 24,
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "Ara idle dance alt0"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
 			"anim": "idle",
 			"loop": false,
-			"name": "Ara idle dance"
+			"name": "Ara idle dance0"
 		}
 	],
 	"no_antialiasing": false,
