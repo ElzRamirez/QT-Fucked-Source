@@ -6321,7 +6321,7 @@ class PlayState extends MusicBeatState
 		//Only works on Hard difficulty.
 		//v2.2: Updated to support Harder difficulty.
 		//QT FUCKED updated to support Fucked difficulty
-		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || storyDifficulty == 5 || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
+		if((storyDifficulty == 2 || storyDifficulty == 3 || storyDifficulty == 4 || storyDifficulty == 5 || SONG.song.toLowerCase()=="tutorial" || SONG.song.toLowerCase()=="fuckinfree" || SONG.song.toLowerCase()=="fuckedless" || SONG.song.toLowerCase()=="censory-fuckedload" || SONG.song.toLowerCase()=="bad-battle" || SONG.song.toLowerCase()=="fuckedmination-corrupted" || SONG.song.toLowerCase()=="fuckedmination" || SONG.song.toLowerCase()=="cessation") && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
 			//prevents health drain if the drain would kill the player.
 			if(health - dadDrainHealth - 0.1 > maxHealth){
 				//And here I thought that this code couldn't get any worse. What is wrong with me?
