@@ -767,7 +767,7 @@ class PlayState extends MusicBeatState
 				qt_tv01.animation.play('idle');
 
 			case 'Stage-Rami':
-				dadDrainHealth=0.023;
+				dadDrainHealth=0.020;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "You try Vs zRamirez";
 				
@@ -843,6 +843,86 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality){
 					//Front Layer - Error (changes to have a glow)
 					streetFrontError = new FlxSprite(-820, 710).loadGraphic(Paths.image('hazard/qt-port/stage/streetFrontError'));
+					streetFrontError.setGraphicSize(Std.int(streetFrontError.width * 1.15));
+					streetFrontError.updateHitbox();
+					streetFrontError.antialiasing = ClientPrefs.globalAntialiasing;
+					streetFrontError.scrollFactor.set(0.95, 0.95);
+					streetFrontError.active = false;
+					add(streetFrontError);
+					streetFrontError.visible = false;
+				}
+
+				qt_tv01 = new FlxSprite();
+				qt_tv01.frames = Paths.getSparrowAtlas('hazard/qt-port/stage/TV_V5');
+				qt_tv01.animation.addByPrefix('idle', 'TV_Idle', 24, true);
+				qt_tv01.animation.addByPrefix('eye', 'TV_brutality', 24, true); //Replaced the hex eye with the brutality symbols for more accurate lore.
+				qt_tv01.animation.addByPrefix('error', 'TV_Error', 24, true);	
+				qt_tv01.animation.addByPrefix('404', 'TV_Bluescreen', 24, true);		
+				qt_tv01.animation.addByPrefix('alert', 'TV_Attention', 36, false);		
+				qt_tv01.animation.addByPrefix('drop', 'TV_Drop', 24, true);
+				qt_tv01.animation.addByPrefix('sus', 'TV_sus', 24, true);
+				qt_tv01.animation.addByPrefix('instructions', 'TV_Instructions-Normal', 24, true);
+				qt_tv01.animation.addByPrefix('gl', 'TV_GoodLuck', 24, true);
+				qt_tv01.animation.addByPrefix('heart', 'TV_End', 24, false);
+				qt_tv01.animation.addByPrefix('watch', 'TV_Watchout', 24, true);
+				qt_tv01.animation.addByPrefix('eyeRight', 'TV_eyeRight', 24, false);
+				qt_tv01.animation.addByPrefix('eyeLeft', 'TV_eyeLeft', 24, false);
+				qt_tv01.animation.addByPrefix('heart', 'TV_End', 24, false);
+				qt_tv01.setPosition(-62, 540);
+				qt_tv01.setGraphicSize(Std.int(qt_tv01.width * 1.2));
+				qt_tv01.updateHitbox();
+				qt_tv01.antialiasing = ClientPrefs.globalAntialiasing;
+				qt_tv01.scrollFactor.set(0.9, 0.9);
+				add(qt_tv01);
+				qt_tv01.animation.play('idle');
+
+			case 'street-corrupted':
+				disableArrowIntro = true;
+				discordDifficultyOverrideShouldUse = true;
+
+				if (SONG.song.toLowerCase()=='fuckedmination-corrupted'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Very Fucked";
+					healthLossMultiplier=1.0111;
+					healthGainMultiplier=2.0;
+					dadDrainHealth=0.01595;
+				}
+
+				
+				if(!ClientPrefs.lowQuality){
+					//Far Back Layer - Error (blue screen)
+					var errorBG:FlxSprite = new FlxSprite(-600, -150).loadGraphic(Paths.image('hazard/qt-port/stage-corrupted/streetError'));
+					errorBG.antialiasing = ClientPrefs.globalAntialiasing;
+					errorBG.scrollFactor.set(0.95, 0.95);
+					errorBG.active = false;
+					add(errorBG);
+
+					//Back Layer - Error (glitched version of normal Back)
+					streetBGerror = new FlxSprite(-750, -145).loadGraphic(Paths.image('hazard/qt-port/stage-corrupted/streetBackError'));
+					streetBGerror.antialiasing = ClientPrefs.globalAntialiasing;
+					streetBGerror.scrollFactor.set(0.95, 0.95);
+					add(streetBGerror);
+				}
+
+				//Back Layer - Normal
+				streetBG = new FlxSprite(-750, -145).loadGraphic(Paths.image('hazard/qt-port/stage-corrupted/streetBack'));
+				streetBG.antialiasing = ClientPrefs.globalAntialiasing;
+				streetBG.scrollFactor.set(0.95, 0.95);
+				add(streetBG);
+
+
+				//Front Layer - Normal
+				var streetFront:FlxSprite = new FlxSprite(-820, 710).loadGraphic(Paths.image('hazard/qt-port/stage-corrupted/streetFront'));
+				streetFront.setGraphicSize(Std.int(streetFront.width * 1.15));
+				streetFront.updateHitbox();
+				streetFront.antialiasing = ClientPrefs.globalAntialiasing;
+				streetFront.scrollFactor.set(0.95, 0.95);
+				streetFront.active = false;
+				add(streetFront);
+
+				if(!ClientPrefs.lowQuality){
+					//Front Layer - Error (changes to have a glow)
+					streetFrontError = new FlxSprite(-820, 710).loadGraphic(Paths.image('hazard/qt-port/stage-corrupted/streetFrontError'));
 					streetFrontError.setGraphicSize(Std.int(streetFrontError.width * 1.15));
 					streetFrontError.updateHitbox();
 					streetFrontError.antialiasing = ClientPrefs.globalAntialiasing;
