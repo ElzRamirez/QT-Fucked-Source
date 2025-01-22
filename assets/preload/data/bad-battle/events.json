@@ -1,5 +1,10 @@
 {
 	"song": {
+		"speed": 1,
+		"stage": "Stage-Rami",
+		"player1": "bf",
+		"player2": "zRamirez-VSZ",
+		"player3": null,
 		"events": [
 			[
 				0,
@@ -7,11 +12,6 @@
 					[
 						"HideUI",
 						"0",
-						""
-					],
-					[
-						"Move Camera When Singing",
-						"true",
 						""
 					]
 				]
@@ -491,6 +491,15 @@
 					]
 				]
 			]
-		]
+		],
+		"notes": [],
+		"splashSkin": "noteSplashes",
+		"validScore": false,
+		"gfVersion": "gf-ramirez",
+		"bpm": 178,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "Bad Battle",
+		"dodgeEnabled": false
 	}
 }
