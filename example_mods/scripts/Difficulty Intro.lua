@@ -1,59 +1,128 @@
---configuración fácil de los scripts
-IntroTextSize2 = 25	--Tamaño del texto de la cosa "Difficulty is".
-IntroSubTextSize2 = 28 --tamaño del texto para el nombre de la canción.
-IntroTagColor2 = '8300c3'	--Color de la etiqueta al final de la caja.
-IntroTagWidth2 = 15	--Ancho de la etiqueta de la caja.
---configuración fácil de los scripts
+--script modified by zRamirez
+--easy script configs
+DifIntroTextSize = 25	--Size of the text for the Difficulty thing.
+DifIntroSubTextSize = 28 --size of the text for the Dif Name.
+DifIntroTagColor = '8300c3'	--Color of the tag at the end of the dif box.
+DifIntroTagWidth = 15	--Width of the dif box's tag thingy.
+--easy script configs
 
 --actual script
 function onCreate()
-	--la etiqueta al final de la caja
-	makeLuaSprite('JukeBoxTag2', 'empty', -305-IntroTagWidth2, 135)
-	makeGraphic('JukeBoxTag2', 300+IntroTagWidth2, 100, '3EFFE4')
-	setObjectCamera('JukeBoxTag2', 'other')
-	addLuaSprite('JukeBoxTag2', true)
+	--the tag at the end of the dif box
+	makeLuaSprite('JukeDifBoxTag', 'empty', -305-DifIntroTagWidth, 125)
+	makeGraphic('JukeDifBoxTag', 300+DifIntroTagWidth, 100, '3EFFE4')
+	setObjectCamera('JukeDifBoxTag', 'other')
+	addLuaSprite('JukeDifBoxTag', true)
 
-	--la caja
-	makeLuaSprite('JukeBox2', 'empty', -305-IntroTagWidth2, 135)
-	makeGraphic('JukeBox2', 300, 100, '000000')
-	setObjectCamera('JukeBox2', 'other')
-	addLuaSprite('JukeBox2', true)
+	--the dif box
+	makeLuaSprite('JukeDifBox', 'empty', -305-DifIntroTagWidth, 125)
+	makeGraphic('JukeDifBox', 300, 100, '000000')
+	setObjectCamera('JukeDifBox', 'other')
+	addLuaSprite('JukeDifBox', true)
 	
-	--el texto para el bit "Difficulty is:"
-	makeLuaText('JukeBoxText2', 'Difficuly is:', 300, -305-IntroTagWidth2, 150)
-	setTextAlignment('JukeBoxText2', 'left')
-	setObjectCamera('JukeBoxText2', 'other')
-	setTextSize('JukeBoxText2', IntroTextSize2)
-	addLuaText('JukeBoxText2')
+	--the text for the "Difficulty" bit
+	makeLuaText('JukeDifBoxText', 'Difficulty is:', 300, -305-DifIntroTagWidth, 140)
+	setTextAlignment('JukeDifBoxText', 'left')
+	setObjectCamera('JukeDifBoxText', 'other')
+	setTextSize('JukeDifBoxText', DifIntroTextSize)
+	addLuaText('JukeDifBoxText')
 	
-	--texto para el nombre de la canción
+	--text for the difficulty name
         currentDifficulty = getProperty('storyDifficultyText');
-	makeLuaText('JukeBoxSubText2', currentDifficulty, 300, -305-IntroTagWidth2, 180)
-	setTextAlignment('JukeBoxSubText2', 'left')
-	setObjectCamera('JukeBoxSubText2', 'other')
-	setTextSize('JukeBoxSubText2', IntroSubTextSize2)
-	addLuaText('JukeBoxSubText2')
+	makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+	setTextAlignment('JukeDifBoxSubText', 'left')
+	setObjectCamera('JukeDifBoxSubText', 'other')
+	setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+	addLuaText('JukeDifBoxSubText')
+          if songName == 'Fuckedmination' then -- for Termination
+             if difficulty ~= 0 then
+                 currentDifficulty = getProperty('Very Fucked');
+	         makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+	         setTextAlignment('JukeDifBoxSubText', 'left')
+	         setObjectCamera('JukeDifBoxSubText', 'other')
+	         setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+	         addLuaText('JukeDifBoxSubText')
+             end
+             if difficulty ~= 1 then
+                 currentDifficulty = getProperty('Fuck You!');
+	         makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+	         setTextAlignment('JukeDifBoxSubText', 'left')
+	         setObjectCamera('JukeDifBoxSubText', 'other')
+	         setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+	         addLuaText('JukeDifBoxSubText')
+             end
+          end
+		  if songName == 'Fuckinfree' then -- for Cessation
+			if difficulty ~= 0 then
+				currentDifficulty = getProperty('Fucked');
+			makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+			setTextAlignment('JukeDifBoxSubText', 'left')
+			setObjectCamera('JukeDifBoxSubText', 'other')
+			setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+			addLuaText('JukeDifBoxSubText')
+			end
+		 end
+		 if songName == 'Fuckedless' then -- for Cessation
+			if difficulty ~= 0 then
+				currentDifficulty = getProperty('Fucked');
+			makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+			setTextAlignment('JukeDifBoxSubText', 'left')
+			setObjectCamera('JukeDifBoxSubText', 'other')
+			setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+			addLuaText('JukeDifBoxSubText')
+			end
+		 end
+		 if songName == 'Censory-Fuckedload' then -- for Cessation
+			if difficulty ~= 0 then
+				currentDifficulty = getProperty('Fucked');
+			makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+			setTextAlignment('JukeDifBoxSubText', 'left')
+			setObjectCamera('JukeDifBoxSubText', 'other')
+			setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+			addLuaText('JukeDifBoxSubText')
+			end
+		 end
+          if songName == 'Cessation' then -- for Cessation
+             if difficulty ~= 0 then
+                 currentDifficulty = getProperty('Future?...');
+	         makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+	         setTextAlignment('JukeDifBoxSubText', 'left')
+	         setObjectCamera('JukeDifBoxSubText', 'other')
+	         setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+	         addLuaText('JukeDifBoxSubText')
+             end
+          end
+		  if songName == 'Interlope' then -- for Interlope
+			if difficulty ~= 0 then
+				currentDifficulty = getProperty('???');
+			makeLuaText('JukeDifBoxSubText', currentDifficulty, 300, -305-DifIntroTagWidth, 170)
+			setTextAlignment('JukeDifBoxSubText', 'left')
+			setObjectCamera('JukeDifBoxSubText', 'other')
+			setTextSize('JukeDifBoxSubText', DifIntroSubTextSize)
+			addLuaText('JukeDifBoxSubText')
+			end
+		 end
 end
 
---funciones de movimiento
+--motion functions
 function onSongStart()
-	-- Inst y Vocales comienzan a sonar, songPosition = 0
-	doTweenX('MoveInOne2', 'JukeBoxTag2', 0, 1, 'CircInOut2')
-	doTweenX('MoveInTwo2', 'JukeBox2', 0, 1, 'CircInOut2')
-	doTweenX('MoveInThree2', 'JukeBoxText2', 0, 1, 'CircInOut2')
-	doTweenX('MoveInFour2', 'JukeBoxSubText2', 0, 1, 'CircInOut2')
+	-- Inst and Vocals start playing, songPosition = 0
+	doTweenX('DifMoveInOne', 'JukeDifBoxTag', 0, 1, 'DifCircInOut')
+	doTweenX('DifMoveInTwo', 'JukeDifBox', 0, 1, 'DifCircInOut')
+	doTweenX('DifMoveInThree', 'JukeDifBoxText', 0, 1, 'DifCircInOut')
+	doTweenX('DifMoveInFour', 'JukeDifBoxSubText', 0, 1, 'DifCircInOut')
 	
-	runTimer('JukeBoxWait2', 3, 1)
+	runTimer('JukeDifBoxWait', 3, 1)
 end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	-- Un bucle de un temporizador que has llamado se ha completado, el valor "tag" es su etiqueta
-	-- loops = cuántos bucles habrá hecho cuando termine por completo
-	-- loopsLeft = cuántos quedan
-	if tag == 'JukeBoxWait2' then
-		doTweenX('MoveOutOne2', 'JukeBoxTag2', -450, 1.5, 'CircInOut2')
-		doTweenX('MoveOutTwo2', 'JukeBox2', -450, 1.5, 'CircInOut2')
-		doTweenX('MoveOutThree2', 'JukeBoxText2', -450, 1.5, 'CircInOut2')
-		doTweenX('MoveOutFour2', 'JukeBoxSubText2', -450, 1.5, 'CircInOut2')
+	-- A loop from a timer you called has been completed, value "tag" is it's tag
+	-- loops = how many loops it will have done when it ends completely
+	-- loopsLeft = how many are remaining
+	if tag == 'JukeDifBoxWait' then
+		doTweenX('DifMoveOutOne', 'JukeDifBoxTag', -450, 1.5, 'DifCircInOut')
+		doTweenX('DifMoveOutTwo', 'JukeDifBox', -450, 1.5, 'DifCircInOut')
+		doTweenX('DifMoveOutThree', 'JukeDifBoxText', -450, 1.5, 'DifCircInOut')
+		doTweenX('DifMoveOutFour', 'JukeDifBoxSubText', -450, 1.5, 'DifCircInOut')
 	end
 end
