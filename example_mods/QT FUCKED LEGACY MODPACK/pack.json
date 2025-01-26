@@ -1,0 +1,7 @@
+{
+	"name": "QT FUCKED LEGACY MODPACK",
+	"description": "Returns all the extra songs from the Original QT FUCKED DIFFICULTY",
+	"restart":false,
+	"runsGlobally": true,
+	"color": [235, 0, 0]
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Ara Dead over GF V3.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Ara Dead idle0000" x="8" y="8" width="755" height="587" frameX="0" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0001" x="773" y="8" width="755" height="588" frameX="0" frameY="-1" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0002" x="1538" y="8" width="750" height="585" frameX="-5" frameY="0" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0003" x="2298" y="8" width="745" height="584" frameX="-5" frameY="-1" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0004" x="3053" y="8" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0005" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0006" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0007" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0008" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0009" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0010" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara Dead idle0011" x="8" y="606" width="745" height="583" frameX="-5" frameY="-2" frameWidth="755" frameHeight="589"/>
+	<SubTexture name="Ara idle dance0000" x="763" y="606" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0001" x="763" y="606" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0002" x="1528" y="606" width="750" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0003" x="2288" y="606" width="745" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0004" x="3043" y="606" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0005" x="8" y="1301" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0006" x="763" y="1301" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0007" x="763" y="1301" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0008" x="1518" y="1301" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0009" x="1518" y="1301" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0010" x="1518" y="1301" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0011" x="1518" y="1301" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+</TextureAtlas>

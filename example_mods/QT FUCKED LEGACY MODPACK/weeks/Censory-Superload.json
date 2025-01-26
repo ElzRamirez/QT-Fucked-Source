@@ -1,0 +1,26 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "Very Hard",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Censory-Superload",
+			"kb",
+			[
+				215,
+				0,
+				0
+			]
+		]
+	],
+	"weekName": "QT EXTREME"
+}

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Hit.png"><SubTexture name="Hit-Low0000" x="0" y="0" width="327" height="39" frameX="-337" frameY="0" frameWidth="664" frameHeight="39" />
+<SubTexture name="Hit-quarter0000" x="327" y="0" width="473" height="39" frameX="-191" frameY="0" frameWidth="664" frameHeight="39" />
+<SubTexture name="Hit-half0000" x="0" y="39" width="664" height="39" frameX="-1" frameY="0" frameWidth="664" frameHeight="39" />
+</TextureAtlas>

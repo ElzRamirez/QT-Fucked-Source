@@ -1,0 +1,1295 @@
+{
+	"song": {
+		"speed": 3,
+		"stage": "street-kb",
+		"player1": "zRamirez",
+		"player2": "kb-angry",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"streetTV state",
+						"69",
+						""
+					]
+				]
+			],
+			[
+				3789.47368421053,
+				[
+					[
+						"streetTV state",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				5052.63157894737,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"hola",
+						""
+					]
+				]
+			],
+			[
+				7578.94736842105,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				25263.1578947368,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"adios",
+						""
+					],
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				30315.7894736842,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				35368.4210526316,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				40421.0526315789,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				45473.6842105263,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				50526.3157894737,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				55578.947368421,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				60631.5789473684,
+				[
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				65684.2105263157,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"hola",
+						""
+					],
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				70736.8421052631,
+				[
+					[
+						"streetTV state",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				73263.1578947368,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				75789.4736842105,
+				[
+					[
+						"streetTV state",
+						"9",
+						""
+					],
+					[
+						"Gas Effect",
+						"burst",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				76421.0526315789,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				77052.6315789473,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				77684.2105263157,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				78315.7894736841,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				78947.3684210526,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				79578.947368421,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				80210.5263157894,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				80842.1052631578,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				81473.6842105262,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				82105.2631578947,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				82736.8421052631,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				83368.4210526315,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				83999.9999999999,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				84631.5789473683,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				85263.1578947368,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				85894.7368421052,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				86526.3157894736,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				87157.894736842,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				87789.4736842104,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				88421.0526315789,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				89052.6315789473,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				89684.2105263157,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				90315.7894736841,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				90947.3684210525,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				91578.947368421,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				92210.5263157894,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				92842.1052631578,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				93473.6842105262,
+				[
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				94105.2631578946,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				94736.8421052631,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.09"
+					]
+				]
+			],
+			[
+				95368.4210526315,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.09"
+					]
+				]
+			],
+			[
+				95999.9999999999,
+				[
+					[
+						"streetTV state",
+						"1",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"adios",
+						""
+					],
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				98526.3157894736,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				101052.631578947,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				103578.947368421,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				106105.263157895,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				108631.578947368,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				111157.894736842,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				113684.210526316,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				116210.526315789,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				118736.842105263,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				121263.157894737,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				123789.47368421,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				126315.789473684,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				128842.105263158,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				131368.421052631,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				133894.736842105,
+				[
+					[
+						"Gas Effect",
+						"burstFAST",
+						""
+					]
+				]
+			],
+			[
+				136421.052631579,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"hola",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Gas Effect",
+						"burst",
+						""
+					]
+				]
+			],
+			[
+				155368.421052632,
+				[
+					[
+						"streetTV state",
+						"4",
+						""
+					]
+				]
+			],
+			[
+				156631.578947369,
+				[
+					[
+						"streetTV state",
+						"9",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				159157.894736842,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				161684.210526316,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				164210.52631579,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				166736.842105263,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				166736.842105263,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				169263.157894737,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				171789.473684211,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				174315.789473684,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				175578.947368421,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				176210.52631579,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					]
+				]
+			],
+			[
+				176842.105263158,
+				[
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				176842.105263158,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"adios",
+						""
+					]
+				]
+			],
+			[
+				178105.263157895,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				179368.421052632,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				180631.578947369,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				181894.736842106,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				183157.894736842,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				184421.052631579,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				185684.210526316,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				186947.368421053,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				188210.52631579,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				189473.684210527,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				190736.842105264,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				192000,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				193263.157894737,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				194526.315789474,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				195789.473684211,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					]
+				]
+			],
+			[
+				197052.631578948,
+				[
+					[
+						"Gas Effect",
+						"burstFASTER ",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				217261.184210527,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"",
+						"",
+						""
+					]
+				]
+			],
+			[
+				217263.157894738,
+				[
+					[
+						"streetTV state",
+						"5",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"hola",
+						""
+					]
+				]
+			],
+			[
+				221684.210526317,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					],
+					[
+						"streetBG state",
+						"1",
+						""
+					],
+					[
+						"Gas Effect",
+						"burstFASTER",
+						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						"-alt"
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.00525",
+						""
+					]
+				]
+			],
+			[
+				222000.000000001,
+				[
+					[
+						"KB_Pincer",
+						"22",
+						""
+					]
+				]
+			],
+			[
+				222236.842105264,
+				[
+					[
+						"PantallaYesHud",
+						"adios",
+						""
+					]
+				]
+			],
+			[
+				222315.789473685,
+				[
+					[
+						"streetTV state",
+						"7",
+						""
+					],
+					[
+						"KB_Pincer",
+						"23",
+						""
+					],
+					[
+						"streetBG state",
+						"2",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb-angry_404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"zRamirez-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"Ara-404"
+					]
+				]
+			],
+			[
+				262421.05263158,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					]
+				]
+			],
+			[
+				262736.842105264,
+				[
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"Ara"
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb-angry"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"zRamirez"
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					],
+					[
+						"streetBG state",
+						"0",
+						""
+					],
+					[
+						"KB_Pincer",
+						"24",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"hola",
+						""
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.01185",
+						""
+					]
+				]
+			],
+			[
+				282947.368421054,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				303155.921052633,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"PantallaYesHud",
+						"adios",
+						""
+					]
+				]
+			],
+			[
+				303157.894736844,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "Ara",
+		"bpm": 190,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Censory-Fuckedload",
+		"dodgeEnabled": true
+	}
+}

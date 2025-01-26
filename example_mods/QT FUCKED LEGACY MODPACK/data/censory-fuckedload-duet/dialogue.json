@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"expression": "Mad",
+			"text": "PERO QUE CHINGADOS TE PASA MIERDA?!",
+			"boxState": "angry",
+			"portrait": "zramirez",
+			"speed": 0.05
+		},
+		{
+			"expression": "Mad",
+			"text": "ESTUVISTE A PUNTO DE MATARME PEDAZO DE IDIOTA!",
+			"boxState": "angry",
+			"portrait": "zramirez",
+			"speed": 0.05
+		},
+		{
+			"expression": "bruh",
+			"text": "Chico, Chico...",
+			"boxState": "normal",
+			"portrait": "kb",
+			"speed": 0.095
+		},
+		{
+			"expression": "angry",
+			"text": "Pediste una pelea de verdad, pues tendras una pelea de verdad",
+			"boxState": "normal",
+			"speed": 0.06,
+			"portrait": "kb"
+		},
+		{
+			"expression": "Angry",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.5,
+			"portrait": "zramirez"
+		},
+		{
+			"expression": "Angry",
+			"text": "...",
+			"boxState": "normal",
+			"speed": 0.5,
+			"portrait": "ara"
+		}
+	]
+}

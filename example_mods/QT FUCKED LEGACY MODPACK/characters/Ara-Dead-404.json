@@ -1,0 +1,45 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle2",
+			"indices": [],
+			"name": "Ara idle dance0"
+		},
+		{
+			"offsets": [
+				0,
+				-105
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Ara Dead idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Ara-Dead-404",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "Ara",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		0,
+		40
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

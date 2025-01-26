@@ -1,0 +1,26 @@
+{
+	"storyName": "happy...",
+	"difficulties": "Hard",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"No Fuckedmination",
+			"kb",
+			[
+				195,
+				0,
+				0
+			]
+		]
+	],
+	"weekName": ""
+}

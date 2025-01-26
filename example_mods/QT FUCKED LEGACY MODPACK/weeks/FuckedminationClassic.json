@@ -1,0 +1,44 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "Classic",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Fuckedmination-v1",
+			"kbangry",
+			[
+				255,
+				0,
+				0
+			]
+		],
+		[
+			"Fuckedmination-v2",
+			"kbangry",
+			[
+				255,
+				0,
+				0
+			]
+		],
+		[
+			"Fuckedmination-v3",
+			"kbangry",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"weekName": "QT EXTREME"
+}

@@ -1,0 +1,31 @@
+{
+	"storyName": "Cool Drip",
+	"difficulties": "Hard, Sus",
+	"hideFreeplay": false,
+	"weekBackground": "SuperDrip",
+	"weekBefore": "tutorial",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": true,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"Censory-SuperDrip",
+			"kb",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "Drip Week"
+}

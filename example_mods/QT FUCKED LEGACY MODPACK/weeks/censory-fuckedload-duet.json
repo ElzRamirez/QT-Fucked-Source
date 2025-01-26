@@ -1,0 +1,26 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "Fucked",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Censory-Fuckedload-Duet",
+			"kbangry",
+			[
+				155,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekName": "QT EXTREME"
+}

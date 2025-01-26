@@ -1,0 +1,26 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "Extreme",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"songs": [
+		[
+			"Extermination V2",
+			"kb",
+			[
+				215,
+				0,
+				0
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "QT EXTREME"
+}

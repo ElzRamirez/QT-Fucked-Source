@@ -1,0 +1,31 @@
+{
+	"storyName": "Your New Week",
+	"difficulties": "Very Hard",
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "tutorial",
+	"startUnlocked": true,
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"songs": [
+		[
+			"Termifuckednation",
+			"kb",
+			[
+				255,
+				0,
+				33
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekName": "Custom Week"
+}

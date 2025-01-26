@@ -1,0 +1,26 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "bitch",
+	"hideFreeplay": false,
+	"weekBackground": "noqt",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Unlucky-Bitch",
+			"kbangry",
+			[
+				255,
+				0,
+				0
+			]
+		]
+	],
+	"weekName": "QT FUCKED DIFICULTY"
+}

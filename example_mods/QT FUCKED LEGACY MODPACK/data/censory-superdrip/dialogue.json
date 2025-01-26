@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.075,
+			"portrait": "kb",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Nothing personal, kid"
+		},
+		{
+			"speed": 0.075,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hey, you!"
+		},
+		{
+			"speed": 0.105,
+			"portrait": "kb",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "???"
+		},
+		{
+			"speed": 0.075,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "let's sing something with style"
+		},
+		{
+			"speed": 0.075,
+			"portrait": "kb",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "with... style?"
+		},
+		{
+			"speed": 0.075,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "just improvise"
+		}
+	]
+}

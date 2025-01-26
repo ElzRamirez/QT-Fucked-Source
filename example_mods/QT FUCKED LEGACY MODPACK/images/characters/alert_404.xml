@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="ALERT.png"><SubTexture name="ALERT down0000" x="0" y="0" width="403" height="308" frameX="0" frameY="-175" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT down0001" x="0" y="0" width="403" height="308" frameX="0" frameY="-175" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT down0002" x="0" y="585" width="402" height="255" frameX="0" frameY="-233" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT down0003" x="0" y="585" width="402" height="255" frameX="0" frameY="-233" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT down0004" x="0" y="585" width="402" height="255" frameX="0" frameY="-240" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT down0005" x="0" y="585" width="402" height="255" frameX="0" frameY="-240" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT idle dance0000" x="992" y="0" width="232" height="205" frameX="-83" frameY="-82" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT idle dance0001" x="992" y="205" width="230" height="203" frameX="-84" frameY="-83" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT idle dance0002" x="992" y="408" width="230" height="203" frameX="-84" frameY="-83" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT idle dance0003" x="992" y="611" width="230" height="203" frameX="-84" frameY="-83" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT idle dance0004" x="0" y="840" width="230" height="203" frameX="-84" frameY="-83" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0000" x="689" y="0" width="303" height="263" frameX="-4" frameY="-66" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0001" x="689" y="0" width="303" height="263" frameX="-4" frameY="-66" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0002" x="327" y="308" width="297" height="273" frameX="-6" frameY="-61" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0003" x="327" y="308" width="297" height="273" frameX="-6" frameY="-61" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0004" x="403" y="0" width="286" height="285" frameX="-13" frameY="-53" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT left0005" x="403" y="0" width="286" height="285" frameX="-13" frameY="-53" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0000" x="610" y="585" width="210" height="234" frameX="-120" frameY="-77" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0001" x="610" y="585" width="210" height="234" frameX="-120" frameY="-77" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0002" x="689" y="263" width="206" height="235" frameX="-126" frameY="-81" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0003" x="689" y="263" width="206" height="235" frameX="-126" frameY="-81" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0004" x="402" y="585" width="208" height="235" frameX="-132" frameY="-85" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT right0005" x="402" y="585" width="208" height="235" frameX="-132" frameY="-85" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0000" x="0" y="308" width="327" height="277" frameX="-38" frameY="-34" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0001" x="0" y="308" width="327" height="277" frameX="-38" frameY="-34" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0002" x="0" y="308" width="327" height="277" frameX="-38" frameY="-25" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0003" x="0" y="308" width="327" height="277" frameX="-38" frameY="-25" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0004" x="0" y="308" width="327" height="277" frameX="-38" frameY="-15" frameWidth="408" frameHeight="495" />
+<SubTexture name="ALERT up0005" x="0" y="308" width="327" height="277" frameX="-38" frameY="-15" frameWidth="408" frameHeight="495" />
+</TextureAtlas>

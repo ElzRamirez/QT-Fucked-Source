@@ -1,0 +1,260 @@
+{
+	"song": {
+		"speed": 2,
+		"stage": "street-real",
+		"player1": "bf",
+		"player2": "Darkness-zRamirez-Sad",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"newLossMultiplier",
+						"0.923",
+						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.00943",
+						""
+					],
+					[
+						"newHealthGainMultiplier",
+						"1.0",
+						""
+					],
+					[
+						"Move Camera When Singing",
+						"10",
+						""
+					],
+					[
+						"HideUI",
+						"0",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"680",
+						"600"
+					]
+				]
+			],
+			[
+				12000,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				24000,
+				[
+					[
+						"HideUI",
+						"1",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"560",
+						"650"
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				36000,
+				[
+					[
+						"Camera Follow Pos",
+						"870",
+						"650"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				48000,
+				[
+					[
+						"Camera Follow Pos",
+						"560",
+						"650"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				54000,
+				[
+					[
+						"Camera Follow Pos",
+						"870",
+						"650"
+					]
+				]
+			],
+			[
+				60000,
+				[
+					[
+						"Camera Follow Pos",
+						"560",
+						"650"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				72000,
+				[
+					[
+						"Camera Follow Pos",
+						"870",
+						"650"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				84000,
+				[
+					[
+						"Camera Follow Pos",
+						"680",
+						"650"
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"streetTV state",
+						"9",
+						""
+					]
+				]
+			],
+			[
+				96000,
+				[
+					[
+						"streetTV state",
+						"8",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.815",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Change Character",
+						"dad",
+						"Darkness-zRamirez-happy"
+					]
+				]
+			],
+			[
+				108000,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				120000,
+				[
+					[
+						"Camera Follow Pos",
+						"680",
+						"605"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.925",
+						""
+					],
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				132000,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					]
+				]
+			],
+			[
+				144000,
+				[
+					[
+						"Flash White",
+						"",
+						""
+					],
+					[
+						"Hey!",
+						"bf",
+						"20"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": "noteSplashes",
+		"validScore": false,
+		"gfVersion": "Ara",
+		"bpm": 160,
+		"arrowSkin": "",
+		"needsVoices": true,
+		"song": "Last-Smile",
+		"dodgeEnabled": false
+	}
+}

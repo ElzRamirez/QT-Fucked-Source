@@ -1,0 +1,5 @@
+with this event you can add a timer with the sawblade
+if value 1 = true it will instakill on Miss
+this Event work with BPM
+if you want a custom dodge use KB_alerts
+dont put this event 2 times if attacks aren't completed

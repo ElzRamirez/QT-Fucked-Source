@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "TVSINGLE-IDLE"
+		},
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-who",
+			"indices": [],
+			"name": "TVSINGLE-01"
+		},
+		{
+			"offsets": [
+				-4,
+				1
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-youre",
+			"indices": [],
+			"name": "TVSINGLE-02"
+		},
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-helpyou",
+			"indices": [],
+			"name": "TVSINGLE-03"
+		},
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-listenmyvoice",
+			"indices": [],
+			"name": "TVSINGLE-04"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "stage-redacted/tv-single",
+	"position": [
+		-10,
+		390
+	],
+	"healthicon": "invi",
+	"flip_x": false,
+	"healthbar_colors": [
+		100,
+		100,
+		100
+	],
+	"camera_position": [
+		-1060,
+		-220
+	],
+	"sing_duration": 4,
+	"scale": 1.4
+}

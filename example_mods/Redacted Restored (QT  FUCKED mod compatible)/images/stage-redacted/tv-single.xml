@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="qtalt.png">
+	<!-- Created with Adobe Animate version 19.2.1.408 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="TVSINGLE-010000" x="8" y="8" width="1503" height="270" frameX="0" frameY="0" frameWidth="1503" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-010001" x="1521" y="8" width="1503" height="271"/>
+	<SubTexture name="TVSINGLE-010002" x="8" y="289" width="1503" height="270" frameX="0" frameY="0" frameWidth="1503" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-020000" x="1521" y="289" width="1504" height="271"/>
+	<SubTexture name="TVSINGLE-020001" x="8" y="570" width="1503" height="271" frameX="-1" frameY="0" frameWidth="1504" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-020002" x="1521" y="570" width="1503" height="271" frameX="-1" frameY="0" frameWidth="1504" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-030000" x="8" y="851" width="1505" height="275" frameX="0" frameY="0" frameWidth="1506" frameHeight="275"/>
+	<SubTexture name="TVSINGLE-030001" x="1523" y="851" width="1505" height="274" frameX="0" frameY="0" frameWidth="1506" frameHeight="275"/>
+	<SubTexture name="TVSINGLE-030002" x="8" y="1136" width="1506" height="274" frameX="0" frameY="0" frameWidth="1506" frameHeight="275"/>
+	<SubTexture name="TVSINGLE-040000" x="1524" y="1136" width="1503" height="270" frameX="0" frameY="0" frameWidth="1503" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-040001" x="8" y="1420" width="1503" height="271"/>
+	<SubTexture name="TVSINGLE-040002" x="1521" y="1420" width="1503" height="270" frameX="0" frameY="0" frameWidth="1503" frameHeight="271"/>
+	<SubTexture name="TVSINGLE-IDLE0000" x="8" y="1701" width="1503" height="270"/>
+	<SubTexture name="TVSINGLE-IDLE0001" x="1521" y="1701" width="1503" height="270"/>
+	<SubTexture name="TVSINGLE-IDLE0002" x="8" y="1981" width="1503" height="270"/>
+</TextureAtlas>

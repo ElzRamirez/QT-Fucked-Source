@@ -1,0 +1,26 @@
+{
+	"storyName": "YOU DEAD",
+	"difficulties": "Corruption",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"Fuckedmination-Corrupted",
+			"kbangry",
+			[
+				55,
+				0,
+				0
+			]
+		]
+	],
+	"weekName": "QT EXTREME"
+}
