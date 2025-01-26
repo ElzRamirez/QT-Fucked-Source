@@ -6258,13 +6258,6 @@ class PlayState extends MusicBeatState
 			if(!inhumanSong && FlxG.keys.anyJustPressed(tauntKey) && !bfDodging && !controlHoldArray.contains(true) && !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
-
-				if (SONG.notes[curSection] != null)
-				{
-					if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
-						handleCameraOffset(boyfriend, false, 'hey', cameraOffsetWhenSingingValue, cameraOffsetWhenSingingValue);
-				}
-				
 				boyfriend.heyTimer = 0.59;
 				FlxG.sound.play(Paths.sound('hey'));
 				tauntCounter++;
