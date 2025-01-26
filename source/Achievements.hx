@@ -44,7 +44,9 @@ class Achievements {
 		["Playing with fire!",					"Try to taunt over 30 times or more in Fuckedmination and win.",		'taunter_master',			null, 			false],
 		["What a Funkin' Disaster!",			"Complete a Song with a rating lower than 20%.",						'ur_bad',					null, 			false],
 		["Perfectionist",						"Complete a Song with a rating of 100%.",								'ur_good',					null,			false],
-		["What is this doing here?",			"Download and Complete the Redacted Restored modpack.",					'long_time',				null,			true]
+		["What is this doing here?",			"Download and Complete the Redacted Restored modpack.",					'long_time',				null,			true],
+		//así es amigo mio, esto lo agregue a ultimo momento, por eso esta hasta abajo del todo, y sabes la puta paja que me da editar el puto png por que es una puta mierda este puto sistema de logros, prefiero al 100% el sistema de la psych 0.6 en adelante hjklñZSDFhjiklñszxdvhjiklñzxcvhjikolñdf
+		["Alertastic but Classic?",				"Beat Alertmination Classic from the legacy modpack.",					'alertclassic_beat',		null, 			true]
 	];
 
 	public static var achievementsStuff:Array<Dynamic> = [ 

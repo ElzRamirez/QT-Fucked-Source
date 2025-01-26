@@ -7513,6 +7513,10 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'alertmination' && !usedPractice) {
 							unlock = true;
 						}
+					case 'alertclassic_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'alertmination-classic' && !usedPractice) {
+							unlock = true;
+						}
 					case 'drip_beat':
 						if(Paths.formatToSongPath(SONG.song) == 'censory-superdrip' && !usedPractice) {
 							unlock = true;
