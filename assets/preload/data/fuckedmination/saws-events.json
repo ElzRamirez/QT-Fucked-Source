@@ -3,7 +3,7 @@
 		"speed": 3.5,
 		"stage": "street-termination",
 		"player1": "zRamirez",
-		"player2": "kb-angry",
+		"player2": "zramirez-kb",
 		"player3": null,
 		"events": [
 			[
@@ -9617,7 +9617,7 @@
 					[
 						"KB_AttackFire",
 						"quadruple",
-						""
+						"1"
 					],
 					[
 						"KB_Alert",
@@ -18045,7 +18045,7 @@
 		"notes": [],
 		"splashSkin": null,
 		"validScore": false,
-		"gfVersion": "bfSpeaker",
+		"gfVersion": "Ara",
 		"bpm": 222,
 		"arrowSkin": "",
 		"needsVoices": true,
