@@ -285,6 +285,8 @@ class PlayState extends MusicBeatState
 	var tauntCounter:Int = 0;
 	var cessationTrollDone:Bool = false;
 
+	var sawbladeCounter:Int = 0; //For testing purposes
+
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
 
@@ -3943,7 +3945,12 @@ class PlayState extends MusicBeatState
 			kb_attack_saw.offset.set(1600,0);
 			FlxG.camera.shake(0.001675,0.6);
 			camHUD.shake(0.001675,0.2);
-			if(cpuControlled) bfDodge();
+			if(cpuControlled)
+			{
+				bfDodge();
+				sawbladeCounter++;
+				trace("Sawblades: " + sawbladeCounter);
+			}
 			//Slight delay for animation. Yeah I know I should be doing this using curStep and curBeat and what not, but I'm lazy -Haz
 			new FlxTimer().start(0.09, function(tmr:FlxTimer)
 			{
