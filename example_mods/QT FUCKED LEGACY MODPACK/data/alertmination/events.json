@@ -4793,6 +4793,16 @@
 						"KB_AttackPrepare",
 						"0",
 						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"0.00525",
+						""
+					],
+					[
+						"newLossMultiplier",
+						"0.5",
+						""
 					]
 				]
 			],
@@ -5772,6 +5782,16 @@
 					[
 						"KB_AttackFire",
 						"double",
+						""
+					],
+					[
+						"newLossMultiplier",
+						"1.075",
+						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"skip",
 						""
 					]
 				]
@@ -7177,6 +7197,21 @@
 				]
 			],
 			[
+				259054.054054056,
+				[
+					[
+						"newDadDrainHealthValue",
+						"0.00525",
+						""
+					],
+					[
+						"newLossMultiplier",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
 				259189.189189191,
 				[
 					[
@@ -8277,6 +8312,21 @@
 					[
 						"Alt Idle Animation",
 						"gf",
+						""
+					]
+				]
+			],
+			[
+				294054.054054055,
+				[
+					[
+						"newLossMultiplier",
+						"1.075",
+						""
+					],
+					[
+						"newDadDrainHealthValue",
+						"skip",
 						""
 					]
 				]

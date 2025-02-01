@@ -585,11 +585,14 @@ class PlayState extends MusicBeatState
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "Future";
 				}
-
+				
 				if (SONG.song.toLowerCase()=='fuckinfree'){	
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "Fucked";
+					dadDrainHealth=0.00904;
+					healthLossMultiplier=1.0;
 				}
+
 
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBackCute', -750, -145, 0.95, 0.95);
 				add(hazardBG);
@@ -664,6 +667,13 @@ class PlayState extends MusicBeatState
 					discordDifficultyOverride = "Fucked";
 				}
 
+				if (SONG.song.toLowerCase()=='last-smile'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Good Bye Buddy :'D";
+					dadDrainHealth=0.00895;
+					healthLossMultiplier=0.9743;
+				}
+
 				hazardBG = new BGSprite('hazard/qt-port/stage/streetBack', -750, -145, 0.95, 0.95);
 				add(hazardBG);
 
@@ -707,11 +717,15 @@ class PlayState extends MusicBeatState
 				if (SONG.song.toLowerCase()=='fuckedless'){	
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "Fucked";
+					dadDrainHealth=0.0105;
+					healthLossMultiplier=1.075;
 				}
 				
 				if (SONG.song.toLowerCase()=='censory-fuckedload'){	
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "Fucked";
+					dadDrainHealth=0.01185;
+					healthLossMultiplier=1.122;
 				}
 
 				if(!ClientPrefs.lowQuality){
@@ -814,6 +828,14 @@ class PlayState extends MusicBeatState
 						healthGainMultiplier=1.081;
 						dadDrainHealth=0.01595;
 					}
+				}
+
+				if (SONG.song.toLowerCase()=='alertmination'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "WTF?";
+					dadDrainHealth=0.0105;
+					healthLossMultiplier=1.075;
+					healthGainMultiplier=1.081;
 				}
 
 				
