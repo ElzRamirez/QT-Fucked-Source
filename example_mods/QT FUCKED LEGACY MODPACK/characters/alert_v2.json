@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "alert_idle",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				100,
+				73
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "alert_left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-160,
+				148
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "alert_right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-29,
+				-157
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "alert_down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				119,
+				140
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "alert_up",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/alert_v2",
+	"position": [
+		60,
+		300
+	],
+	"healthicon": "alert",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		0,
+		50
+	],
+	"sing_duration": 8,
+	"scale": 1.2
+}

@@ -334,6 +334,7 @@ class PlayState extends MusicBeatState
 	var bfDodgeCooldown:Float = 0.102; //0.1135 for single sawblades (most forgiving), 0.102 for double sawblade variation
 	var canSkipEndScreen:Bool = false; //This is set to true at the "thanks for playing" screen. Once true, in update, if enter is pressed it'll skip to the main menu.
 	var kb_attack_alert:FlxSprite;
+	var kb_attack_alert_KB:FlxSprite;
 	var kb_attack_saw:FlxSprite;
 	public var pincer1:FlxSprite;
 	public var pincer2:FlxSprite;
@@ -343,8 +344,12 @@ class PlayState extends MusicBeatState
 	var qt_gas02:FlxSprite;
 	var hazardRandom:Int = 1; //This integer is randomised upon song start between 1-5.
 
+	var qtIsBlueScreened:Bool = false; //lol so Hazard didn't port this variable? Well, I need it for something else :iconKB:
+	var qtIsGlitched:Bool = false;
+
 	var qtSawbladeAdded:Bool = false;
 	var qtAlertAdded:Bool = false;
+	var alertminationTrueAlertAdded:Bool = false;
 	var freezeNotes:Bool = false; //Used for Terminate's ending
 	var gfScared:Bool = false;
 	var qtTVstate:Int = 0; 
@@ -393,6 +398,7 @@ class PlayState extends MusicBeatState
 	var hazardBlack:BGSprite; //Black is ontop of camera!
 	var hazardInterlopeLaugh:FlxSprite; //Used by Amelia in Interlope when taunting player
 	var hazardOverlayShit:BGSprite;
+	var hazardOverlayShit2:BGSprite;
 	var hazardNoise:FlxSprite;
 	var hazardBGpulsing:Bool = false; //Set to true to pulse the background in some sections.
 	var interlopeIntroTween:FlxTween;
@@ -1108,7 +1114,7 @@ class PlayState extends MusicBeatState
 
 		//Adding sawblades and pincers to every song so all songs can use them!
 		if(ClientPrefs.flashing){
-			hazardOverlayShit = new BGSprite('hazard/inhuman-port/alert-vignette');
+			hazardOverlayShit = new BGSprite('hazard/inhuman-port/alert-vignette' + (SONG.song.toLowerCase() == "alertmination" ? "OG" : ""));
 			hazardOverlayShit.setGraphicSize(FlxG.width, FlxG.height);
 			hazardOverlayShit.screenCenter();
 			hazardOverlayShit.x += (FlxG.width/2) - 60; //Mmmmmm scuffed positioning, my favourite!
@@ -1117,8 +1123,36 @@ class PlayState extends MusicBeatState
 			hazardOverlayShit.alpha=0;
 			hazardOverlayShit.cameras = [camOther];
 			add(hazardOverlayShit);
+
+			if (SONG.song.toLowerCase() == "alertmination")
+			{
+				hazardOverlayShit2 = new BGSprite('hazard/inhuman-port/alert-vignette');
+				hazardOverlayShit2.setGraphicSize(FlxG.width, FlxG.height);
+				hazardOverlayShit2.screenCenter();
+				hazardOverlayShit2.x += (FlxG.width/2) - 60; //Mmmmmm scuffed positioning, my favourite!
+				hazardOverlayShit2.y += (FlxG.height/2) - 20;
+				hazardOverlayShit2.updateHitbox();
+				hazardOverlayShit2.alpha=0;
+				hazardOverlayShit2.cameras = [camOther];
+				add(hazardOverlayShit2);
+			}
 		}
 
+		if (SONG.song.toLowerCase() == "alertmination")
+		{
+			kb_attack_alert_KB = new FlxSprite();
+			kb_attack_alert_KB.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_KB');
+			kb_attack_alert_KB.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', 24, false);	
+			kb_attack_alert_KB.animation.addByPrefix('alertDOUBLE', 'kb_attack_animation_alert-double', 24, false);	
+			kb_attack_alert_KB.animation.addByPrefix('alertTRIPLE', 'kb_attack_animation_alert-triple', 24, false);	
+			kb_attack_alert_KB.animation.addByPrefix('alertQUAD', 'kb_attack_animation_alert-quad', 24, false);	
+			kb_attack_alert_KB.antialiasing = ClientPrefs.globalAntialiasing;
+			kb_attack_alert_KB.setGraphicSize(Std.int(kb_attack_alert_KB.width * 1.5));
+			kb_attack_alert_KB.cameras = [camHUD];
+			kb_attack_alert_KB.x = FlxG.width - 700;
+			kb_attack_alert_KB.y = 205;
+		}
+		
 		//Alert!
 		kb_attack_alert = new FlxSprite();
 		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_NEW');
@@ -3055,6 +3089,10 @@ class PlayState extends MusicBeatState
 			if(hazardOverlayShit.alpha > 0) //Seperate if check because I'm paranoid of a crash -Haz
 				hazardOverlayShit.alpha -= 1.2 * elapsed;
 		}
+		if(hazardOverlayShit2 != null){
+			if(hazardOverlayShit2.alpha > 0)
+				hazardOverlayShit2.alpha -= 1.2 * elapsed;
+		}
 		if(interlopeChroma != null){
 			if(interlopeChromaIntensity > 0){
 				//Effect is reduced at a much faster rate for swapping bullshit
@@ -3368,7 +3406,23 @@ class PlayState extends MusicBeatState
 					if(secondsTotal < 0) secondsTotal = 0;
 
 					if(ClientPrefs.timeBarType != 'Song Name')
-						timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
+					{
+						if (qtIsBlueScreened)
+							timeTxt.text = "SYSTEM ERROR";
+						else if (qtIsGlitched)
+							timeTxt.text = "?:??";
+						else
+							timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
+					}
+					else
+					{
+						if (qtIsBlueScreened)
+							timeTxt.text = "SYSTEM ERROR";
+						else if (qtIsGlitched)
+							timeTxt.text = "???";
+						else
+							timeTxt.text = SONG.song;
+					}
 				}
 			}
 
@@ -3856,81 +3910,153 @@ class PlayState extends MusicBeatState
 		reloadHealthBarColors();
 	}
 
-	public function kbATTACK_ALERT(alertType:Int = 1, playSound:Bool = true, customSound:Null<String> = ""):Void
+	public function kbATTACK_ALERT(alertType:Int = 1, playSound:Bool = true, customSound:Null<String> = "", alertminationTrueAlert:Null<Bool> = false):Void
 	{
 		//Feel free to add your own alert types in here. Make sure that the alert sprite has the animation and the sound is also available.
 		switch(alertType){
 			case 2:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertDouble'), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertDouble-kb' : 'hazard/alertDouble')), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
-					kbATTACK_ALERT_PART2(0.55,'alertDOUBLE');
+					kbATTACK_ALERT_PART2(0.55,'alertDOUBLE', alertminationTrueAlert);
 				} else {
 					new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-						kbATTACK_ALERT_PART2(0.55,'alertDOUBLE');
+						kbATTACK_ALERT_PART2(0.55,'alertDOUBLE', alertminationTrueAlert);
 					});
 				}	
 				
 			case 3:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertTriple'), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertTriple-kb' : 'hazard/alertTriple')), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
-					kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE');
+					kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE', alertminationTrueAlert);
 				} else {
 					new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-						kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE');
+						kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE', alertminationTrueAlert);
 					});
 				}		
 				
 			case 4:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alertQuadruple'), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertQuadruple-kb' : 'hazard/alertQuadruple')), 1);
 				
 				if(ClientPrefs.noteOffset <= 0) {
-					kbATTACK_ALERT_PART2(0.6,'alertQUAD');
+					kbATTACK_ALERT_PART2(0.6,'alertQUAD', alertminationTrueAlert);
 				} else {
 					new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-						kbATTACK_ALERT_PART2(0.6,'alertQUAD');
+						kbATTACK_ALERT_PART2(0.6,'alertQUAD', alertminationTrueAlert);
 					});
 				}		
 				
 			default:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : 'hazard/alert'), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alert-kb' : 'hazard/alert')), 1);
 				
 				//Not the best way to do offset since I fear lag can lead to an offsync sawblade, but hey I tried at least and it's better then no support at all. -Haz
 				if(ClientPrefs.noteOffset <= 0) {
-					kbATTACK_ALERT_PART2(0.49,'alert');
+					kbATTACK_ALERT_PART2(0.49,'alert', alertminationTrueAlert);
 				} else {
 					new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-						kbATTACK_ALERT_PART2(0.49,'alert');
+						kbATTACK_ALERT_PART2(0.49,'alert', alertminationTrueAlert);
 					});
 				}			
 		}
 	}
 
-	function kbATTACK_ALERT_PART2(newAlpha:Float, animationToPlay:String):Void{
-		if(!qtAlertAdded){
-			add(kb_attack_alert);
-			qtAlertAdded=true;
+	function kbATTACK_ALERT_PART2(newAlpha:Float, animationToPlay:String, alertminationTrueAlert:Null<Bool> = false):Void{
+		if (!qtAlertAdded)
+		{
+			if (SONG.song.toLowerCase() != "alertmination")
+				add(kb_attack_alert);
+			else
+				add(kb_attack_alert_KB);
+			qtAlertAdded = true;
+		}
+
+		if (alertminationTrueAlert)
+		{
+			if (!alertminationTrueAlertAdded && SONG.song.toLowerCase() == "alertmination")
+			{
+				add(kb_attack_alert);
+				alertminationTrueAlertAdded = true;
+			}
 		}
 
 		//NewAlpha is for the alert overlay vigenette.
-		if(ClientPrefs.flashing && hazardOverlayShit != null)
-			hazardOverlayShit.alpha=newAlpha;
+		if (ClientPrefs.flashing)
+		{
+			if (alertminationTrueAlert)
+			{
+				if (hazardOverlayShit2 != null)
+					hazardOverlayShit2.alpha = newAlpha;
+			}
+			else
+			{
+				if (hazardOverlayShit != null)
+					hazardOverlayShit.alpha = newAlpha;
+			}
+		}			
 
-		kb_attack_alert.animation.play(animationToPlay);
+		if (SONG.song.toLowerCase() == "alertmination")
+		{
+			if (alertminationTrueAlert)
+				kb_attack_alert.animation.play(animationToPlay);
+			else
+				kb_attack_alert_KB.animation.play(animationToPlay);
+		}
+		else
+			kb_attack_alert.animation.play(animationToPlay);
+
 		switch(animationToPlay){
 			default:
-				kb_attack_alert.offset.set(0,0);
+				if (kb_attack_alert != null)
+				{
+					if (alertminationTrueAlert)
+						kb_attack_alert.scale.set(1.5,1.5);
+
+					kb_attack_alert.offset.set(0,0);
+				}
+
+				if (kb_attack_alert_KB != null)
+					kb_attack_alert_KB.offset.set(0,-50);
 			case "alertQUAD":
-				kb_attack_alert.offset.set(152,38);
+				if (kb_attack_alert != null)
+				{
+					if (alertminationTrueAlert)
+					{
+						kb_attack_alert.scale.set(2.25,2.25);
+						kb_attack_alert.offset.set(252,53);
+					}
+					else
+						kb_attack_alert.offset.set(152,38);
+				}
+				if (kb_attack_alert_KB != null)
+					kb_attack_alert_KB.offset.set(152,53);
 			case "alertTRIPLE":
-				kb_attack_alert.offset.set(150,56);
+				if (kb_attack_alert != null)
+				{
+					if (alertminationTrueAlert)
+					{
+						kb_attack_alert.scale.set(1.85,1.85);
+						kb_attack_alert.offset.set(235,56);
+					}
+					else
+						kb_attack_alert.offset.set(150,56);
+				}
+				if (kb_attack_alert_KB != null)
+					kb_attack_alert_KB.offset.set(150,-4);
 			case "alertDOUBLE":
-				kb_attack_alert.offset.set(70,5);
+				if (kb_attack_alert != null)
+				{
+					if (alertminationTrueAlert)
+						kb_attack_alert.scale.set(1.5,1.5);
+
+					kb_attack_alert.offset.set(70,5);
+				}
+				if (kb_attack_alert_KB != null)
+					kb_attack_alert_KB.offset.set(70,-45);
 		}
 	}
 
@@ -4270,6 +4396,10 @@ class PlayState extends MusicBeatState
 					streetBG.visible = false;
 				}
 				FlxG.camera.shake(0.0078,0.675);
+				qtIsGlitched = true;
+				qtIsBlueScreened = false;
+				reloadSongPosBarColors(false, true);
+
 				//dadDrainHealth=0.0055; //Reducing health drain because fuck me that's a lot of notes!
 				//healthLossMultiplier=1.1375; //More forgiving because fuck me that's a lot of notes!
 				//healthGainMultiplier=1.125;
@@ -4280,6 +4410,9 @@ class PlayState extends MusicBeatState
 					streetFrontError.visible = true;
 					CensoryOverload404();
 				}
+				qtIsGlitched = false;
+				qtIsBlueScreened = true;
+				reloadSongPosBarColors(true, false);
 			case 0:
 				//healthLossMultiplier=1.22;
 				//healthGainMultiplier=1.12;
@@ -4288,7 +4421,24 @@ class PlayState extends MusicBeatState
 					streetBG.visible = true;
 					streetFrontError.visible = false;
 				}
+				qtIsGlitched = false;
+				qtIsBlueScreened = false;
+				reloadSongPosBarColors(false, false);
 		}
+	}
+
+	//Thanks to Luis for this code :qt_face: (Although I've modified it a bit lol) //Fun fact: This code was made 2 years and half ago lmao
+	public function reloadSongPosBarColors(isBlue:Bool = false, isGlitch:Bool = false)
+	{
+		if (isBlue)
+			timeBar.createFilledBar(FlxColor.BLUE, FlxColor.BLUE);
+		else if (isGlitch)
+			timeBar.createFilledBar(FlxColor.BLACK, FlxColor.BLACK);
+		else
+			timeBar.createFilledBar(0xFF000000, 0xFFFFFFFF);
+
+		//timeBar.shader = swagShader.shader;
+		timeBar.updateBar();
 	}
 	
 	function terminateEndEarly():Void
@@ -4676,7 +4826,44 @@ class PlayState extends MusicBeatState
 
 			case 'KB_AlertDouble':
 				//Kept for legacy support
-				kbATTACK_ALERT(2);
+				//Actually I will use this for Alertmination hehe
+
+				var daBool:String = value1.toLowerCase();
+				var soundToPlay:String = value2.toLowerCase();
+
+				if (soundToPlay == null || soundToPlay == " "  || soundToPlay == "")
+					soundToPlay = "";
+
+				if (daBool == "true")
+					kbATTACK_ALERT(2, true, soundToPlay, true);
+				else
+					kbATTACK_ALERT(2, true, soundToPlay);
+			case 'KB_AlertTriple':
+				//Same as obove
+
+				var daBool:String = value1.toLowerCase();
+				var soundToPlay:String = value2.toLowerCase();
+
+				if (soundToPlay == null || soundToPlay == " "  || soundToPlay == "")
+					soundToPlay = "";
+
+				if (daBool == "true")
+					kbATTACK_ALERT(3, true, soundToPlay, true);
+				else
+					kbATTACK_ALERT(3, true, soundToPlay);
+			case 'KB_AlertQuadruple':
+				//Same as above again lol
+
+				var daBool:String = value1.toLowerCase();
+				var soundToPlay:String = value2.toLowerCase();
+
+				if (soundToPlay == null || soundToPlay == " "  || soundToPlay == "")
+					soundToPlay = "";
+
+				if (daBool == "true")
+					kbATTACK_ALERT(4, true, soundToPlay, true);
+				else
+					kbATTACK_ALERT(4, true, soundToPlay);
 			case 'KB_AttackPrepare':
 				KBATTACK(false);
 				if(value1!='0'){ 

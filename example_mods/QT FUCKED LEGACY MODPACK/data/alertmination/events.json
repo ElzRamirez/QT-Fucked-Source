@@ -1,9 +1,9 @@
 {
 	"song": {
-		"speed": 3.1,
+		"speed": 3.2,
 		"stage": "street-termination",
 		"player1": "zRamirez",
-		"player2": "alert",
+		"player2": "alert_v2",
 		"player3": null,
 		"events": [
 			[
@@ -4797,16 +4797,6 @@
 				]
 			],
 			[
-				189797.297297298,
-				[
-					[
-						"Screen Shake",
-						"0.54,0.0135",
-						"0.54,0.0131"
-					]
-				]
-			],
-			[
 				190000.000000001,
 				[
 					[
@@ -4842,7 +4832,7 @@
 					[
 						"Change Character OPTIONAL",
 						"dad",
-						"alert_404"
+						"alert_v2-404"
 					],
 					[
 						"KB_AttackFire",
@@ -5772,7 +5762,7 @@
 					[
 						"Change Character OPTIONAL",
 						"dad",
-						"alert"
+						"alert_v2"
 					],
 					[
 						"Alt Idle Animation",
@@ -7140,9 +7130,19 @@
 				258378.37837838,
 				[
 					[
-						"KB_Alert",
-						"2",
-						"nothing"
+						"KB_AlertDouble",
+						"true",
+						"alertMuted"
+					],
+					[
+						"Alt Idle Animation",
+						"gf",
+						"-alt"
+					],
+					[
+						"streetTV state",
+						"5",
+						""
 					]
 				]
 			],
@@ -7150,9 +7150,9 @@
 				258648.64864865,
 				[
 					[
-						"KB_Alert",
-						"2",
-						"nothing"
+						"KB_AlertDouble",
+						"true",
+						"alertMuted"
 					]
 				]
 			],
@@ -7160,14 +7160,29 @@
 				258918.91891892,
 				[
 					[
-						"KB_Alert",
-						"3",
-						"nothing"
-					],
-					[
 						"KB_AttackPrepare",
 						"0",
 						""
+					],
+					[
+						"KB_AlertTriple",
+						"true",
+						"alertMuted"
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				259189.189189191,
+				[
+					[
+						"KB_AlertQuadruple",
+						"true",
+						"alertMuted"
 					],
 					[
 						"streetTV state",
@@ -7180,29 +7195,9 @@
 						""
 					],
 					[
-						"Alt Idle Animation",
-						"gf",
-						"-alt"
-					]
-				]
-			],
-			[
-				258986.486486488,
-				[
-					[
 						"Screen Shake",
-						"0.54,0.0135",
-						"0.54,0.0131"
-					]
-				]
-			],
-			[
-				259189.189189191,
-				[
-					[
-						"KB_Alert",
-						"4",
-						"nothing"
+						"0.27, 0.00675",
+						"0.27, 0.00655"
 					]
 				]
 			],
@@ -7237,7 +7232,7 @@
 					[
 						"Change Character OPTIONAL",
 						"dad",
-						"alert_404"
+						"alert_v2-404"
 					]
 				]
 			],
@@ -8277,7 +8272,7 @@
 					[
 						"Change Character OPTIONAL",
 						"dad",
-						"alert"
+						"alert_v2"
 					],
 					[
 						"Alt Idle Animation",

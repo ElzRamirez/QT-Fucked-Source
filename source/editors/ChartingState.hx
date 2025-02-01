@@ -99,6 +99,8 @@ class ChartingState extends MusicBeatState
 		['KB_AttackPrepare', "Prepares a sawblade before attacking. \nWill also call the alert event for you automatically! \n(Disable alert by setting value 1 to '0')"],
 		['KB_Alert', "Plays the alert animation with sound.\nSet Value1 to 2 for double alert, 3 for triple, \nand 4 for quadruple."],
 		['KB_AlertDouble', "Plays the alert animation with sound. \nUses the Double Variant sound and sprite. \nv2.2 UPDATE: Recommended to use KB_Alert instead!!!"],
+		['KB_AlertTriple', "Plays the alert animation with sound. \nUses the Triple Variant sound and sprite. \nv2.2 UPDATE: Recommended to use KB_Alert instead!!!"],
+		['KB_AlertQuadruple', "Plays the alert animation with sound. \nUses the Quadruple Variant sound and sprite. \nv2.2 UPDATE: Recommended to use KB_Alert instead!!!"],
 		['KB_AttackFire', "Fires the sawblade. \nIf BF isn't dodging, will fuck 'em up.\nSet value1 to be the sound to play (for example:\n 'triple' will play 'hazard/attack-triple').\nLeave blank if you don't want different sound.\nSet value2 to '1' to make the saw instakill."],
 		['KB_AttackFireDOUBLE', "Fires the sawblade. \nIf BF isn't dodging, will fuck 'em up. \nUses the double sawblade variation sfx instead. \n(Warning add this event 1 step earlier to\nensure sawblade is prepared\nwith a value of '1'!)\n\nSet value2 to '1' to make the saw instakill.\nv2.2 UPDATE: Recommended to use KB_AttackFire instead!!!"],
 		['KB_Pincer', "PincerShit. \nValue1=PincerState\nDon't use this unless you know what you're doing."],
