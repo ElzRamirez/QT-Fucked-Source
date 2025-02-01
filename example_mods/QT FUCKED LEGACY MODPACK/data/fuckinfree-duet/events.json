@@ -1,0 +1,60 @@
+{
+	"song": {
+		"speed": 2.6,
+		"stage": "street-cessation",
+		"player1": "zRamirez",
+		"player2": "qt-kb-new-extensed",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"streetTV state",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				3750,
+				[
+					[
+						"streetTV state",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				7500,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				99375,
+				[
+					[
+						"Change Character",
+						"dad",
+						"qt-kb-old-together"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "bfSpeaker",
+		"bpm": 128,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Fuckinfree",
+		"dodgeEnabled": true
+	}
+}

@@ -1,0 +1,100 @@
+{
+	"song": {
+		"speed": 2.5,
+		"stage": "street-kb",
+		"player1": "zRamirez",
+		"player2": "qt-kb-angry-old-together",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"streetTV state",
+						"69",
+						""
+					]
+				]
+			],
+			[
+				2181.81818181818,
+				[
+					[
+						"streetTV state",
+						"3",
+						""
+					]
+				]
+			],
+			[
+				4363.63636363636,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				69818.1818181819,
+				[
+					[
+						"Alt Idle Animation",
+						"dad",
+						"-alt"
+					]
+				]
+			],
+			[
+				87272.7272727273,
+				[
+					[
+						"Alt Idle Animation",
+						"dad",
+						""
+					]
+				]
+			],
+			[
+				104727.272727273,
+				[
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				122181.818181818,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					]
+				]
+			],
+			[
+				139090.909090909,
+				[
+					[
+						"Alt Idle Animation",
+						"dad",
+						"-alt"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "bfSpeaker",
+		"bpm": 110,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Fuckedless",
+		"dodgeEnabled": true
+	}
+}

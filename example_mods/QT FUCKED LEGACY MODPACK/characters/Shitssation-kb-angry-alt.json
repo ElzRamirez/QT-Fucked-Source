@@ -1,0 +1,111 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				281,
+				252
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "KB_angry_Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-92,
+				57
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "KB_angry_Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				210,
+				39
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "KB_angry_Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				193,
+				267
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "KB_angry_Up",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				109,
+				99
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "KB_angryALT_idleTired",
+			"indices": []
+		},
+		{
+			"offsets": [
+				176,
+				82
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-altA",
+			"indices": [],
+			"name": "KB_angryALT_idleBabyRage"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				181,
+				113
+			],
+			"anim": "danceLeft",
+			"fps": 24,
+			"name": "KB_angry_DanceLeft",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				140,
+				122
+			],
+			"anim": "danceRight",
+			"fps": 24,
+			"name": "KB_angry_DanceRight",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/kb-angry",
+	"position": [
+		-230,
+		210
+	],
+	"healthicon": "kbangry",
+	"flip_x": false,
+	"healthbar_colors": [
+		128,
+		128,
+		128
+	],
+	"camera_position": [
+		-60,
+		-120
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

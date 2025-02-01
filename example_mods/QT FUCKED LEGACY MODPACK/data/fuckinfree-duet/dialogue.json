@@ -1,0 +1,116 @@
+{
+	"dialogue": [
+		{
+			"expression": "Neutral",
+			"text": "Well, it looks like we've arrived...",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "zramirez"
+		},
+		{
+			"expression": "Think",
+			"text": "Ramirez, are you sure we're in the right place?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "ara"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Neutral",
+			"text": "Boyfriend told me this is the place"
+		},
+		{
+			"expression": "talk",
+			"text": "Hello! Welcome guys",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "qt"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Oh, hey QT!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Hello"
+		},
+		{
+			"expression": "talk",
+			"text": "(Isn't that guy we fought with last time?)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "kb2"
+		},
+		{
+			"expression": "talk",
+			"text": "Whats brings you here guys?",
+			"boxState": "normal",
+			"speed": 0.05,
+			"portrait": "qt"
+		},
+		{
+			"expression": "Neutral",
+			"text": "Well, Boyfriend told me that you gave him a great rap battle, and he told me to come try to challenge you",
+			"boxState": "normal",
+			"portrait": "zramirez",
+			"speed": 0.05
+		},
+		{
+			"expression": "excited",
+			"text": "Oh sure, we're going to have too much fun!",
+			"boxState": "normal",
+			"portrait": "qt",
+			"speed": 0.0499999999999998
+		},
+		{
+			"speed": 0.05,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "bruhNoTalk",
+			"text": "(So... this guy isn't Boyfriend...)"
+		},
+		{
+			"expression": "Happy",
+			"text": "well, then it's time to rap",
+			"boxState": "normal",
+			"portrait": "zramirez",
+			"speed": 0.05
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zramirez",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Ara, did you bring the speakers?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "and do you still doubt it Rami?"
+		},
+		{
+			"expression": "Happy",
+			"text": "well, let's get started",
+			"boxState": "normal",
+			"portrait": "zramirez",
+			"speed": 0.05
+		},
+		{
+			"expression": "angry",
+			"text": "(They don't know the trouble they got into...)",
+			"boxState": "normal",
+			"portrait": "kb2",
+			"speed": 0.0749999999999998
+		}
+	]
+}

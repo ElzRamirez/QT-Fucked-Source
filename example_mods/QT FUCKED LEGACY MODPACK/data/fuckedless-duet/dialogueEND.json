@@ -1,0 +1,11 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.1,
+			"portrait": "kb",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "It's end for you..."
+		}
+	]
+}

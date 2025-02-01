@@ -1,0 +1,166 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-18,
+				268
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "singLeftKB"
+		},
+		{
+			"offsets": [
+				171,
+				139
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft",
+			"indices": [],
+			"name": "danceLeftNormal"
+		},
+		{
+			"offsets": [
+				136,
+				148
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight",
+			"indices": [],
+			"name": "danceRightNormal"
+		},
+		{
+			"offsets": [
+				223,
+				127
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceLeft-alt",
+			"indices": [],
+			"name": "danceLeftKB"
+		},
+		{
+			"offsets": [
+				188,
+				136
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "danceRight-alt",
+			"indices": [],
+			"name": "danceRightKB"
+		},
+		{
+			"offsets": [
+				158,
+				283
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "singUpKB"
+		},
+		{
+			"offsets": [
+				204,
+				71
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "singRightKB"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				119,
+				52
+			],
+			"anim": "singDOWN-alt",
+			"fps": 24,
+			"name": "singDownKB",
+			"indices": []
+		},
+		{
+			"offsets": [
+				133,
+				297
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "singUpTogether"
+		},
+		{
+			"offsets": [
+				207,
+				74
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "singRightTogether"
+		},
+		{
+			"offsets": [
+				-17,
+				268
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "singLeftTogether"
+		},
+		{
+			"offsets": [
+				120,
+				53
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "singDownTogether"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-17,
+				269
+			],
+			"anim": "dodge",
+			"fps": 24,
+			"name": "singLeftKB",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/qt-kb-angry",
+	"position": [
+		40,
+		215
+	],
+	"healthicon": "qtkb",
+	"flip_x": false,
+	"healthbar_colors": [
+		150,
+		150,
+		255
+	],
+	"camera_position": [
+		285,
+		-60
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

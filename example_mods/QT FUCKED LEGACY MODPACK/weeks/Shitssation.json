@@ -1,0 +1,26 @@
+{
+	"storyName": "This has not cessated",
+	"difficulties": "Bad Future",
+	"hideFreeplay": false,
+	"weekBackground": "alleyway",
+	"weekBefore": "",
+	"startUnlocked": true,
+	"songs": [
+		[
+			"Shitssation",
+			"qtkb",
+			[
+				255,
+				120,
+				155
+			]
+		]
+	],
+	"hideStoryMode": true,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"weekName": "QT EXTREME"
+}
