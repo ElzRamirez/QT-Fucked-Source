@@ -1,0 +1,123 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Neutral",
+			"text": "Wow, you're fucking crazy bro"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "Mad",
+			"text": "And did you just notice it? After he almost killed you with a FUCKING SAW?!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Sad",
+			"text": "Sorry Ara, I was a dumbass"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Sad",
+			"text": "I risked our lives just for some stupid rap battles, I'm really sorry"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "Happy",
+			"text": "Nah, don't worry Rami, maybe i would have done the same LOLXD"
+		},
+		{
+			"speed": 0.075,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hey Ramirez..."
+		},
+		{
+			"speed": 0.1,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Angry",
+			"text": "?..."
+		},
+		{
+			"speed": 0.15,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I..."
+		},
+		{
+			"speed": 0.2,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "angry",
+			"text": "I just..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I just love latinas Ramirez"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Neutral",
+			"text": "Wait, What?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "q",
+			"text": "WTF?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Asi es amigo Ramirez, I just love latinas, Adios amigo, ire a buscar a todas las latinas que pueda"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "zRamirez",
+			"boxState": "normal",
+			"expression": "Neutral",
+			"text": "Ok?... Let's get out of here Ara"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "ara",
+			"boxState": "normal",
+			"expression": "Neutral",
+			"text": "And very fast"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "qt",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Good Bye!"
+		},
+		{
+			"speed": 0.1,
+			"portrait": "kb2",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Adios... Ramirez"
+		}
+	]
+}

@@ -7717,6 +7717,10 @@ class PlayState extends MusicBeatState
 						if(WeekData.getWeekFileName().toLowerCase() == 'qt' && isStoryMode && CoolUtil.difficultyString() == 'FUCKED' && storyPlaylist.length <= 1 && !changedDifficulty && !usedPractice) {
 							unlock = true;
 						}
+					case 'qtduo_week':
+						if(WeekData.getWeekFileName().toLowerCase() == 'qtweek-duet-1' && isStoryMode && CoolUtil.difficultyString() == 'FUCKED' && storyPlaylist.length <= 1 && !changedDifficulty && !usedPractice) {
+							unlock = true;
+						}
 					case 'ur_bad':
 						if(ratingPercent < 0.2 && !usedPractice && Paths.formatToSongPath(SONG.song) != 'fuckedminate') {
 							unlock = true;
@@ -7729,12 +7733,20 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && storyDifficulty==1) {
 							unlock = true;
 						}
+					case 'fuckedmination_duo_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duet' && !usedPractice) {
+							unlock = true;
+						}
 					case 'fuckedmination_old':
 						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination' && !usedPractice && storyDifficulty==2) {
 							unlock = true;
 						}
 					case 'cessation_beat':
 						if(Paths.formatToSongPath(SONG.song) == 'cessation' && !usedPractice) {
+							unlock = true;
+						}
+					case 'cessation_duo_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'cessation-duet' && !usedPractice) {
 							unlock = true;
 						}
 					case 'alert_beat':

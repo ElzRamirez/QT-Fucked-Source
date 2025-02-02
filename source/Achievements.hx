@@ -31,7 +31,7 @@ class Achievements {
 	public static var achievementShits:Array<Dynamic> = [//Name, Description, Achievement save tag, Unlocks after, Hidden achievement
 		//Set unlock after to "null" if it doesnt unlock after a week!!
 		["Freaky on a Friday Night",			"Play on a Friday... Night.",											'friday_night_play',		null, 			true],
-		["Do you need help?",					"Beat Tutorial on Very Fucked.",											'tutorial_fucked',			null, 			false],
+		["Do you need help?",					"Beat Tutorial on Very Fucked.",										'tutorial_fucked',			null, 			false],
 		["You r really sick...",				"Complete QT week on Fucked Difficulty.",								'qtweek_fucked',			null, 			false],
 		["IMPOSSIBLE!!!",						"Beat Fuckedmination on Very Fucked.",									'fuckedmination_beat',		null, 			false],
 		["Get a life, freaky!",					"Beat Fuckedmination on Fuck You. (Please, get a life bro)",			'fuckedmination_old',		null, 			false],
@@ -46,7 +46,11 @@ class Achievements {
 		["Perfectionist",						"Complete a Song with a rating of 100%.",								'ur_good',					null,			false],
 		["What is this doing here?",			"Download and Complete the Redacted Restored modpack.",					'long_time',				null,			true],
 		//así es amigo mio, esto lo agregue a ultimo momento, por eso esta hasta abajo del todo, y sabes la puta paja que me da editar el puto png por que es una puta mierda este puto sistema de logros, prefiero al 100% el sistema de la psych 0.6 en adelante hjklñZSDFhjiklñszxdvhjiklñzxcvhjikolñdf
-		["Alertastic but Classic?",				"Beat Alertmination Classic from the legacy modpack.",					'alertclassic_beat',		null, 			true]
+		["Alertastic but Classic?",				"Beat Alertmination Classic from the legacy modpack.",					'alertclassic_beat',		null, 			true],
+		["Baby steps",							"Complete QT Duo week on Fucked Difficulty from the legacy modpack.",	'qtduo_week',				null, 			true],
+		["Comformation",						"Beat Fuckedmination Duet from the legacy modpack.",					'fuckedmination_duo_beat',	null, 			true],
+		["You r perfection",					"Beat Cessation Duet from the legacy modpack.",							'cessation_duo_beat',		null, 			true]
+		//Me pregunto quien sería el jodidamente enfermo que llegue a conseguir estos logros
 	];
 
 	public static var achievementsStuff:Array<Dynamic> = [ 

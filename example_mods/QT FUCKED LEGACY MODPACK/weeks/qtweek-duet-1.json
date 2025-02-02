@@ -2,15 +2,9 @@
 	"storyName": "YOU DEAD",
 	"difficulties": "Fucked",
 	"hideFreeplay": false,
-	"weekBackground": "alleyway",
+	"weekBackground": "noqt",
 	"weekBefore": "",
 	"startUnlocked": true,
-	"hideStoryMode": true,
-	"weekCharacters": [
-		"",
-		"",
-		""
-	],
 	"songs": [
 		[
 			"Fuckinfree-Duet",
@@ -39,6 +33,12 @@
 				0
 			]
 		]
+	],
+	"hideStoryMode": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
 	],
 	"weekName": "QT EXTREME"
 }
