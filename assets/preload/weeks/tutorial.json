@@ -1,7 +1,7 @@
 {
 	"storyName": "",
 	"difficulties": "Easy, Normal, Hard, Harder, Fucked, Very Fucked",
-	"hideFreeplay": false,
+	"hideFreeplay": true,
 	"weekBackground": "howtoplay",
 	"weekBefore": "tutorial",
 	"startUnlocked": true,
