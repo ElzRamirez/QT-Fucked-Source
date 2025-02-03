@@ -388,6 +388,10 @@ class PlayState extends MusicBeatState
 	var wiggleShitShow:WiggleEffect = null;
 	var interlopeChroma:ChromaticAberrationEffect = null;
 	var interlopeChromaIntensity:Float = 0;
+	var sawbladeChroma:ChromaticAberrationEffect = null;
+	var sawbladeChromaIntensity:Float = 0;
+	var bluescreenChroma:ChromaticAberrationEffect = null;
+	var bluescreenChromaPhase:Float = 0;
 	var interlopeFadeinShader:TiltshiftEffect = null;
 	var interlopeFadeinShaderIntensity:Float = 4;
 	var interlopeFadeinShaderFading:Bool = false;
@@ -2470,6 +2474,17 @@ class PlayState extends MusicBeatState
 		hazardRandom = FlxG.random.int(1, 5);
 		FlxG.log.notice(('Cessation Random Roll:' + hazardRandom));
 
+		if(!ClientPrefs.lowQuality && !ClientPrefs.noShaders && ClientPrefs.flashing)
+		{
+			bluescreenChroma = new ChromaticAberrationEffect(0);
+			//addShaderToCamera("game", bluescreenChroma);
+			//addShaderToCamera("hud", bluescreenChroma);
+
+			sawbladeChroma = new ChromaticAberrationEffect(0);
+			addShaderToCamera("game", sawbladeChroma);
+			addShaderToCamera("hud", sawbladeChroma);
+		}
+
 		if(SONG.song.toLowerCase() == "interlope"){ 
 			remove(hazardBlack); //Layering moment LMAO
 			add(hazardBlack);
@@ -3127,6 +3142,24 @@ class PlayState extends MusicBeatState
 				interlopeChromaIntensity = 0; //Stop going below zero
 
 			interlopeChroma.setChrome(interlopeChromaIntensity);
+		}
+		if(sawbladeChroma != null){ //Copypasted because tengo flojera zzz
+			if (sawbladeChromaIntensity > 0)
+				sawbladeChromaIntensity -= 0.082 * elapsed;
+			else if (sawbladeChromaIntensity < 0) 
+				sawbladeChromaIntensity = 0; //Stop going below zero
+
+			sawbladeChroma.setChrome(sawbladeChromaIntensity);
+		}
+		if(bluescreenChroma != null){
+			bluescreenChromaPhase += 180 * elapsed;
+
+			var averageValue:Float = 0.0035;
+        	var amplitude:Float = 0.0025;
+
+			var bluescreenChromaSine:Float = averageValue + amplitude * Math.sin((Math.PI * bluescreenChromaPhase) / 180);
+
+			bluescreenChroma.setChrome(bluescreenChromaSine);
 		}
 
 		if(interlopeFadeinShader != null){
@@ -3856,6 +3889,9 @@ class PlayState extends MusicBeatState
 				vocals.stop();
 				FlxG.sound.music.stop();
 
+				clearShaderFromCamera("game");
+				clearShaderFromCamera("hud");
+
 				persistentUpdate = false;
 				persistentDraw = false;
 				for (tween in modchartTweens) {
@@ -4091,6 +4127,7 @@ class PlayState extends MusicBeatState
 			//Play saw attack animation
 			kb_attack_saw.animation.play('fire');
 			kb_attack_saw.offset.set(1600,0);
+			sawbladeChromaIntensity = 0.012;
 			FlxG.camera.shake(0.001675,0.6);
 			camHUD.shake(0.001675,0.2);
 			if(cpuControlled)
@@ -4421,6 +4458,11 @@ class PlayState extends MusicBeatState
 				qtIsGlitched = true;
 				qtIsBlueScreened = false;
 				reloadSongPosBarColors(false, true);
+				if (bluescreenChroma != null)
+				{
+					removeShaderFromCamera("game", bluescreenChroma);
+					removeShaderFromCamera("hud", bluescreenChroma);
+				}
 
 				//dadDrainHealth=0.0055; //Reducing health drain because fuck me that's a lot of notes!
 				//healthLossMultiplier=1.1375; //More forgiving because fuck me that's a lot of notes!
@@ -4435,6 +4477,11 @@ class PlayState extends MusicBeatState
 				qtIsGlitched = false;
 				qtIsBlueScreened = true;
 				reloadSongPosBarColors(true, false);
+				if (bluescreenChroma != null)
+				{
+					addShaderToCamera("game", bluescreenChroma);
+					addShaderToCamera("hud", bluescreenChroma);
+				}
 			case 0:
 				//healthLossMultiplier=1.22;
 				//healthGainMultiplier=1.12;
@@ -4446,6 +4493,11 @@ class PlayState extends MusicBeatState
 				qtIsGlitched = false;
 				qtIsBlueScreened = false;
 				reloadSongPosBarColors(false, false);
+				if (bluescreenChroma != null)
+				{
+					removeShaderFromCamera("game", bluescreenChroma);
+					removeShaderFromCamera("hud", bluescreenChroma);
+				}
 		}
 	}
 
