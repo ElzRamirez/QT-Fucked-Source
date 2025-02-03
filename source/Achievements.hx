@@ -48,7 +48,7 @@ class Achievements {
 		//así es amigo mio, esto lo agregue a ultimo momento, por eso esta hasta abajo del todo, y sabes la puta paja que me da editar el puto png por que es una puta mierda este puto sistema de logros, prefiero al 100% el sistema de la psych 0.6 en adelante hjklñZSDFhjiklñszxdvhjiklñzxcvhjikolñdf
 		["Alertastic but Classic?",				"Beat Alertmination Classic from the legacy modpack.",					'alertclassic_beat',		null, 			true],
 		["Baby steps",							"Complete QT Duo week on Fucked Difficulty from the legacy modpack.",	'qtduo_week',				null, 			true],
-		["Comformation",						"Beat Fuckedmination Duet from the legacy modpack.",					'fuckedmination_duo_beat',	null, 			true],
+		["Conformation",						"Beat Fuckedmination Duet from the legacy modpack.",					'fuckedmination_duo_beat',	null, 			true],
 		["You r perfection",					"Beat Cessation Duet from the legacy modpack.",							'cessation_duo_beat',		null, 			true]
 		//Me pregunto quien sería el jodidamente enfermo que llegue a conseguir estos logros
 	];
