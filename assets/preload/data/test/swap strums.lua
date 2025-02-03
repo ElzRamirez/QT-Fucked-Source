@@ -4,7 +4,9 @@
 local tempPositions = {}
 
 function onCountdownStarted()
-    swapArrowPositions()
+    if not middlescroll then
+        swapArrowPositions()
+    end
 end
 
 function swapArrowPositions()
