@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="deathNotes.png">
+	<!-- Created with Adobe Animate version 22.0.0.93 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="343" height="196" frameX="-146" frameY="-59" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="blue0001" x="348" y="0" width="495" height="243" frameX="-70" frameY="-12" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="blue0002" x="848" y="0" width="565" height="249" frameX="-35" frameY="-6" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="blue0003" x="1418" y="0" width="635" height="255"/>
+	<SubTexture name="blue0004" x="2058" y="0" width="565" height="249" frameX="-35" frameY="-6" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="blue0005" x="2628" y="0" width="495" height="243" frameX="-70" frameY="-12" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="blue0006" x="3128" y="0" width="425" height="237" frameX="-105" frameY="-18" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="down confirm0000" x="0" y="260" width="653" height="660"/>
+	<SubTexture name="down confirm0001" x="658" y="260" width="653" height="660"/>
+	<SubTexture name="down confirm0002" x="1316" y="260" width="640" height="645" frameX="-6" frameY="-8" frameWidth="653" frameHeight="660"/>
+	<SubTexture name="down confirm0003" x="1316" y="260" width="640" height="645" frameX="-6" frameY="-8" frameWidth="653" frameHeight="660"/>
+	<SubTexture name="green0000" x="1961" y="260" width="343" height="196" frameX="-146" frameY="-59" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="green0001" x="2309" y="260" width="495" height="243" frameX="-70" frameY="-12" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="green0002" x="2809" y="260" width="565" height="249" frameX="-35" frameY="-6" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="green0003" x="3379" y="260" width="635" height="255"/>
+	<SubTexture name="green0004" x="0" y="925" width="565" height="249" frameX="-35" frameY="-6" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="green0005" x="570" y="925" width="495" height="243" frameX="-70" frameY="-12" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="green0006" x="1070" y="925" width="425" height="237" frameX="-105" frameY="-18" frameWidth="635" frameHeight="255"/>
+	<SubTexture name="left confirm0000" x="1500" y="925" width="660" height="653"/>
+	<SubTexture name="left confirm0001" x="2165" y="925" width="660" height="653"/>
+	<SubTexture name="left confirm0002" x="2830" y="925" width="645" height="640" frameX="-6" frameY="-5" frameWidth="660" frameHeight="653"/>
+	<SubTexture name="left confirm0003" x="2830" y="925" width="645" height="640" frameX="-6" frameY="-5" frameWidth="660" frameHeight="653"/>
+	<SubTexture name="purple0000" x="3480" y="925" width="343" height="201" frameX="-146" frameY="-59" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="purple0001" x="0" y="1583" width="495" height="248" frameX="-70" frameY="-12" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="purple0002" x="500" y="1583" width="565" height="254" frameX="-35" frameY="-6" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="purple0003" x="1070" y="1583" width="635" height="260"/>
+	<SubTexture name="purple0004" x="1710" y="1583" width="565" height="254" frameX="-35" frameY="-6" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="purple0005" x="2280" y="1583" width="495" height="248" frameX="-70" frameY="-12" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="purple0006" x="2780" y="1583" width="425" height="242" frameX="-105" frameY="-18" frameWidth="635" frameHeight="260"/>
+	<SubTexture name="red0000" x="3210" y="1583" width="343" height="200" frameX="-146" frameY="-59" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="red0001" x="3558" y="1583" width="495" height="247" frameX="-70" frameY="-12" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="red0002" x="0" y="1848" width="565" height="253" frameX="-35" frameY="-6" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="red0003" x="570" y="1848" width="635" height="259"/>
+	<SubTexture name="red0004" x="1210" y="1848" width="565" height="253" frameX="-35" frameY="-6" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="red0005" x="1780" y="1848" width="495" height="247" frameX="-70" frameY="-12" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="red0006" x="2280" y="1848" width="425" height="241" frameX="-105" frameY="-18" frameWidth="635" frameHeight="259"/>
+	<SubTexture name="right confirm0000" x="2710" y="1848" width="660" height="653"/>
+	<SubTexture name="right confirm0001" x="3375" y="1848" width="660" height="653"/>
+	<SubTexture name="right confirm0002" x="0" y="2506" width="645" height="640" frameX="-11" frameY="-6" frameWidth="660" frameHeight="653"/>
+	<SubTexture name="right confirm0003" x="0" y="2506" width="645" height="640" frameX="-11" frameY="-6" frameWidth="660" frameHeight="653"/>
+	<SubTexture name="up confirm0000" x="650" y="2506" width="653" height="660"/>
+	<SubTexture name="up confirm0001" x="1308" y="2506" width="653" height="660"/>
+	<SubTexture name="up confirm0002" x="1966" y="2506" width="640" height="645" frameX="-7" frameY="-6" frameWidth="653" frameHeight="660"/>
+	<SubTexture name="up confirm0003" x="1966" y="2506" width="640" height="645" frameX="-7" frameY="-6" frameWidth="653" frameHeight="660"/>
+</TextureAtlas>
