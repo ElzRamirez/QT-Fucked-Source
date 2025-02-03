@@ -634,6 +634,9 @@ class FreeplayState extends MusicBeatState
 				CoolUtil.difficulties = diffs;
 			}
 		}
+
+		if (songs[curSelected].songName.toLowerCase() == "tutorial")
+			CoolUtil.difficulties = ["Easy", "Normal", "Hard", "Harder", "Fucked", "Very Fucked"];
 		
 		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
 		var newPos:Int = CoolUtil.difficulties.indexOf(lastDifficultyName);
