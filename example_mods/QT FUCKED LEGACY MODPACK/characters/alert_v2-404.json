@@ -62,7 +62,7 @@
 		60,
 		300
 	],
-	"healthicon": "alert404",
+	"healthicon": "alert-v2-404",
 	"flip_x": false,
 	"healthbar_colors": [
 		255,

@@ -1140,7 +1140,7 @@ class PlayState extends MusicBeatState
 
 		//Adding sawblades and pincers to every song so all songs can use them!
 		if(ClientPrefs.flashing){
-			hazardOverlayShit = new BGSprite('hazard/inhuman-port/alert-vignette' + (SONG.song.toLowerCase() == "alertmination" ? "OG" : ""));
+			hazardOverlayShit = new BGSprite('hazard/inhuman-port/alert-vignette' + ((SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb") ? "OG" : ""));
 			hazardOverlayShit.setGraphicSize(FlxG.width, FlxG.height);
 			hazardOverlayShit.screenCenter();
 			hazardOverlayShit.x += (FlxG.width/2) - 60; //Mmmmmm scuffed positioning, my favourite!
@@ -1150,7 +1150,7 @@ class PlayState extends MusicBeatState
 			hazardOverlayShit.cameras = [camOther];
 			add(hazardOverlayShit);
 
-			if (SONG.song.toLowerCase() == "alertmination")
+			if (SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb")
 			{
 				hazardOverlayShit2 = new BGSprite('hazard/inhuman-port/alert-vignette');
 				hazardOverlayShit2.setGraphicSize(FlxG.width, FlxG.height);
@@ -1164,7 +1164,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (SONG.song.toLowerCase() == "alertmination")
+		if (SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb")
 		{
 			kb_attack_alert_KB = new FlxSprite();
 			kb_attack_alert_KB.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_KB');
@@ -3974,7 +3974,7 @@ class PlayState extends MusicBeatState
 		switch(alertType){
 			case 2:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertDouble-kb' : 'hazard/alertDouble')), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertDouble-kb' : 'hazard/alertDouble')), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.55,'alertDOUBLE', alertminationTrueAlert);
@@ -3986,7 +3986,7 @@ class PlayState extends MusicBeatState
 				
 			case 3:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertTriple-kb' : 'hazard/alertTriple')), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertTriple-kb' : 'hazard/alertTriple')), 1);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE', alertminationTrueAlert);
@@ -3998,7 +3998,7 @@ class PlayState extends MusicBeatState
 				
 			case 4:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alertQuadruple-kb' : 'hazard/alertQuadruple')), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertQuadruple-kb' : 'hazard/alertQuadruple')), 1);
 				
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.6,'alertQUAD', alertminationTrueAlert);
@@ -4010,7 +4010,7 @@ class PlayState extends MusicBeatState
 				
 			default:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : (SONG.song.toLowerCase()=="alertmination" ? 'hazard/custom/alert-kb' : 'hazard/alert')), 1);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alert-kb' : 'hazard/alert')), 1);
 				
 				//Not the best way to do offset since I fear lag can lead to an offsync sawblade, but hey I tried at least and it's better then no support at all. -Haz
 				if(ClientPrefs.noteOffset <= 0) {
@@ -4026,7 +4026,7 @@ class PlayState extends MusicBeatState
 	function kbATTACK_ALERT_PART2(newAlpha:Float, animationToPlay:String, alertminationTrueAlert:Null<Bool> = false):Void{
 		if (!qtAlertAdded)
 		{
-			if (SONG.song.toLowerCase() != "alertmination")
+			if (SONG.song.toLowerCase() != "alertmination" && SONG.song.toLowerCase() != "kb")
 				add(kb_attack_alert);
 			else
 				add(kb_attack_alert_KB);
@@ -4035,7 +4035,7 @@ class PlayState extends MusicBeatState
 
 		if (alertminationTrueAlert)
 		{
-			if (!alertminationTrueAlertAdded && SONG.song.toLowerCase() == "alertmination")
+			if (!alertminationTrueAlertAdded && (SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb"))
 			{
 				add(kb_attack_alert);
 				alertminationTrueAlertAdded = true;
@@ -4057,7 +4057,7 @@ class PlayState extends MusicBeatState
 			}
 		}			
 
-		if (SONG.song.toLowerCase() == "alertmination")
+		if (SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb")
 		{
 			if (alertminationTrueAlert)
 				kb_attack_alert.animation.play(animationToPlay);
