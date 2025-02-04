@@ -69,9 +69,6 @@ class FreeplayState extends MusicBeatState
 		DiscordClient.changePresence("In the Menus", null);
 		#end
 
-		WeekData.setDirectoryFromWeek();
-		addSong("Tutorial", 0, 'gf', FlxColor.fromRGB(165, 0, 77));
-		
 		//addSong("Interlope", 0, 'invis', FlxColor.fromRGB(0, 0, 0));
 		addSong("Fuckinfree", 0, 'qtkb', FlxColor.fromRGB(215, 0, 0));
 		addSong("Fuckedless", 0, 'qtkbold', FlxColor.fromRGB(186, 0, 0));
@@ -83,7 +80,7 @@ class FreeplayState extends MusicBeatState
 		//If beaten Termination or Termination-Classic
 		if(Achievements.achievementsMap.exists(Achievements.achievementsStuff[3][2]) || Achievements.achievementsMap.exists(Achievements.achievementsStuff[4][2]))
 			addSong("Cessation", 0, 'qtkb', FlxColor.fromRGB(130, 180, 255));
-
+		
 		for (i in 0...WeekData.weeksList.length) {
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
 			var leSongs:Array<String> = [];
@@ -95,7 +92,6 @@ class FreeplayState extends MusicBeatState
 			}
 
 			WeekData.setDirectoryFromWeek(leWeek);
-
 			for (song in leWeek.songs)
 			{
 				var colors:Array<Int> = song[2];
@@ -106,6 +102,7 @@ class FreeplayState extends MusicBeatState
 				addSong(song[0], i, song[1], FlxColor.fromRGB(colors[0], colors[1], colors[2]));
 			}
 		}
+		WeekData.setDirectoryFromWeek();
 
 		lastSongLocation = songs.length-1;
 		lastSongColor = songs[lastSongLocation].color; //Keep this the same colour as Cessation!
@@ -634,9 +631,6 @@ class FreeplayState extends MusicBeatState
 				CoolUtil.difficulties = diffs;
 			}
 		}
-
-		if (songs[curSelected].songName.toLowerCase() == "tutorial")
-			CoolUtil.difficulties = ["Easy", "Normal", "Hard", "Harder", "Fucked", "Very Fucked"];
 		
 		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
 		var newPos:Int = CoolUtil.difficulties.indexOf(lastDifficultyName);
