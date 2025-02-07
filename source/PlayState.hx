@@ -1190,10 +1190,10 @@ class PlayState extends MusicBeatState
 		//Alert!
 		kb_attack_alert = new FlxSprite();
 		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_NEW');
-		kb_attack_alert.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', 24, false);	
-		kb_attack_alert.animation.addByPrefix('alertDOUBLE', 'kb_attack_animation_alert-double', 24, false);	
-		kb_attack_alert.animation.addByPrefix('alertTRIPLE', 'kb_attack_animation_alert-triple', 24, false);	
-		kb_attack_alert.animation.addByPrefix('alertQUAD', 'kb_attack_animation_alert-quad', 24, false);	
+		kb_attack_alert.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
+		kb_attack_alert.animation.addByPrefix('alertDOUBLE', 'kb_attack_animation_alert-double', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
+		kb_attack_alert.animation.addByPrefix('alertTRIPLE', 'kb_attack_animation_alert-triple', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
+		kb_attack_alert.animation.addByPrefix('alertQUAD', 'kb_attack_animation_alert-quad', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
 		kb_attack_alert.antialiasing = ClientPrefs.globalAntialiasing;
 		kb_attack_alert.setGraphicSize(Std.int(kb_attack_alert.width * 1.5));
 		kb_attack_alert.cameras = [camHUD];
