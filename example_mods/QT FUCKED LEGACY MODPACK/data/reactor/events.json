@@ -1,0 +1,665 @@
+{
+	"song": {
+		"speed": 3.2,
+		"stage": "street-termination",
+		"player1": "bf-reactor",
+		"player2": "kb",
+		"player3": null,
+		"events": [
+			[
+				0,
+				[
+					[
+						"streetTV state",
+						"9",
+						""
+					]
+				]
+			],
+			[
+				1920,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					]
+				]
+			],
+			[
+				3840,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					]
+				]
+			],
+			[
+				5760,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					]
+				]
+			],
+			[
+				7680,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					],
+					[
+						"TerminationIntro",
+						"0",
+						""
+					],
+					[
+						"TerminationIntro",
+						"3",
+						"player"
+					]
+				]
+			],
+			[
+				9600,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					],
+					[
+						"TerminationIntro",
+						"1",
+						""
+					],
+					[
+						"TerminationIntro",
+						"2",
+						"player"
+					]
+				]
+			],
+			[
+				11520,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					],
+					[
+						"TerminationIntro",
+						"2",
+						""
+					],
+					[
+						"TerminationIntro",
+						"1",
+						"player"
+					]
+				]
+			],
+			[
+				13440,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					],
+					[
+						"TerminationIntro",
+						"3",
+						""
+					],
+					[
+						"TerminationIntro",
+						"0",
+						"player"
+					]
+				]
+			],
+			[
+				14400,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					]
+				]
+			],
+			[
+				14880,
+				[
+					[
+						"Add Camera Zoom",
+						"0.015",
+						""
+					]
+				]
+			],
+			[
+				15360,
+				[
+					[
+						"streetTV state",
+						"1",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.92",
+						""
+					]
+				]
+			],
+			[
+				30240,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					],
+					[
+						"streetBG state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				30720,
+				[
+					[
+						"streetBG state",
+						"2",
+						""
+					],
+					[
+						"streetTV state",
+						"7",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor-404"
+					],
+					[
+						"gfScared",
+						"true",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"650",
+						"610"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				46080,
+				[
+					[
+						"streetBG state",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor"
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb"
+					],
+					[
+						"gfScared",
+						"false",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.89",
+						""
+					]
+				]
+			],
+			[
+				53760,
+				[
+					[
+						"Camera Follow Pos",
+						"650",
+						"610"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				61440,
+				[
+					[
+						"streetTV state",
+						"5",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.89",
+						""
+					]
+				]
+			],
+			[
+				75840,
+				[
+					[
+						"streetTV state",
+						"6",
+						""
+					],
+					[
+						"streetBG state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				76800,
+				[
+					[
+						"streetBG state",
+						"2",
+						""
+					],
+					[
+						"streetTV state",
+						"7",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor-404"
+					],
+					[
+						"gfScared",
+						"true",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"650",
+						"610"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				79680,
+				[
+					[
+						"Add Camera Zoom",
+						"0.03",
+						"0.03"
+					]
+				]
+			],
+			[
+				80040,
+				[
+					[
+						"Add Camera Zoom",
+						"0.03",
+						"0.03"
+					]
+				]
+			],
+			[
+				80400,
+				[
+					[
+						"Add Camera Zoom",
+						"0.03",
+						"0.03"
+					]
+				]
+			],
+			[
+				92160,
+				[
+					[
+						"streetBG state",
+						"0",
+						""
+					],
+					[
+						"streetTV state",
+						"1",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor"
+					],
+					[
+						"gfScared",
+						"false",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.81",
+						""
+					]
+				]
+			],
+			[
+				107520,
+				[
+					[
+						"streetTV state",
+						"9",
+						""
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.9",
+						""
+					]
+				]
+			],
+			[
+				114900,
+				[
+					[
+						"Camera Follow Pos",
+						"640",
+						"630"
+					]
+				]
+			],
+			[
+				114960,
+				[
+					[
+						"Camera_Tween_Zoom",
+						"0.82",
+						""
+					]
+				]
+			],
+			[
+				115200,
+				[
+					[
+						"streetTV state",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				130320,
+				[
+					[
+						"streetBG state",
+						"1",
+						""
+					],
+					[
+						"streetTV state",
+						"6",
+						""
+					]
+				]
+			],
+			[
+				130560,
+				[
+					[
+						"streetBG state",
+						"2",
+						""
+					],
+					[
+						"streetTV state",
+						"7",
+						""
+					],
+					[
+						"gfScared",
+						"true",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor-404"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor-404"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.69",
+						""
+					],
+					[
+						"Camera Follow Pos",
+						"650",
+						"570"
+					]
+				]
+			],
+			[
+				145920,
+				[
+					[
+						"Camera Follow Pos",
+						"650",
+						"650"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.84",
+						""
+					]
+				]
+			],
+			[
+				161280,
+				[
+					[
+						"streetTV state",
+						"0",
+						""
+					],
+					[
+						"streetBG state",
+						"0",
+						""
+					],
+					[
+						"gfScared",
+						"false",
+						""
+					],
+					[
+						"Change Character OPTIONAL",
+						"dad",
+						"kb"
+					],
+					[
+						"Change Character OPTIONAL",
+						"gf",
+						"gf-reactor"
+					],
+					[
+						"Change Character OPTIONAL",
+						"bf",
+						"bf-reactor"
+					],
+					[
+						"Camera Follow Pos",
+						"650",
+						"590"
+					],
+					[
+						"Camera_Tween_Zoom",
+						"0.75",
+						""
+					]
+				]
+			],
+			[
+				162240,
+				[
+					[
+						"Camera_Tween_Zoom",
+						"0.75",
+						""
+					],
+					[
+						"TerminationOutro",
+						"0",
+						""
+					],
+					[
+						"TerminationOutro",
+						"1",
+						""
+					],
+					[
+						"TerminationOutro",
+						"2",
+						""
+					],
+					[
+						"TerminationOutro",
+						"3",
+						""
+					],
+					[
+						"TerminationOutro",
+						"4",
+						""
+					],
+					[
+						"TerminationOutro",
+						"5",
+						""
+					],
+					[
+						"TerminationOutro",
+						"6",
+						""
+					],
+					[
+						"TerminationOutro",
+						"7",
+						""
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "gf-reactor",
+		"bpm": 250,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Reactor",
+		"dodgeEnabled": true
+	}
+}

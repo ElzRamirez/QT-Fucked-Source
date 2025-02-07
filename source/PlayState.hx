@@ -842,6 +842,14 @@ class PlayState extends MusicBeatState
 					healthGainMultiplier=1.081;
 				}
 
+				if (SONG.song.toLowerCase()=='reactor'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Hard?";
+					dadDrainHealth=0.01493;
+					healthLossMultiplier=1.05;
+					healthGainMultiplier=1.05;
+				}
+
 				
 				if(!ClientPrefs.lowQuality){
 					//Far Back Layer - Error (blue screen)
@@ -6665,6 +6673,7 @@ class PlayState extends MusicBeatState
 		"cessation",
 		"alertmination",
 		"last-smile",
+		"reactor",
 		"double-kill-v2"
 	];
 
