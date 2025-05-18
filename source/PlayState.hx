@@ -850,6 +850,21 @@ class PlayState extends MusicBeatState
 					healthGainMultiplier=1.05;
 				}
 
+				if (SONG.song.toLowerCase()=='fuckedmination-vip'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "I REALLY HATE MY LIFE";
+					dadDrainHealth=0.01493;
+					healthLossMultiplier=1.05;
+					healthGainMultiplier=1.05;
+				}
+
+				if (SONG.song.toLowerCase()=='fuckedmination-duet-vip'){	
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "I REALLY HATE MY LIFE";
+					dadDrainHealth=0.01493;
+					healthLossMultiplier=1.05;
+					healthGainMultiplier=1.05;
+				}
 				
 				if(!ClientPrefs.lowQuality){
 					//Far Back Layer - Error (blue screen)
