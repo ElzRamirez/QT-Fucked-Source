@@ -1,0 +1,980 @@
+{
+	"song": {
+		"speed": 3.5,
+		"stage": "street-termination",
+		"player1": "zRamirez",
+		"player2": "zramirez-kb",
+		"player3": null,
+		"events": [
+			[
+				423785.472972972,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				424866.554054053,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				425947.635135134,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				427028.716216215,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				428109.797297296,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				429190.878378377,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				430271.959459458,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				431353.04054054,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				432434.121621621,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				433515.202702702,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				434596.283783783,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				435677.364864864,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				436758.445945945,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				437839.527027026,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				438920.608108107,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				440001.689189188,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				441082.770270269,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				442163.85135135,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				443244.932432431,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				444326.013513512,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				445407.094594593,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				446488.175675674,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				447569.256756756,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				448650.337837837,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				449731.418918918,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				450812.499999999,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				451893.58108108,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				452974.662162161,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				454055.743243242,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				455136.824324323,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				456217.905405404,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				457298.986486485,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				458380.067567566,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				459461.148648647,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				460542.229729728,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				461623.310810809,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				462704.39189189,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				463785.472972972,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				464866.554054053,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				465947.635135134,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				467028.716216215,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				468109.797297296,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				469190.878378377,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				470271.959459458,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				471353.040540539,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				472434.12162162,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				473515.202702701,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				474596.283783782,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				475677.364864863,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				476758.445945944,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				477839.527027025,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				478920.608108106,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				480001.689189187,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				481082.770270269,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				482163.85135135,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				483244.932432431,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				484326.013513512,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				485407.094594593,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				486488.175675674,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				487569.256756755,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				488650.337837836,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				489731.418918917,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				490812.499999998,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			],
+			[
+				491893.581081079,
+				[
+					[
+						"Alarm Gradient",
+						"left",
+						"0.375"
+					],
+					[
+						"Alarm Gradient",
+						"right",
+						"0.375"
+					]
+				]
+			]
+		],
+		"notes": [],
+		"splashSkin": null,
+		"validScore": false,
+		"gfVersion": "Ara",
+		"bpm": 222,
+		"arrowSkin": null,
+		"needsVoices": true,
+		"song": "Fuckedmination-VIP",
+		"dodgeEnabled": true
+	}
+}
