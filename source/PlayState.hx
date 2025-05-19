@@ -6511,6 +6511,7 @@ class PlayState extends MusicBeatState
 		{
 			bfDodging=false;
 			boyfriend.dance(); //V1.3 = This forces the animation to end when you are no longer safe as the animation keeps misleading people.
+			gf.dance(); //fixed to gf :)
 			if (SONG.notes[curSection] != null)
 			{
 				if (SONG.notes[curSection].mustHitSection && ClientPrefs.moveCameraWhenSing)
