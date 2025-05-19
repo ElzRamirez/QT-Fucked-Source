@@ -222,6 +222,8 @@ class PlayState extends MusicBeatState
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:BGSprite;
 
+	var luz:FlxSprite;
+
 	var upperBoppers:BGSprite;
 	var bottomBoppers:BGSprite;
 	var santa:BGSprite;
@@ -796,6 +798,29 @@ class PlayState extends MusicBeatState
 				dadDrainHealth=0.020;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "You try Vs zRamirez";
+
+				var stageBack:BGSprite = new BGSprite('StageHotfix/StageBack', -200, 0, 1.0, 1.0);
+				add(stageBack);
+
+				var stageFront:BGSprite = new BGSprite('StageHotfix/StageFront', -208, 1031, 1.0, 1.0);
+				add(stageFront);
+
+				var mueble:BGSprite = new BGSprite('StageHotfix/StageMueble', 569, 607, 1.0, 1.0);
+				mueble.setGraphicSize(Std.int(mueble.width * 1.1));
+				mueble.updateHitbox();
+				add(mueble);
+				//This is for trash PCs, like zRamirez for example
+				if(!ClientPrefs.lowQuality) {
+					var adornos:BGSprite = new BGSprite('StageHotfix/Adornos', -110, 305, 1.0, 1.0);
+					add(adornos);
+
+					var extra:BGSprite = new BGSprite('StageHotfix/StageExtra2', 290, 715, 1.0, 1.0);
+					add(extra);
+
+					luz = new FlxSprite(-200, 0).loadGraphic(Paths.image('StageHotfix/idk'));
+					luz.scrollFactor.set(1.0, 1.0);
+					luz.alpha=0.2;
+				}
 				
 
 			case 'street-termination':
@@ -1300,6 +1325,13 @@ class PlayState extends MusicBeatState
 				add(halloweenWhite);
 			}
 		}
+
+		switch(curStage)
+		{
+			case 'Stage-Rami':
+				add(luz);
+		}
+
 
 		#if LUA_ALLOWED
 		luaDebugGroup = new FlxTypedGroup<DebugLuaText>();
@@ -2335,7 +2367,7 @@ class PlayState extends MusicBeatState
 			}
 			startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 			{
-				if (!gfScared && tmr.loopsLeft % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing"))
+				if (!gfScared && tmr.loopsLeft % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing") && !bfDodging)
 				{
 					gf.dance();
 				}
@@ -6463,6 +6495,7 @@ class PlayState extends MusicBeatState
 			//boyfriend404.playAnim('dodge');
 		//else
 		boyfriend.playAnim('dodge');
+		gf.playAnim('dodge');
 
 		if (SONG.notes[curSection] != null)
 		{
@@ -6550,6 +6583,9 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
 				boyfriend.heyTimer = 0.59;
+				gf.playAnim('cheer', true);
+				gf.specialAnim = true;
+				gf.heyTimer = 0.59;
 				FlxG.sound.play(Paths.sound('hey'));
 				tauntCounter++;
 				trace("taunts: ",tauntCounter);
@@ -7462,7 +7498,7 @@ class PlayState extends MusicBeatState
 		iconP1.updateHitbox();
 		iconP2.updateHitbox();
 
-		if (!gfScared && curBeat % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing"))
+		if (!gfScared && !bfDodging && curBeat % gfSpeed == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing"))
 		{
 			gf.dance();
 		}

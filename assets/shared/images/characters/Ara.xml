@@ -1,29 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="Ara over GF V3.0.1.png">
+<TextureAtlas imagePath="Ara over GF QT REWIRED V3.5.png">
 	<!-- Created with Adobe Animate version 19.2.1.408 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Ara idle dance0000" x="8" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0001" x="8" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0002" x="773" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0003" x="1538" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0004" x="2303" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0005" x="2303" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0006" x="3068" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0007" x="3068" y="8" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0008" x="8" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0009" x="8" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0010" x="8" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance0011" x="8" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0000" x="773" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0001" x="773" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0002" x="1538" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0003" x="2303" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0004" x="3068" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0005" x="3068" y="712" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0006" x="8" y="1416" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0007" x="8" y="1416" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0008" x="773" y="1416" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0009" x="773" y="1416" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0010" x="773" y="1416" width="755" height="694"/>
-	<SubTexture name="Ara idle dance alt0011" x="773" y="1416" width="755" height="694"/>
+	<SubTexture name="Ara HEY!!0000" x="8" y="8" width="755" height="692"/>
+	<SubTexture name="Ara HEY!!0001" x="8" y="8" width="755" height="692"/>
+	<SubTexture name="Ara HEY!!0002" x="773" y="8" width="750" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0003" x="1533" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0004" x="1533" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0005" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0006" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0007" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0008" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0009" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0010" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara HEY!!0011" x="2288" y="8" width="745" height="688" frameX="-5" frameY="0" frameWidth="755" frameHeight="692"/>
+	<SubTexture name="Ara dodge0000" x="3043" y="8" width="755" height="699"/>
+	<SubTexture name="Ara dodge0001" x="3043" y="8" width="755" height="699"/>
+	<SubTexture name="Ara dodge0002" x="8" y="717" width="750" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0003" x="768" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0004" x="768" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0005" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0006" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0007" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0008" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0009" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0010" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0011" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0012" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0013" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0014" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0015" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0016" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0017" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0018" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0019" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0020" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0021" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0022" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara dodge0023" x="1523" y="717" width="745" height="691" frameX="-5" frameY="-4" frameWidth="755" frameHeight="699"/>
+	<SubTexture name="Ara idle dance0000" x="2278" y="717" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0001" x="2278" y="717" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0002" x="3043" y="717" width="750" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0003" x="8" y="1418" width="745" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0004" x="763" y="1418" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0005" x="1518" y="1418" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0006" x="2273" y="1418" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0007" x="2273" y="1418" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0008" x="3028" y="1418" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0009" x="3028" y="1418" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0010" x="3028" y="1418" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance0011" x="3028" y="1418" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0000" x="8" y="2118" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0001" x="8" y="2118" width="755" height="685" frameX="0" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0002" x="773" y="2118" width="750" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0003" x="1533" y="2118" width="745" height="681" frameX="-5" frameY="-9" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0004" x="2288" y="2118" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0005" x="3043" y="2118" width="745" height="684" frameX="-5" frameY="-6" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0006" x="8" y="2813" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0007" x="8" y="2813" width="745" height="689" frameX="-5" frameY="-1" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0008" x="763" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0009" x="763" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0010" x="763" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara idle dance alt0011" x="763" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0000" x="1518" y="2813" width="755" height="694"/>
+	<SubTexture name="Ara shocked0001" x="1518" y="2813" width="755" height="694"/>
+	<SubTexture name="Ara shocked0002" x="2283" y="2813" width="750" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0003" x="3043" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0004" x="3043" y="2813" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0005" x="8" y="3517" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0006" x="8" y="3517" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0007" x="8" y="3517" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0008" x="8" y="3517" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
+	<SubTexture name="Ara shocked0009" x="8" y="3517" width="745" height="690" frameX="-5" frameY="0" frameWidth="755" frameHeight="694"/>
 </TextureAtlas>

@@ -1,15 +1,48 @@
 {
 	"animations": [
 		{
+			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "Ara idle dance0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "idle-alt",
+			"fps": 24,
+			"name": "Ara idle dance alt0",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				5
+			],
 			"indices": [],
 			"fps": 24,
-			"anim": "idle",
+			"anim": "dodge",
 			"loop": false,
-			"name": "Ara idle dance0"
+			"name": "Ara dodge"
+		},
+		{
+			"offsets": [
+				0,
+				-2
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "cheer",
+			"loop": false,
+			"name": "Ara HEY"
 		},
 		{
 			"offsets": [
@@ -18,15 +51,15 @@
 			],
 			"indices": [],
 			"fps": 24,
-			"anim": "idle-alt",
-			"loop": false,
-			"name": "Ara idle dance alt0"
+			"anim": "shock",
+			"loop": true,
+			"name": "Ara shocked"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/Ara",
 	"position": [
-		0,
+		-10,
 		0
 	],
 	"healthicon": "Ara",
