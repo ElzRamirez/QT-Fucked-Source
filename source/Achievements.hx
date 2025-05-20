@@ -40,6 +40,8 @@ class Achievements {
 		["Alertastic!",							"Beat Alertmination from the legacy modpack.",							'alert_beat',				null, 			true],
 		["Master of the Style",					"Beat Censory SuperDrip on any difficulty from the legacy modpack.",	'drip_beat',				null, 			true],
 		["EXTREME LIMITS!",						"Beat Fuckedmination Corrupted from the legacy modpack.",				'fuckedcorrupted_beat',		null, 			true],
+		["WHAT ARE YOU DOING EVITO?!",			"Beat Fuckedmination VIP... (You Really Sick Man!).",					'fuckedvip_beat',			null, 			true],
+		["WHAT ARE YOU DOING EDU?!",			"Beat Fuckedmination Duet VIP... (WHAT THE FUCK?!).",					'fuckedduovip_beat',		null, 			true],
 		["Inhuman",								"Went into the depths of Freeplay...",									'freeplay_depths',			null, 			true],
 		["Playing with fire!",					"Try to taunt over 30 times or more in Fuckedmination and win.",		'taunter_master',			null, 			false],
 		["What a Funkin' Disaster!",			"Complete a Song with a rating lower than 20%.",						'ur_bad',					null, 			false],

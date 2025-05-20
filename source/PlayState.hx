@@ -7878,6 +7878,14 @@ class PlayState extends MusicBeatState
 						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-corrupted' && !usedPractice) {
 							unlock = true;
 						}
+					case 'fuckedvip_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-vip' && !usedPractice) {
+							unlock = true;
+						}
+					case 'fuckedduovip_beat':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice) {
+							unlock = true;
+						}
 					case 'badbattle_beat':
 						if(Paths.formatToSongPath(SONG.song) == 'bad-battle' && !usedPractice) {
 							unlock = true;
