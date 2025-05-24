@@ -24,7 +24,7 @@
 		},
 		{
 			"offsets": [
-				-135,
+				-130,
 				356
 			],
 			"loop": false,
@@ -35,7 +35,7 @@
 		},
 		{
 			"offsets": [
-				-80,
+				-81,
 				344
 			],
 			"loop": false,
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				-101,
-				373
+				-96,
+				381
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,7 +57,7 @@
 		},
 		{
 			"offsets": [
-				-62,
+				-74,
 				303
 			],
 			"loop": false,
@@ -68,7 +68,7 @@
 		},
 		{
 			"offsets": [
-				-65,
+				-61,
 				352
 			],
 			"loop": false,
@@ -79,8 +79,8 @@
 		},
 		{
 			"offsets": [
-				45,
-				349
+				47,
+				346
 			],
 			"loop": false,
 			"fps": 24,
@@ -90,8 +90,8 @@
 		},
 		{
 			"offsets": [
-				-40,
-				390
+				-35,
+				391
 			],
 			"loop": false,
 			"fps": 24,
@@ -112,7 +112,7 @@
 		}
 	],
 	"no_antialiasing": false,
-	"image": "characters/zRamirez",
+	"image": "characters/zRamirez-v2",
 	"position": [
 		-5,
 		465

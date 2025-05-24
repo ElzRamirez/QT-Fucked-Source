@@ -40,8 +40,6 @@ class Achievements {
 		["Alertastic!",							"Beat Alertmination from the legacy modpack.",							'alert_beat',				null, 			true],
 		["Master of the Style",					"Beat Censory SuperDrip on any difficulty from the legacy modpack.",	'drip_beat',				null, 			true],
 		["EXTREME LIMITS!",						"Beat Fuckedmination Corrupted from the legacy modpack.",				'fuckedcorrupted_beat',		null, 			true],
-		["WHAT ARE YOU DOING EVITO?!",			"Beat Fuckedmination VIP... (You Really Sick Man!).",					'fuckedvip_beat',			null, 			true],
-		["WHAT ARE YOU DOING EDU?!",			"Beat Fuckedmination Duet VIP... (WHAT THE FUCK?!).",					'fuckedduovip_beat',		null, 			true],
 		["Inhuman",								"Went into the depths of Freeplay...",									'freeplay_depths',			null, 			true],
 		["Playing with fire!",					"Try to taunt over 30 times or more in Fuckedmination and win.",		'taunter_master',			null, 			false],
 		["What a Funkin' Disaster!",			"Complete a Song with a rating lower than 20%.",						'ur_bad',					null, 			false],
@@ -51,7 +49,12 @@ class Achievements {
 		["Alertastic but Classic?",				"Beat Alertmination Classic from the legacy modpack.",					'alertclassic_beat',		null, 			true],
 		["Baby steps",							"Complete QT Duo week on Fucked Difficulty from the legacy modpack.",	'qtduo_week',				null, 			true],
 		["Conformation",						"Beat Fuckedmination Duet from the legacy modpack.",					'fuckedmination_duo_beat',	null, 			true],
-		["You r perfection",					"Beat Cessation Duet from the legacy modpack.",							'cessation_duo_beat',		null, 			true]
+		["You r perfection",					"Beat Cessation Duet from the legacy modpack.",							'cessation_duo_beat',		null, 			true],
+		["WHAT ARE YOU DOING EVITO?!",			"Beat Fuckedmination VIP... (You Really Sick Man!).",					'fuckedvip_beat',			null, 			true],
+		["WHAT ARE YOU DOING EDU?!",			"Beat Fuckedmination Duet VIP... (WHAT THE FUCK?!).",					'fuckedduovip_beat',		null, 			true],
+		["PLEASE TOUCH GRASS!!!",				"Beat Fuckedmination VIP on Fuck You Difficulty...",					'fuckedvip_fucked',			null, 			true],
+		["DEFINITVAMENTE ERES UN FRACASADO!",	"Nisiquiera me tomaré el tiempo de traducir este logro de mierda por que estoy un 99% seguro de que no fuiste capaz de pasarte esto sin usar algún tipo de script, hack o modificación, pero si realmente conseguiste pasarte esto legalmente, solamente dejame decirte una cosa, deja la puta pc y sal a tocar un poco de pasto puto fracasado de mierda.",	'fuckedduovip_fucked',		null, 			true],
+		//si consigues el ultimo logro de este mod de mierda en verdad te daré tu medalla del mayor fracasado del internet
 		//Me pregunto quien sería el jodidamente enfermo que llegue a conseguir estos logros
 	];
 

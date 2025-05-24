@@ -794,10 +794,15 @@ class PlayState extends MusicBeatState
 				add(qt_tv01);
 				qt_tv01.animation.play('idle');
 
-			case 'Stage-Rami':
+			case 'Stage-Rami' | 'Stage-Rami-test':
 				dadDrainHealth=0.020;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "You try Vs zRamirez";
+				if (SONG.song.toLowerCase()=='test'){	
+					dadDrainHealth=0.020;
+					discordDifficultyOverrideShouldUse = true;
+					discordDifficultyOverride = "Easter Egg? i don't know";
+				}
 
 				var stageBack:BGSprite = new BGSprite('StageHotfix/StageBack', -200, 0, 1.0, 1.0);
 				add(stageBack);
@@ -809,18 +814,17 @@ class PlayState extends MusicBeatState
 				mueble.setGraphicSize(Std.int(mueble.width * 1.1));
 				mueble.updateHitbox();
 				add(mueble);
-				//This is for trash PCs, like zRamirez for example
-				if(!ClientPrefs.lowQuality) {
-					var adornos:BGSprite = new BGSprite('StageHotfix/Adornos', -110, 305, 1.0, 1.0);
-					add(adornos);
 
-					var extra:BGSprite = new BGSprite('StageHotfix/StageExtra2', 290, 715, 1.0, 1.0);
-					add(extra);
+				//bro, do you really need the low quality option?
+				var adornos:BGSprite = new BGSprite('StageHotfix/Adornos', -110, 305, 1.0, 1.0);
+				add(adornos);
 
-					luz = new FlxSprite(-200, 0).loadGraphic(Paths.image('StageHotfix/idk'));
-					luz.scrollFactor.set(1.0, 1.0);
-					luz.alpha=0.2;
-				}
+				var extra:BGSprite = new BGSprite('StageHotfix/StageExtra2', 290, 715, 1.0, 1.0);
+				add(extra);
+
+				luz = new FlxSprite(-200, 0).loadGraphic(Paths.image('StageHotfix/idk'));
+				luz.scrollFactor.set(1.0, 1.0);
+				luz.alpha=0.2;
 				
 
 			case 'street-termination':
@@ -1328,7 +1332,7 @@ class PlayState extends MusicBeatState
 
 		switch(curStage)
 		{
-			case 'Stage-Rami':
+			case 'Stage-Rami' | 'Stage-Rami-test':
 				add(luz);
 		}
 
@@ -6495,7 +6499,10 @@ class PlayState extends MusicBeatState
 			//boyfriend404.playAnim('dodge');
 		//else
 		boyfriend.playAnim('dodge');
-		gf.playAnim('dodge');
+		if (gf.animOffsets.exists('dodge'))
+		{
+			gf.playAnim('dodge');
+		}
 
 		if (SONG.notes[curSection] != null)
 		{
@@ -6628,8 +6635,18 @@ class PlayState extends MusicBeatState
 				note.destroy();
 			}
 		});
+		//now this var are to fix miss animation from gf if you have enabled the ghost tapping
+		if (!boyfriend.stunned)
+		{
+			if (combo > 10 && gf != null && gf.animOffsets.exists('sad'))
+			{
+				gf.playAnim('sad');
+				gf.specialAnim = true;
+				trace('You really hurts GF :(');
+			}
+		}
 		combo = 0;
-														//Less miss health when stunned since you can't really do anything while stunned and it'll be too unfair to deal full damage.
+		//Less miss health when stunned since you can't really do anything while stunned and it'll be too unfair to deal full damage.
 		health -= (daNote.missHealth * healthLoss * healthLossMultiplier)  * (boyfriend.stunned ? 0.195 : 1);
 		causeOfDeath = 'health';
 		if(instakillOnMiss)
@@ -6678,7 +6695,7 @@ class PlayState extends MusicBeatState
 
 			if(ClientPrefs.ghostTapping) return;
 
-			if (combo > 5 && gf.animOffsets.exists('sad'))
+			if (combo > 5 && gf.animOffsets.exists('sad') && !ClientPrefs.ghostTapping)
 			{
 				gf.playAnim('sad');
 			}
@@ -7879,11 +7896,19 @@ class PlayState extends MusicBeatState
 							unlock = true;
 						}
 					case 'fuckedvip_beat':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-vip' && !usedPractice) {
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-vip' && !usedPractice && storyDifficulty==1) {
 							unlock = true;
 						}
 					case 'fuckedduovip_beat':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice) {
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice && storyDifficulty==1) {
+							unlock = true;
+						}
+					case 'fuckedvip_fucked':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-vip' && !usedPractice && storyDifficulty==2) {
+							unlock = true;
+						}
+					case 'fuckedduovip_fucked':
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice && storyDifficulty==2) {
 							unlock = true;
 						}
 					case 'badbattle_beat':
