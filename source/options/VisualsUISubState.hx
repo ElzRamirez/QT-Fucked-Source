@@ -41,6 +41,22 @@ class VisualsUISubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('Note Splashes Texture:',
+			"Choose what texture you want to be used in the Note Splashes.",
+			'noteSplashesTexture',
+			'string',
+			'Lightning',
+			['Vanilla', 'Psych', 'Diamond', 'Electric', 'Sparkles', 'Lightning']);
+		addOption(option);
+
+		var option:Option = new Option('Note Skin Texture:',
+			"Choose what texture you want to be used in on the Notes.",
+			'noteSkin',
+			'string',
+			'Vanilla',
+			['Vanilla', 'Future', 'Chip', 'Bar', 'Diamond', 'Square', 'DoritosPizzerola']);
+		addOption(option);
+		
 		var option:Option = new Option('Hurt note transparency',
 			"Allows you to customise how opaque the hurt notes are to allow you to read charts easier.",
 			'hurtNoteAlpha',
