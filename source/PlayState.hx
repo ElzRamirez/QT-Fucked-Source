@@ -5015,23 +5015,12 @@ class PlayState extends MusicBeatState
 				}
 
 				//Checking if it should be an insta-kill sawblade.
-				if(ClientPrefs.sawsInstakill){
-					KBATTACK(true, soundToPlay, true);
-				}else{
-					KBATTACK(true, soundToPlay, false);
-				}
+				KBATTACK(true, soundToPlay, ClientPrefs.sawsInstakill);
 
 			case 'KB_AttackFireDOUBLE':
 				//Kept for legacy support
-				if(value1=='1'){
-					KBATTACK(false);
-				}else{
-					if(ClientPrefs.sawsInstakill){
-						KBATTACK(true, "hazard/attack-double", true);
-					}else{
-						KBATTACK(true, "hazard/attack-double", false);
-					}
-				}
+				if (value1 == '1') KBATTACK(false);
+				else KBATTACK(true, "hazard/attack-double", ClientPrefs.sawsInstakill);
 			case 'KB_Pincer':
 				switch(Std.parseInt(value1)){
 					//An awful way to convert the modchart shit from lua, but fuck you.
