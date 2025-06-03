@@ -882,17 +882,17 @@ class PlayState extends MusicBeatState
 				if (SONG.song.toLowerCase()=='fuckedmination-vip'){	
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "I REALLY HATE MY LIFE";
-					dadDrainHealth=0.01493;
-					healthLossMultiplier=1.05;
-					healthGainMultiplier=1.05;
+					dadDrainHealth=0;
+					healthLossMultiplier=0.85;
+					healthGainMultiplier=1.3;
 				}
 
 				if (SONG.song.toLowerCase()=='fuckedmination-duet-vip'){	
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "I REALLY HATE MY LIFE";
-					dadDrainHealth=0.01493;
+					dadDrainHealth=0;
 					healthLossMultiplier=1.05;
-					healthGainMultiplier=1.05;
+					healthGainMultiplier=1.1;
 				}
 				
 				if(!ClientPrefs.lowQuality){
@@ -4177,7 +4177,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = 'hazard/attack', instaKill:Bool = false){
+	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = 'hazard/attack', sawsInstakill:Bool = false){
 		if(state){
 			if(!qtSawbladeAdded){
 				add(kb_attack_saw);
@@ -4205,7 +4205,7 @@ class PlayState extends MusicBeatState
 
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
-						if((instaKill || sawbladeHits > 3 || (storyDifficulty==2 && SONG.song.toLowerCase() == "fuckedmination"))){
+						if((sawsInstakill || sawbladeHits > 3 || (storyDifficulty==2 && SONG.song.toLowerCase() == "fuckedmination"))){
 							//MURDER THE BITCH!
 							trace("Instakill sawblade missed");
 							health -= 404;
@@ -4269,7 +4269,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	public function KBATTACK(state:Bool = false, soundToPlay:String = 'hazard/attack', instaKill:Bool = false):Void
+	public function KBATTACK(state:Bool = false, soundToPlay:String = 'hazard/attack', sawsInstakill:Bool = false):Void
 	{
 		if(state)	FlxG.sound.play(Paths.sound(soundToPlay),0.765);
 
@@ -4279,10 +4279,10 @@ class PlayState extends MusicBeatState
 		}
 
 		if(ClientPrefs.noteOffset <= 0) {
-			kbATTACK_DELAYED(state,soundToPlay,instaKill);
+			kbATTACK_DELAYED(state,soundToPlay,sawsInstakill);
 		} else {
 			new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-				kbATTACK_DELAYED(state,soundToPlay,instaKill);
+				kbATTACK_DELAYED(state,soundToPlay,sawsInstakill);
 			});
 		}	
 	}
@@ -5015,7 +5015,7 @@ class PlayState extends MusicBeatState
 				}
 
 				//Checking if it should be an insta-kill sawblade.
-				if(value2=='1' || value2=='instakill'){
+				if(ClientPrefs.sawsInstakill){
 					KBATTACK(true, soundToPlay, true);
 				}else{
 					KBATTACK(true, soundToPlay, false);
@@ -5026,7 +5026,7 @@ class PlayState extends MusicBeatState
 				if(value1=='1'){
 					KBATTACK(false);
 				}else{
-					if(value2=='1' || value2=='instakill'){
+					if(ClientPrefs.sawsInstakill){
 						KBATTACK(true, "hazard/attack-double", true);
 					}else{
 						KBATTACK(true, "hazard/attack-double", false);
@@ -7900,7 +7900,7 @@ class PlayState extends MusicBeatState
 							unlock = true;
 						}
 					case 'fuckedduovip_beat':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice && storyDifficulty==1) {
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duet-vip' && !usedPractice && storyDifficulty==1) {
 							unlock = true;
 						}
 					case 'fuckedvip_fucked':
@@ -7908,7 +7908,7 @@ class PlayState extends MusicBeatState
 							unlock = true;
 						}
 					case 'fuckedduovip_fucked':
-						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duo-vip' && !usedPractice && storyDifficulty==2) {
+						if(Paths.formatToSongPath(SONG.song) == 'fuckedmination-duet-vip' && !usedPractice && storyDifficulty==2) {
 							unlock = true;
 						}
 					case 'badbattle_beat':
