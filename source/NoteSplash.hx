@@ -4,11 +4,53 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 
+using StringTools;
+
+class NoteSplashData
+{
+	public function new() {}
+
+	public var animOffsets:Map<String, Array<Float>> = [];
+	public function getOffset(name:String):Array<Float>
+		return animOffsets[name];
+
+	public function setOffset(name:String, pos:Array<Float>):Array<Float>
+	{
+		animOffsets.set(name, pos);
+		return getOffset(name);
+	}
+
+	public var fps:Array<Int> = null;
+}
+
+class NoteSplashOffsetHandler
+{
+	public var skins:Map<String, NoteSplashData> = [];
+
+	public function new() {}
+
+	public function getSkin(name:String):NoteSplashData
+		return skins[name];
+
+	public function setSkin(name:String, offset:NoteSplashData)
+	{
+		skins.set(name, offset);
+		return getSkin(name);
+	}
+
+	public function getSkinOffset(name:String, animNum:String):Array<Float>
+		return getSkin(name).getOffset(animNum);
+
+	public function setSkinOffset(skin:String, name:String, pos:Array<Float>):Array<Float>
+		return getSkin(skin).setOffset(name, pos);
+}
+
 class NoteSplash extends FlxSprite
 {
 	public var colorSwap:ColorSwap = null;
 	private var idleAnim:String;
 	private var textureLoaded:String = null;
+	public static var offsetHandler:NoteSplashOffsetHandler = new NoteSplashOffsetHandler();
 
 	public function new(x:Float = 0, y:Float = 0, ?note:Int = 0) {
 		super(x, y);
@@ -17,6 +59,39 @@ class NoteSplash extends FlxSprite
 		if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) skin = PlayState.SONG.splashSkin;
 
 		loadAnims(skin);
+
+		final data:NoteSplashData = new NoteSplashData();
+		switch (skin)
+		{
+			case 'noteSplashShit/Lightning':
+				data.fps = [22, 26];
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1'])
+					data.setOffset(anim, [-15, -19]);
+			case 'noteSplashShit/Diamond':
+				data.fps = [22, 26];
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1', 'note0-2', 'note1-2', 'note2-2', 'note3-2'])
+				{
+					if (anim.contains('-1'))
+						data.setOffset(anim, [-28, -52]);
+					else
+						data.setOffset(anim, [-16, -55]);
+				}
+			case 'noteSplashShit/Psych':
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1', 'note0-2', 'note1-2', 'note2-2', 'note3-2'])
+					data.setOffset(anim, [0, 0]);
+			case 'noteSplashShit/Vanilla':
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1', 'note0-2', 'note1-2', 'note2-2', 'note3-2'])
+					data.setOffset(anim, [-35, -27]);
+			case 'noteSplashShit/Electric':
+				data.fps = [22, 26];
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1'])
+					data.setOffset(anim, [-44, -54]);
+			case 'noteSplashShit/Sparkles':
+				data.fps = [22, 26];
+				for (anim in ['note0-1', 'note1-1', 'note2-1', 'note3-1'])
+					data.setOffset(anim, [-48, -48]);
+		}
+		offsetHandler.setSkin(skin, data);
 		
 		colorSwap = new ColorSwap();
 		shader = colorSwap.shader;
@@ -40,11 +115,26 @@ class NoteSplash extends FlxSprite
 		colorSwap.hue = hueColor;
 		colorSwap.saturation = satColor;
 		colorSwap.brightness = brtColor;
+
+		final name:String = checkAnim(note);
+		animation.play(name, true);
 		offset.set(10, 10);
 
-		var animNum:Int = FlxG.random.int(1, 2);
-		animation.play('note' + note + '-' + animNum, true);
-		if(animation.curAnim != null)animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
+		final animOffsets:Array<Float> = offsetHandler.getSkinOffset(texture, name);
+		if (animOffsets != null) 
+		{
+			offset.x += animOffsets[0];
+			offset.y += animOffsets[1];
+		}
+
+		final fpsArray:Array<Int> = offsetHandler.getSkin(texture).fps;
+		if(animation.curAnim != null) animation.curAnim.frameRate = fpsArray == null ? 24 + FlxG.random.int(-2, 2) : FlxG.random.int(fpsArray[0], fpsArray[1]);
+	}
+
+	function checkAnim(note:Int):String {
+		if (animation.getByName('note$note-2') == null)
+			return 'note$note-1';
+		return 'note$note-' + FlxG.random.int(1, 2);
 	}
 
 	function loadAnims(skin:String) {
