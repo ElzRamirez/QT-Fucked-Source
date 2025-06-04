@@ -4205,7 +4205,7 @@ class PlayState extends MusicBeatState
 
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
-						if((sawsInstakill || sawbladeHits > 7 || (storyDifficulty==2 && SONG.song.toLowerCase() == "fuckedmination"))){
+						if((sawsInstakill || sawbladeHits > 7)){
 							//MURDER THE BITCH!
 							trace("Instakill sawblade missed");
 							health -= 404;
