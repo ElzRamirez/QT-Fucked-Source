@@ -1980,11 +1980,9 @@
 		"gfVersion": "Ara",
 		"player3": null,
 		"dodgeEnabled": false,
-		"splashSkin": "noteSplashes",
 		"song": "Last-Smile",
 		"stage": "street-real",
 		"validScore": true,
-		"arrowSkin": "",
 		"needsVoices": true,
 		"speed": 2,
 		"bpm": 160

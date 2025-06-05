@@ -7571,11 +7571,9 @@
 		"gfVersion": "gf-ramirez",
 		"player3": null,
 		"dodgeEnabled": false,
-		"splashSkin": "noteSplashes",
 		"song": "Bad Battle",
 		"stage": "Stage-Rami",
 		"validScore": true,
-		"arrowSkin": "",
 		"needsVoices": true,
 		"speed": 3,
 		"bpm": 178

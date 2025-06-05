@@ -891,8 +891,8 @@ class PlayState extends MusicBeatState
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "I REALLY HATE MY LIFE";
 					dadDrainHealth=0;
-					healthLossMultiplier=1.05;
-					healthGainMultiplier=1.1;
+					healthLossMultiplier=0.9;
+					healthGainMultiplier=1.3;
 				}
 				
 				if(!ClientPrefs.lowQuality){
@@ -6889,7 +6889,7 @@ class PlayState extends MusicBeatState
 			var altAnim:String = "";
 
 			//Makes KB's strums move back a bit to show his power... or something idfk it looks cool okay? -Haz
-			if(dad.curCharacter.startsWith('kb') && !note.isSustainNote){
+			if((dad.curCharacter.startsWith('kb') || dad.curCharacter.startsWith('zramirez-kb') || dad.curCharacter.startsWith('kb-angry') || dad.curCharacter.startsWith('kb-angry alt') || dad.curCharacter.startsWith('kb-variant') || dad.curCharacter.startsWith('alert_v2')) && !note.isSustainNote){
 				opponentStrums.members[note.noteData].y = hazardModChartDefaultStrumY[note.noteData] + (ClientPrefs.downScroll ? 22: -22);
 				FlxTween.tween(opponentStrums.members[note.noteData], {y: hazardModChartDefaultStrumY[note.noteData]}, 0.125, {ease: FlxEase.cubeOut});
 			}

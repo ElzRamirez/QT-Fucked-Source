@@ -4408,11 +4408,9 @@
 			]
 		],
 		"notes": [],
-		"splashSkin": null,
 		"validScore": false,
 		"gfVersion": "bfSpeaker",
 		"bpm": 222,
-		"arrowSkin": null,
 		"needsVoices": true,
 		"song": "Extermination V1",
 		"dodgeEnabled": true
