@@ -1,6 +1,6 @@
 {
 	"song": {
-		"speed": 1,
+		"speed": 3,
 		"stage": "Stage-Rami",
 		"player1": "bf",
 		"player2": "zRamirez-VSZ",
@@ -453,6 +453,11 @@
 						"Camera_Tween_Zoom",
 						"0.83",
 						""
+					],
+					[
+						"Move Camera When Singing",
+						"0",
+						""
 					]
 				]
 			],
@@ -493,11 +498,11 @@
 			]
 		],
 		"notes": [],
-		"splashSkin": "noteSplashes",
+		"splashSkin": null,
 		"validScore": false,
 		"gfVersion": "gf-ramirez",
 		"bpm": 178,
-		"arrowSkin": "",
+		"arrowSkin": null,
 		"needsVoices": true,
 		"song": "Bad Battle",
 		"dodgeEnabled": false
