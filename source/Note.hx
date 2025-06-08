@@ -94,8 +94,8 @@ class Note extends FlxSprite
 			switch(value) {
 				case 'Hurt Note':
 					ignoreNote = mustPress;
-					reloadNote('HURT');
-					noteSplashTexture = 'HURTnoteSplashes';
+					reloadNote('noteShit/', 'HURT-', ClientPrefs.noteSkin);
+					noteSplashTexture = 'noteSplashShit/Hurt';
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
@@ -113,8 +113,8 @@ class Note extends FlxSprite
 					ignoreNote = mustPress;
 					copyAlpha=false;
 					alpha=0; //Makes them invisible.
-					reloadNote('HURT');
-					noteSplashTexture = 'HURTnoteSplashes';
+					reloadNote('noteShit/', 'HURT-', ClientPrefs.noteSkin);
+					noteSplashTexture = 'noteSplashShit/Hurt';
 					colorSwap.hue = 0;
 					colorSwap.saturation = 0;
 					colorSwap.brightness = 0;
