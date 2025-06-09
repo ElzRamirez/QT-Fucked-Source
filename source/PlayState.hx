@@ -193,6 +193,7 @@ class PlayState extends MusicBeatState
 	public var iconP1:HealthIcon;
 	public var iconP2:HealthIcon;
 	public var camHUD:FlxCamera;
+	public var camPincers:FlxCamera;
 	public var camGame:FlxCamera;
 	public var camOther:FlxCamera;
 	public var cameraSpeed:Float = 1;
@@ -456,12 +457,19 @@ class PlayState extends MusicBeatState
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
+		camPincers = new FlxCamera();
+        camPincers.bgColor.alpha = 0;
+        camPincers.x -= 100;
+        camPincers.y -= 100;
+        camPincers.width += 200;
+        camPincers.height += 200;
 		camOther = new FlxCamera();
 		camHUD.bgColor.alpha = 0;
 		camOther.bgColor.alpha = 0;
 
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
+		FlxG.cameras.add(camPincers);
 		FlxG.cameras.add(camOther);
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
@@ -1258,19 +1266,19 @@ class PlayState extends MusicBeatState
 		tauntCounter = 0;
 
 		//Pincer shit for moving notes around for a little bit of trollin'
-		pincer1 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer1 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer1.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer1.scrollFactor.set();
 		
-		pincer2 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer2 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer2.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer2.scrollFactor.set();
 		
-		pincer3 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer3 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer3.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer3.scrollFactor.set();
 
-		pincer4 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer4 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer4.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer4.scrollFactor.set();
 		
@@ -3368,6 +3376,7 @@ class PlayState extends MusicBeatState
 				case 2:
 					//Screen shaking effect (Termination)
 					camHUD.angle = Math.sin((Conductor.songPosition/Conductor.crochet)*Math.PI) * 5;
+					camPincers.angle = Math.sin((Conductor.songPosition/Conductor.crochet)*Math.PI) * 5;
 
 				default:
 					//do nothing
@@ -3547,6 +3556,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom = FlxMath.lerp(defaultCamZoom, FlxG.camera.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
 			camHUD.zoom = FlxMath.lerp(1, camHUD.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
+			camPincers.zoom = FlxMath.lerp(1, camPincers.zoom, CoolUtil.boundTo(1 - (elapsed * 3.125), 0, 1));
 		}
 
 		FlxG.watch.addQuick("beatShit", curBeat);
@@ -4294,10 +4304,10 @@ class PlayState extends MusicBeatState
 		//1 = BF far left, 4 = BF far right. This only works for BF!
 		//Update! 5 now refers to the far left lane (KB side). Mainly used for the shaking section or whatever.
 		//UPDATE 2! 6 now refers to the far right lane (KB side). Used for the screen shasking effect when in middle scroll.
-		pincer1.cameras = [camHUD];
-		pincer2.cameras = [camHUD];
-		pincer3.cameras = [camHUD];
-		pincer4.cameras = [camHUD];
+		pincer1.cameras = [camPincers];
+		pincer2.cameras = [camPincers];
+		pincer3.cameras = [camPincers];
+		pincer4.cameras = [camPincers];
 
 		//This is probably the most disgusting code I've ever written in my life.
 		//OH MY FUCKING GOD HAZARD, YOU DIDN'T EVEN FIX THIS AWFUL SHIT? WHY?! FUCK YOU FOR LEAVING THIS HERE! -Future Haz
@@ -5203,6 +5213,7 @@ class PlayState extends MusicBeatState
 							KBPINCER_PREPARE(4,true);
 						hazardModChartEffect=0;
 						camHUD.angle=0;
+						camPincers.angle=0;
 				}
 
 			case 'ShaderTesting':
@@ -5448,6 +5459,7 @@ class PlayState extends MusicBeatState
 
 					FlxG.camera.zoom += camZoom;
 					camHUD.zoom += hudZoom;
+					camPincers.zoom += hudZoom;
 				}
 
 			case 'Move Camera When Singing':
@@ -7497,6 +7509,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.camera.zoom += 0.015;
 			camHUD.zoom += 0.03;
+			camPincers.zoom += 0.03;
 		}
 
 		iconP1.scale.set(1.2, 1.2);
@@ -7532,6 +7545,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 				}
 			case 'fuckedmination':
@@ -7541,6 +7555,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 				}
 				else if(curBeat >= 512 && curBeat <= 640) //1st drop
@@ -7549,6 +7564,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 				}
 				else if(curBeat >= 832 && curBeat <= 1088) //last drop
@@ -7557,6 +7573,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 				}
 			case 'censory-fuckedload':
@@ -7575,6 +7592,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 	
 					//Gas Release effect
@@ -7589,6 +7607,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 					//Gas Release effect
 					if (curBeat % 4 == 0 && !ClientPrefs.lowQuality)
@@ -7602,6 +7621,7 @@ class PlayState extends MusicBeatState
 					{
 						FlxG.camera.zoom += 0.0075;
 						camHUD.zoom += 0.015;
+						camPincers.zoom += 0.015;
 					}
 
 					//Gas Release effect
@@ -7614,6 +7634,7 @@ class PlayState extends MusicBeatState
 				else if((curBeat == 976 || curBeat == 992) && camZooming && FlxG.camera.zoom < 1.35 && ClientPrefs.camZooms){ //Extra zooms for distorted kicks at end
 					FlxG.camera.zoom += 0.031;
 					camHUD.zoom += 0.062;
+					camPincers.zoom += 0.062;
 				}else if(curBeat == 702 && !ClientPrefs.lowQuality){
 					qt_gas01.animation.play('burst');
 					qt_gas02.animation.play('burst');
