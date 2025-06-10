@@ -291,6 +291,8 @@ class PlayState extends MusicBeatState
 
 	var sawbladeCounter:Int = 0; //For testing purposes
 
+	public static var maxSawbladeHits:Int = 0;
+
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
 
