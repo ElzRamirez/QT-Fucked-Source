@@ -91,6 +91,7 @@ class PlayState extends MusicBeatState
 	public var shader_chromatic_abberation:ChromaticAberrationEffect;
 	public var camGameShaders:Array<ShaderEffect> = [];
 	public var camHUDShaders:Array<ShaderEffect> = [];
+	public var camPincersShaders:Array<ShaderEffect> = [];
 	public var camOtherShaders:Array<ShaderEffect> = [];
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;
@@ -1266,19 +1267,19 @@ class PlayState extends MusicBeatState
 		tauntCounter = 0;
 
 		//Pincer shit for moving notes around for a little bit of trollin'
-		pincer1 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer1 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer1.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer1.scrollFactor.set();
 		
-		pincer2 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer2 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer2.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer2.scrollFactor.set();
 		
-		pincer3 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer3 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer3.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer3.scrollFactor.set();
 
-		pincer4 = new FlxSprite(100, 100).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer4 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer4.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer4.scrollFactor.set();
 		
@@ -1301,7 +1302,7 @@ class PlayState extends MusicBeatState
 			pincer3.offset.set(218,240);
 			pincer4.offset.set(218,240);
 		}
-
+		
 		//For the 'alarm' effect. Only added if flashling lights is allowed and low quality is off.
 		if(ClientPrefs.flashing && !ClientPrefs.lowQuality){
 			hazardAlarmLeft = new BGSprite('hazard/inhuman-port/back-Gradient', -600, -480, 0.5, 0.5);
@@ -2031,6 +2032,13 @@ class PlayState extends MusicBeatState
 						newCamEffects.push(new ShaderFilter(i.shader));
 						}
 						camHUD.setFilters(newCamEffects);
+				case 'campincers' | 'pincers':
+						camPincersShaders.push(effect);
+						var newCamEffects:Array<BitmapFilter>=[]; // IT SHUTS HAXE UP IDK WHY BUT WHATEVER IDK WHY I CANT JUST ARRAY<SHADERFILTER>
+						for(i in camPincersShaders){
+						newCamEffects.push(new ShaderFilter(i.shader));
+						}
+						camPincers.setFilters(newCamEffects);
 				case 'camother' | 'other':
 						camOtherShaders.push(effect);
 						var newCamEffects:Array<BitmapFilter>=[]; // IT SHUTS HAXE UP IDK WHY BUT WHATEVER IDK WHY I CANT JUST ARRAY<SHADERFILTER>
@@ -2072,6 +2080,13 @@ class PlayState extends MusicBeatState
     			  newCamEffects.push(new ShaderFilter(i.shader));
     			}
     			camHUD.setFilters(newCamEffects);
+			case 'campincers' | 'pincers': 
+    			camPincersShaders.remove(effect);
+    			var newCamEffects:Array<BitmapFilter>=[];
+    			for(i in camPincersShaders){
+    			  newCamEffects.push(new ShaderFilter(i.shader));
+    			}
+    			camPincers.setFilters(newCamEffects);
 			case 'camother' | 'other': 
 				camOtherShaders.remove(effect);
 				var newCamEffects:Array<BitmapFilter>=[];
@@ -2110,6 +2125,10 @@ class PlayState extends MusicBeatState
 				camHUDShaders = [];
 				var newCamEffects:Array<BitmapFilter>=[];
 				camHUD.setFilters(newCamEffects);
+			case 'campincers' | 'pincers': 
+				camPincersShaders = [];
+				var newCamEffects:Array<BitmapFilter>=[];
+				camPincers.setFilters(newCamEffects);
 			case 'camother' | 'other': 
 				camOtherShaders = [];
 				var newCamEffects:Array<BitmapFilter>=[];
@@ -2550,6 +2569,7 @@ class PlayState extends MusicBeatState
 			sawbladeChroma = new ChromaticAberrationEffect(0);
 			addShaderToCamera("game", sawbladeChroma);
 			addShaderToCamera("hud", sawbladeChroma);
+			addShaderToCamera("pincers", sawbladeChroma);
 		}
 
 		if(SONG.song.toLowerCase() == "interlope"){ 
@@ -4199,6 +4219,7 @@ class PlayState extends MusicBeatState
 			sawbladeChromaIntensity = 0.012;
 			FlxG.camera.shake(0.001675,0.6);
 			camHUD.shake(0.001675,0.2);
+			camPincers.shake(0.001675,0.2);
 			if(cpuControlled)
 			{
 				bfDodge();
@@ -4309,6 +4330,8 @@ class PlayState extends MusicBeatState
 		pincer3.cameras = [camPincers];
 		pincer4.cameras = [camPincers];
 
+		var offset:Float = 100;
+
 		//This is probably the most disgusting code I've ever written in my life.
 		//OH MY FUCKING GOD HAZARD, YOU DIDN'T EVEN FIX THIS AWFUL SHIT? WHY?! FUCK YOU FOR LEAVING THIS HERE! -Future Haz
 		//All because I can't be bothered to learn arrays and shit.
@@ -4317,19 +4340,19 @@ class PlayState extends MusicBeatState
 			pincer1.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[4].x,strumLineNotes.members[4].y+500);
+					pincer1.setPosition(strumLineNotes.members[4].x+offset,strumLineNotes.members[4].y+500+offset);
 					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
 				}
 			}else{
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[4].x,strumLineNotes.members[4].y-500);
+					pincer1.setPosition(strumLineNotes.members[4].x+offset,strumLineNotes.members[4].y-500+offset);
 					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[4].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
 				}
 			}
 		}
@@ -4337,19 +4360,19 @@ class PlayState extends MusicBeatState
 			pincer1.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[0].x,strumLineNotes.members[0].y+500);
+					pincer1.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y+500+offset);
 					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
 				}
 			}else{
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[0].x,strumLineNotes.members[0].y-500);
+					pincer1.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y-500+offset);
 					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
 				}
 			}
 		}
@@ -4357,19 +4380,19 @@ class PlayState extends MusicBeatState
 			pincer2.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer2.setPosition(strumLineNotes.members[3].x,strumLineNotes.members[3].y+500);
+					pincer2.setPosition(strumLineNotes.members[3].x+offset,strumLineNotes.members[3].y+500+offset);
 					add(pincer2);
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
 				}
 			}else{
 				if(!goAway){
-					pincer2.setPosition(strumLineNotes.members[3].x,strumLineNotes.members[3].y-500);
+					pincer2.setPosition(strumLineNotes.members[3].x+offset,strumLineNotes.members[3].y-500+offset);
 					add(pincer2);
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[3].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
 				}
 			}
 		}
@@ -4377,19 +4400,19 @@ class PlayState extends MusicBeatState
 			pincer2.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer2.setPosition(strumLineNotes.members[5].x,strumLineNotes.members[5].y+500);
+					pincer2.setPosition(strumLineNotes.members[5].x+offset,strumLineNotes.members[5].y+500+offset);
 					add(pincer2);
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
 				}
 			}else{
 				if(!goAway){
-					pincer2.setPosition(strumLineNotes.members[5].x,strumLineNotes.members[5].y-500);
+					pincer2.setPosition(strumLineNotes.members[5].x+offset,strumLineNotes.members[5].y-500+offset);
 					add(pincer2);
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
+					FlxTween.tween(pincer2, {y : strumLineNotes.members[5].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer2);}});
 				}
 			}
 		}
@@ -4397,19 +4420,19 @@ class PlayState extends MusicBeatState
 			pincer3.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer3.setPosition(strumLineNotes.members[6].x,strumLineNotes.members[6].y+500);
+					pincer3.setPosition(strumLineNotes.members[6].x+offset,strumLineNotes.members[6].y+500+offset);
 					add(pincer3);
-					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer3);}});
+					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer3);}});
 				}
 			}else{
 				if(!goAway){
-					pincer3.setPosition(strumLineNotes.members[6].x,strumLineNotes.members[6].y-500);
+					pincer3.setPosition(strumLineNotes.members[6].x+offset,strumLineNotes.members[6].y-500+offset);
 					add(pincer3);
-					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer3);}});
+					FlxTween.tween(pincer3, {y : strumLineNotes.members[6].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer3);}});
 				}
 			}
 		}
@@ -4417,19 +4440,19 @@ class PlayState extends MusicBeatState
 			pincer4.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer4.setPosition(strumLineNotes.members[7].x,strumLineNotes.members[7].y+500);
+					pincer4.setPosition(strumLineNotes.members[7].x+offset,strumLineNotes.members[7].y+500+offset);
 					add(pincer4);
-					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y+500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer4);}});
+					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer4);}});
 				}
 			}else{
 				if(!goAway){
-					pincer4.setPosition(strumLineNotes.members[7].x,strumLineNotes.members[7].y-500);
+					pincer4.setPosition(strumLineNotes.members[7].x+offset,strumLineNotes.members[7].y-500+offset);
 					add(pincer4);
-					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y}, 0.3, {ease: FlxEase.elasticOut});
+					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y-500}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer4);}});
+					FlxTween.tween(pincer4, {y : strumLineNotes.members[7].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer4);}});
 				}
 			}
 		}else{
@@ -4550,6 +4573,7 @@ class PlayState extends MusicBeatState
 				{
 					addShaderToCamera("game", bluescreenChroma);
 					addShaderToCamera("hud", bluescreenChroma);
+					addShaderToCamera("pincers", bluescreenChroma);
 				}
 			case 0:
 				//healthLossMultiplier=1.22;
@@ -5032,6 +5056,8 @@ class PlayState extends MusicBeatState
 				if (value1 == '1') KBATTACK(false);
 				else KBATTACK(true, "hazard/attack-double", ClientPrefs.sawsInstakill);
 			case 'KB_Pincer':
+				var offset:Float = 100;
+				
 				switch(Std.parseInt(value1)){
 					//An awful way to convert the modchart shit from lua, but fuck you.
 					//first pincer move
@@ -5043,10 +5069,10 @@ class PlayState extends MusicBeatState
 						
 						if(ClientPrefs.downScroll){
 							FlxTween.tween(playerStrums.members[2], {y: hazardModChartDefaultStrumY[6]-70}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]-70}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]-70+offset}, 0.25, {ease: FlxEase.quadOut});
 						}else{
 							FlxTween.tween(playerStrums.members[2], {y: hazardModChartDefaultStrumY[6]+70}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]+70}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]+70+offset}, 0.25, {ease: FlxEase.quadOut});
 						}
 						
 					case 2:
@@ -5060,13 +5086,13 @@ class PlayState extends MusicBeatState
 						KBPINCER_GRAB(1);
 						KBPINCER_GRAB(3);
 						FlxTween.tween(playerStrums.members[2], {y: hazardModChartDefaultStrumY[6]}, 0.3, {ease: FlxEase.quadOut});
-						FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]}, 0.3, {ease: FlxEase.quadOut});
+						FlxTween.tween(pincer3, {y: hazardModChartDefaultStrumY[6]+offset}, 0.3, {ease: FlxEase.quadOut});
 						if(ClientPrefs.downScroll){
 							FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[4]-25, y: hazardModChartDefaultStrumY[4]-62}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-25, y: hazardModChartDefaultStrumY[4]-62}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-25+offset, y: hazardModChartDefaultStrumY[4]-62+offset}, 0.25, {ease: FlxEase.quadOut});
 						}else{
 							FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[4]-25, y: hazardModChartDefaultStrumY[4]+62}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-25, y: hazardModChartDefaultStrumY[4]+62}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-25+offset, y: hazardModChartDefaultStrumY[4]+62+offset}, 0.25, {ease: FlxEase.quadOut});
 						}
 					case 5:
 						KBPINCER_PREPARE(3,true);
@@ -5082,17 +5108,17 @@ class PlayState extends MusicBeatState
 						KBPINCER_GRAB(2);
 						KBPINCER_GRAB(4);
 						FlxTween.tween(playerStrums.members[0], {x: hazardModChartDefaultStrumX[4],y: hazardModChartDefaultStrumY[4]}, 0.3, {ease: FlxEase.quadOut});
-						FlxTween.tween(pincer1, {x: hazardModChartDefaultStrumX[4],y: hazardModChartDefaultStrumY[4]}, 0.3, {ease: FlxEase.quadOut});
+						FlxTween.tween(pincer1, {x: hazardModChartDefaultStrumX[4]+offset,y: hazardModChartDefaultStrumY[4]+offset}, 0.3, {ease: FlxEase.quadOut});
 						if(ClientPrefs.downScroll){
 							FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[7]+50, y: hazardModChartDefaultStrumY[7]-40}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+50, y: hazardModChartDefaultStrumY[7]-40}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+50+offset, y: hazardModChartDefaultStrumY[7]-40+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[5]+11, y: hazardModChartDefaultStrumY[5]-70}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+11, y: hazardModChartDefaultStrumY[5]-70}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+11+offset, y: hazardModChartDefaultStrumY[5]-70+offset}, 0.25, {ease: FlxEase.quadOut});
 						}else{
 							FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[7]+50, y: hazardModChartDefaultStrumY[7]+40}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+50, y: hazardModChartDefaultStrumY[7]+40}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+50+offset, y: hazardModChartDefaultStrumY[7]+40+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[5]+11, y: hazardModChartDefaultStrumY[5]+70}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+11, y: hazardModChartDefaultStrumY[5]+70}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+11+offset, y: hazardModChartDefaultStrumY[5]+70+offset}, 0.25, {ease: FlxEase.quadOut});
 						}
 					case 8:
 						KBPINCER_PREPARE(4,true);
@@ -5112,24 +5138,24 @@ class PlayState extends MusicBeatState
 						KBPINCER_GRAB(4);
 						if(ClientPrefs.downScroll){
 							FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[4]-16, y: hazardModChartDefaultStrumY[4]-32}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-16, y: hazardModChartDefaultStrumY[4]-32}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-16+offset, y: hazardModChartDefaultStrumY[4]-32+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[5], y: hazardModChartDefaultStrumY[5]+11}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5], y: hazardModChartDefaultStrumY[5]+11}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+offset, y: hazardModChartDefaultStrumY[5]+11+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[7]+16, y: hazardModChartDefaultStrumY[7]-32}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+16, y: hazardModChartDefaultStrumY[7]-32}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+16+offset, y: hazardModChartDefaultStrumY[7]-32+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[2], {x:hazardModChartDefaultStrumX[6], y: hazardModChartDefaultStrumY[6]+11}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6], y: hazardModChartDefaultStrumY[6]+11}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6]+offset, y: hazardModChartDefaultStrumY[6]+11+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[3], {angle:-40}, 0.25, {ease: FlxEase.linear});
 							FlxTween.tween(playerStrums.members[0], {angle:40}, 0.25, {ease: FlxEase.linear});
 						}else{
 							FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[4]-16, y: hazardModChartDefaultStrumY[4]+32}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-16, y: hazardModChartDefaultStrumY[4]+32}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]-16+offset, y: hazardModChartDefaultStrumY[4]+32+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[5], y: hazardModChartDefaultStrumY[5]-11}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5], y: hazardModChartDefaultStrumY[5]-11}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+offset, y: hazardModChartDefaultStrumY[5]-11+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[7]+16, y: hazardModChartDefaultStrumY[7]+32}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+16, y: hazardModChartDefaultStrumY[7]+32}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+16+offset, y: hazardModChartDefaultStrumY[7]+32+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[2], {x:hazardModChartDefaultStrumX[6], y: hazardModChartDefaultStrumY[6]-11}, 0.25, {ease: FlxEase.quadOut});
-							FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6], y: hazardModChartDefaultStrumY[6]-11}, 0.25, {ease: FlxEase.quadOut});
+							FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6]+offset, y: hazardModChartDefaultStrumY[6]-11+offset}, 0.25, {ease: FlxEase.quadOut});
 							FlxTween.tween(playerStrums.members[3], {angle:40}, 0.25, {ease: FlxEase.linear});
 							FlxTween.tween(playerStrums.members[0], {angle:-40}, 0.25, {ease: FlxEase.linear});
 						}
@@ -5147,19 +5173,19 @@ class PlayState extends MusicBeatState
 						KBPINCER_GRAB(1);
 						KBPINCER_GRAB(4);
 						FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[4], y: hazardModChartDefaultStrumY[4]+75}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4], y: hazardModChartDefaultStrumY[4]+75}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[4]+offset, y: hazardModChartDefaultStrumY[4]+75+offset}, 0.75, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[7], y: hazardModChartDefaultStrumY[7]-75}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7], y: hazardModChartDefaultStrumY[7]-75}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[7]+offset, y: hazardModChartDefaultStrumY[7]-75+offset}, 0.75, {ease: FlxEase.quadInOut});
 					case 14:
 						FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[7]}, 0.9, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[7]}, 0.9, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[7]+offset}, 0.9, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[4]}, 0.9, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[4]}, 0.9, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[4]+offset}, 0.9, {ease: FlxEase.quadInOut});
 					case 15:
 						FlxTween.tween(playerStrums.members[0], {x:hazardModChartDefaultStrumX[7], y:hazardModChartDefaultStrumY[7]}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[7], y:hazardModChartDefaultStrumY[7]}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer1, {x:hazardModChartDefaultStrumX[7]+offset, y:hazardModChartDefaultStrumY[7]+offset}, 0.75, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[3], {x:hazardModChartDefaultStrumX[4], y:hazardModChartDefaultStrumY[4]}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[4], y:hazardModChartDefaultStrumY[4]}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer4, {x:hazardModChartDefaultStrumX[4]+offset, y:hazardModChartDefaultStrumY[4]+offset}, 0.75, {ease: FlxEase.quadInOut});
 
 						FlxTween.tween(playerStrums.members[3], {angle:0}, 0.725, {ease: FlxEase.quadOut});
 						FlxTween.tween(playerStrums.members[0], {angle:0}, 0.725, {ease: FlxEase.quadOut});
@@ -5172,19 +5198,19 @@ class PlayState extends MusicBeatState
 						KBPINCER_GRAB(2);
 						KBPINCER_GRAB(3);
 						FlxTween.tween(playerStrums.members[2], {x:hazardModChartDefaultStrumX[6], y:hazardModChartDefaultStrumY[6]+75}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6], y:hazardModChartDefaultStrumY[6]+75}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[6]+offset, y:hazardModChartDefaultStrumY[6]+75+offset}, 0.75, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[5], y:hazardModChartDefaultStrumY[5]-75}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5], y:hazardModChartDefaultStrumY[5]-75}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[5]+offset, y:hazardModChartDefaultStrumY[5]-75+offset}, 0.75, {ease: FlxEase.quadInOut});
 					case 18:
 						FlxTween.tween(playerStrums.members[2], {x:hazardModChartDefaultStrumX[5]}, 0.9, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[5]}, 0.9, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[5]+offset}, 0.9, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[6]}, 0.9, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[6]}, 0.9, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[6]+offset}, 0.9, {ease: FlxEase.quadInOut});
 					case 19:
 						FlxTween.tween(playerStrums.members[2], {x:hazardModChartDefaultStrumX[5], y:hazardModChartDefaultStrumY[5]}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[5], y:hazardModChartDefaultStrumY[5]}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer3, {x:hazardModChartDefaultStrumX[5]+offset, y:hazardModChartDefaultStrumY[5]+offset}, 0.75, {ease: FlxEase.quadInOut});
 						FlxTween.tween(playerStrums.members[1], {x:hazardModChartDefaultStrumX[6], y:hazardModChartDefaultStrumY[6]}, 0.75, {ease: FlxEase.quadInOut});
-						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[6], y:hazardModChartDefaultStrumY[6]}, 0.75, {ease: FlxEase.quadInOut});
+						FlxTween.tween(pincer2, {x:hazardModChartDefaultStrumX[6]+offset, y:hazardModChartDefaultStrumY[6]+offset}, 0.75, {ease: FlxEase.quadInOut});
 					case 20:
 						KBPINCER_PREPARE(3,true);
 						KBPINCER_PREPARE(2,true);
