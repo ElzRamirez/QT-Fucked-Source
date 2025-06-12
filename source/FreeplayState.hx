@@ -44,6 +44,8 @@ class FreeplayState extends MusicBeatState
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
+	public static var isFuckedminationCorrupted:Bool = false;
+
 	private var iconArray:Array<HealthIcon> = [];
 
 	var bg:FlxSprite;
@@ -254,6 +256,20 @@ class FreeplayState extends MusicBeatState
 	var instPlaying:Int = -1;
 	private static var vocals:FlxSound = null;
 	var holdTime:Float = 0;
+
+	var noSawbladesSongsList:Array<Dynamic> = [
+		["tutorial", ["Easy", "Normal", "Hard"]],
+		["bad-battle", [""]],
+		["test", [""]],
+		["censory-superdrip", ["Hard"]],
+		["fuckedmination-vip", ["No Saws"]],
+		["fuckedmination-duet-vip", ["No Saws"]],
+		["fuckedmination-but-funni", [""]],
+		["last-smile", [""]],
+		["reactor", ["Hard"]],
+		["redacted", [""]]
+	];
+
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.7 && songs[curSelected].songName != "" && songs[curSelected].songName != "Interlope")
@@ -394,6 +410,7 @@ class FreeplayState extends MusicBeatState
 		else if (accepted && songs[curSelected].songName != "")
 		{
 			persistentUpdate = false;
+			isFuckedminationCorrupted = false;
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
 			/*#if MODS_ALLOWED
@@ -416,8 +433,15 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (songLowercase == "bad-battle"){
+			if (songLowercase == "fuckedmination-corrupted"){
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
+				isFuckedminationCorrupted = true;
+				openSubState(new SelectSawbladesAmountSubState(0));
+				return;
+			}else if (!isSongInNoSawbladesList(songLowercase, CoolUtil.difficultyString().toLowerCase())){
+				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				openSubState(new SelectSawbladesAmountSubState());
+				return;
 			}else if (FlxG.keys.pressed.SHIFT){
 				LoadingState.loadAndSwitchState(new ChartingState());
 			}else{
@@ -434,6 +458,45 @@ class FreeplayState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 		}
 		super.update(elapsed);
+	}
+
+	public function isSongInNoSawbladesList(songName:String, difficulty:String):Bool
+	{
+	    for (entry in noSawbladesSongsList)
+	    {
+	        var song:String = entry[0];
+	        var bannedDiffsDynamic = entry[1];
+
+	        if (song.toLowerCase() == songName.toLowerCase())
+	        {
+	            var bannedDiffs:Array<String> = [];
+
+	            if (bannedDiffsDynamic == null)
+	                bannedDiffs = [];
+	            else if (Std.isOfType(bannedDiffsDynamic, String))
+	                bannedDiffs = [cast bannedDiffsDynamic];
+	            else if (Std.isOfType(bannedDiffsDynamic, Array))
+	                bannedDiffs = cast bannedDiffsDynamic;
+	            else
+	            {
+	                trace('Sawblade list check - Unknown type in noSawbladesSongsList for "$songName"');
+	                bannedDiffs = [];
+	            }
+
+	            if (bannedDiffs.length == 0 || bannedDiffs.contains(""))
+	                return true;
+
+	            for (diff in bannedDiffs)
+	            {
+	                if (diff != null && diff.toLowerCase() == difficulty.toLowerCase())
+	                    return true;
+	            }
+
+	            return false;
+	        }
+	    }
+		
+		return false;
 	}
 
 	public static function destroyFreeplayVocals() {

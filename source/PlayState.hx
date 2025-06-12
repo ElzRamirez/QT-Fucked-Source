@@ -291,7 +291,7 @@ class PlayState extends MusicBeatState
 
 	var sawbladeCounter:Int = 0; //For testing purposes
 
-	public static var maxSawbladeHits:Int = 0;
+	public static var maxSawbladeHits:Int = 8;
 
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
@@ -3775,6 +3775,9 @@ class PlayState extends MusicBeatState
 				else
 					scoreTxt.color = FlxColor.WHITE;
 			}
+			else if (FlxG.keys.justPressed.FOUR) {
+				health = 2;
+			}
 			if (!startingSong) {
 				if (FlxG.keys.justPressed.ONE) {
 					KillNotes();
@@ -4233,12 +4236,12 @@ class PlayState extends MusicBeatState
 			{
 				if(!bfDodging){
 					if(!godMode){
-						sawbladeHits ++;
+						sawbladeHits++;
 						trace("sawbladeHits: ",sawbladeHits);
 
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
-						if((sawsInstakill || sawbladeHits > 7)){
+						if(maxSawbladeHits == 0 || (maxSawbladeHits == 4 && sawbladeHits > 3) || (maxSawbladeHits == 8 && sawbladeHits > 7)){
 							//MURDER THE BITCH!
 							trace("Instakill sawblade missed");
 							health -= 404;
@@ -4254,35 +4257,47 @@ class PlayState extends MusicBeatState
 							}
 							FlxG.log.add('ClassicBonks: ' + Achievements.sawbladeDeath);
 							#end
-							}else{
-								health -= 0.185;
-								if(health >= maxHealth+0.27625){ //Almost the half of the original -DrkFon
-									maxHealth = maxHealth+0.27625;
+						}else{
+							if (maxSawbladeHits == 4)
+							{
+								health -= 0.265;
+								if(health >= maxHealth+0.51125){
+									maxHealth = maxHealth+0.51125;
 									reduceMaxHealth();
 									//Only reduce max health if possible. This is here to hopefully avoid a crash with the regerneating the bar or something.
 								}
-								//mmmmm I loved scuffed code. But it works!
-								if(health < maxHealth){ //If the health is too low after the sawblade, sawblade kills you.
-									health -= 404; 		//v2.1, I forgot to add this line of code so errr, now sawblades actually kill you again :D
-									causeOfDeath = "sawblade";
-									#if ACHIEVEMENTS_ALLOWED
-									Achievements.sawbladeDeath++;
-									FlxG.save.data.sawbladeDeath = Achievements.sawbladeDeath;
-									var achieve:String = checkForAchievement(['sawblade_death']);
-									if (achieve != null) {
-										startAchievement(achieve);
-									} else {
-										FlxG.save.flush();
-									}
-									FlxG.log.add('Bonks: ' + Achievements.sawbladeDeath);
-									#end
-								}else{
-									//Done so that the sound doesn't play if the sawblade would've killed the player.
-									if(ClientPrefs.qtBonk)
-										FlxG.sound.play(Paths.sound('bonk'),1); //This is fucking amazing.
-									else
-										FlxG.sound.play(Paths.sound('hazard/sawbladeHit'),1); //Ouch
+							}
+							else if (maxSawbladeHits == 8)
+							{
+								health -= 0.145;
+								if(health >= maxHealth+0.25625){ //Almost the half of the original -DrkFon
+									maxHealth = maxHealth+0.25625;
+									reduceMaxHealth();
+									//Only reduce max health if possible. This is here to hopefully avoid a crash with the regerneating the bar or something.
 								}
+							}
+							//mmmmm I loved scuffed code. But it works!
+							if(health < maxHealth){ //If the health is too low after the sawblade, sawblade kills you.
+								health -= 404; 		//v2.1, I forgot to add this line of code so errr, now sawblades actually kill you again :D
+								causeOfDeath = "sawblade";
+								#if ACHIEVEMENTS_ALLOWED
+								Achievements.sawbladeDeath++;
+								FlxG.save.data.sawbladeDeath = Achievements.sawbladeDeath;
+								var achieve:String = checkForAchievement(['sawblade_death']);
+								if (achieve != null) {
+									startAchievement(achieve);
+								} else {
+									FlxG.save.flush();
+								}
+								FlxG.log.add('Bonks: ' + Achievements.sawbladeDeath);
+								#end
+							}else{
+								//Done so that the sound doesn't play if the sawblade would've killed the player.
+								if(ClientPrefs.qtBonk)
+									FlxG.sound.play(Paths.sound('bonk'),1); //This is fucking amazing.
+								else
+									FlxG.sound.play(Paths.sound('hazard/sawbladeHit'),1); //Ouch
+							}
 							boyfriend.stunned=true;
 							boyfriend.playAnim('hurt',true);
 							new FlxTimer().start(0.495, function(tmr:FlxTimer)
@@ -5579,6 +5594,9 @@ class PlayState extends MusicBeatState
 
 					if(duration > 0 && intensity != 0) {
 						targetsArray[i].shake(intensity, duration);
+
+						if (targetsArray[i] == camHUD)
+							camPincers.shake(intensity, duration);
 					}
 				}
 
@@ -6785,69 +6803,71 @@ class PlayState extends MusicBeatState
 		//v2.2: Updated to support Harder difficulty.
 		//QT FUCKED updated to support Fucked difficulty
 		if(((storyDifficulty >= 2 && storyDifficulty <= 5) || healthDrainSongs.indexOf(SONG.song.toLowerCase()) != -1) && dadDrainHealth>0 && !note.ignoreNote && !note.hitCausesMiss){
-			//prevents health drain if the drain would kill the player.
-			if(health - dadDrainHealth - 0.1 > maxHealth){
-				//And here I thought that this code couldn't get any worse. What is wrong with me?
+			if (maxSawbladeHits == 8)
+			{
+				//prevents health drain if the drain would kill the player.
+				if(health - dadDrainHealth - 0.1 > maxHealth){
+					//And here I thought that this code couldn't get any worse. What is wrong with me?
 
-				//Health drain on sustain notes. Note that this is ignored if you've been hit by 2 or more sawblades.
-				if(dadDrainHealthSustain && note.isSustainNote && sawbladeHits < 2){
-					switch(sawbladeHits){
-							case 0 | 1:
-								if(health < 1.35){
-									if(health < 0.8){
-										//trace("0 or 1 - AWWW SHIT");
-										health -= dadDrainHealth/8.1; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}else{
-										//trace("0 or 1 - fuck you, you're above halfway now");
-										health -= dadDrainHealth/5.7; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}
-								}else{
-									//trace("0 or 1 - Nah, no nerfing just yet");
-									health -= dadDrainHealth/4.375;
-								}
-							case 2 | 3:
-								if(health < 1.5){
-									if(health < 1){
-										//trace("2 or 3 - AWWW SHIT");
-										health -= dadDrainHealth/8.62; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}else{
-										//trace("2 or 3 - fuck you, you're above halfway now");
-										health -= dadDrainHealth/6.1; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}
-								}else{
-									//trace("2 or 3 - Nah, no nerfing just yet");
-									health -= dadDrainHealth/4.38;
-								}
-							case 4 | 5:
-								if(health < 1.8125){
-									if(health < 1.43){
-										//trace("4 or 5 - AWWW SHIT");
-										health -= dadDrainHealth/9.3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}else{
-										//trace("4 or 5 - fuck you, you're above halfway now");
-										health -= dadDrainHealth/6.65; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-									}
-								}else{
-									//trace("4 or 5 - Nah, no nerfing just yet");
-									health -= dadDrainHealth/4.46;
-								}
-							default:
-								//This shouldn't trigger in normal circumstances.
-								if(health < 1.6){
-									//trace("DEFAULT - AWWW SHIT");
-									health -= dadDrainHealth/8.25; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-								}else{
-									//trace("DEFAULT - fuck you, you're above halfway now");
-									health -= dadDrainHealth/6.25; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
-								}
-					}
-				}else if (!note.isSustainNote){
-					if(sawbladeHits > 7){
-						health -= dadDrainHealth/3.15; //At this point, just constantly nerf the opponent.
-						//trace("+3 - You're completely fucked.");
-					}else{
+					//Health drain on sustain notes. Note that this is ignored if you've been hit by 4 or more sawblades.
+					if(dadDrainHealthSustain && note.isSustainNote && sawbladeHits < 4){
 						switch(sawbladeHits){
-							case 0 | 1:
+								case 0 | 1:
+									if(health < 1.35){
+										if(health < 0.8){
+											//trace("0 or 1 - AWWW SHIT");
+											health -= dadDrainHealth/8.1; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("0 or 1 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/5.7; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("0 or 1 - Nah, no nerfing just yet");
+										health -= dadDrainHealth/4.375;
+									}
+								case 2 | 3:
+									if(health < 1.5){
+										if(health < 1){
+											//trace("2 or 3 - AWWW SHIT");
+											health -= dadDrainHealth/8.62; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("2 or 3 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/6.1; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("2 or 3 - Nah, no nerfing just yet");
+										health -= dadDrainHealth/4.38;
+									}
+								case 4 | 5:
+									if(health < 1.8125){
+										if(health < 1.43){
+											//trace("4 or 5 - AWWW SHIT");
+											health -= dadDrainHealth/9.3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("4 or 5 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/6.65; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("4 or 5 - Nah, no nerfing just yet");
+										health -= dadDrainHealth/4.46;
+									}
+								default:
+									//This shouldn't trigger in normal circumstances.
+									if(health < 1.6){
+										//trace("DEFAULT - AWWW SHIT");
+										health -= dadDrainHealth/8.25; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("DEFAULT - fuck you, you're above halfway now");
+										health -= dadDrainHealth/6.25; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+						}
+					}else if (!note.isSustainNote){
+						if(sawbladeHits > 7){
+							health -= dadDrainHealth/3.15; //At this point, just constantly nerf the opponent.
+							//trace("+3 - You're completely fucked.");
+						}else{
+							switch(sawbladeHits){
+								case 0 | 1:
 									if(health < 1.35){
 										if(health < 0.8){
 											//trace("0 or 1 - AWWW SHIT");
@@ -6903,10 +6923,10 @@ class PlayState extends MusicBeatState
 										//trace("DEFAULT - fuck you, you're above halfway now");
 										health -= dadDrainHealth/1.5; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
 									}
+							}
 						}
 					}
 				}
-			}
 				//I FUCKING HATE WORKING WITH PERCENTAGES HOLY SHIT
 				//I GIVE UP ON THIS SHIT, I'M JUST MAKING IT SO THAT IT'S SET POINTS NOW.
 				/*
@@ -6923,6 +6943,149 @@ class PlayState extends MusicBeatState
 					health -= dadDrainHealth;
 					}
 				}*/
+			}
+			else
+			{
+				//OMG I'M SO FUCKING LAZY TO CHECK THIS LINE BY LINE SO I BETTER COPYPASTED THE ORIGINAL AND THAT'S IT HOLY SHIT -Drkfon
+				//prevents health drain if the drain would kill the player.
+				if(health - dadDrainHealth - 0.1 > maxHealth){
+					//And here I thought that this code couldn't get any worse. What is wrong with me?
+
+					//Health drain on sustain notes. Note that this is ignored if you've been hit by 2 or more sawblades.
+					if(dadDrainHealthSustain && note.isSustainNote && sawbladeHits < 2){
+						switch(sawbladeHits){
+							case 0:
+								if(health < 1.35){
+									if(health < 0.8){
+										//trace("0 - AWWW SHIT");
+										health -= dadDrainHealth/8.1; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("0 - fuck you, you're above halfway now");
+										health -= dadDrainHealth/5.7; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+								}else{
+									//trace("0 - Nah, no nerfing just yet");
+									health -= dadDrainHealth/4.375;
+								}
+							case 1:
+								if(health < 1.5){
+									if(health < 1){
+										//trace("1 - AWWW SHIT");
+										health -= dadDrainHealth/8.62; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("1 - fuck you, you're above halfway now");
+										health -= dadDrainHealth/6.1; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+								}else{
+									//trace("1 - Nah, no nerfing just yet");
+									health -= dadDrainHealth/4.38;
+								}
+							case 2:
+								if(health < 1.8125){
+									if(health < 1.43){
+										//trace("2 - AWWW SHIT");
+										health -= dadDrainHealth/9.3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("2 - fuck you, you're above halfway now");
+										health -= dadDrainHealth/6.65; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+								}else{
+									//trace("2 - Nah, no nerfing just yet");
+									health -= dadDrainHealth/4.46;
+								}
+							default:
+								//This shouldn't trigger in normal circumstances.
+								if(health < 1.6){
+									//trace("DEFAULT - AWWW SHIT");
+									health -= dadDrainHealth/8.25; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+								}else{
+									//trace("DEFAULT - fuck you, you're above halfway now");
+									health -= dadDrainHealth/6.25; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+								}
+							}
+					}else if (!note.isSustainNote){
+						if(sawbladeHits > 3){
+							health -= dadDrainHealth/3.15; //At this point, just constantly nerf the opponent.
+							//trace("+3 - You're completely fucked.");
+						}else{
+							switch(sawbladeHits){
+								case 0:
+									if(health < 1.35){
+										if(health < 0.8){
+											//trace("0 - AWWW SHIT");
+											health -= dadDrainHealth/3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("0 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/1.75; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("0 - Nah, no nerfing just yet");
+										health -= dadDrainHealth;
+									}
+								case 1:
+									if(health < 1.5){
+										if(health < 1){
+											//trace("1 - AWWW SHIT");
+											health -= dadDrainHealth/3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("1 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/1.77; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("1 - Nah, no nerfing just yet");
+										health -= dadDrainHealth/1.1;
+									}
+								case 2:
+									if(health < 1.8125){
+										if(health < 1.45){
+											//trace("2 - AWWW SHIT");
+											health -= dadDrainHealth/3.1; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}else{
+											//trace("2 - fuck you, you're above halfway now");
+											health -= dadDrainHealth/2; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+										}
+									}else{
+										//trace("2 - Nah, no nerfing just yet");
+										health -= dadDrainHealth/1.2;
+									}
+								case 3:
+									if(health < 1.82){
+										//trace("3 - AWWW SHIT");
+										health -= dadDrainHealth/3.3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("3 - fuck you, you're above halfway now");
+										health -= dadDrainHealth/2.4; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+								default:
+									//This shouldn't trigger in normal circumstances.
+									if(health < 1.6){
+										//trace("DEFAULT - AWWW SHIT");
+										health -= dadDrainHealth/3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}else{
+										//trace("DEFAULT - fuck you, you're above halfway now");
+										health -= dadDrainHealth/1.5; //nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+									}
+							}
+						}
+					}
+				}
+				//I FUCKING HATE WORKING WITH PERCENTAGES HOLY SHIT
+				//I GIVE UP ON THIS SHIT, I'M JUST MAKING IT SO THAT IT'S SET POINTS NOW.
+				/*
+				if(health < 0.475 * (2 + maxHealth)){
+					if(health < 0.2 * (2 + maxHealth)){
+						trace("AWWW SHIT");
+						health -= dadDrainHealth/3; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+					}else{
+						trace("fuck you, you're above halfway now");
+						health -= dadDrainHealth/1.75; //Massively nerfs the amount of health Opponent can recover if over halfway to give the player more room to breath health-wise.
+					}
+				}else{
+					trace("Nah, no nerfing just yet");
+					health -= dadDrainHealth;
+					}
+				}*/
+			}
 		}
 
 		if (!note.noAnimation && !note.ignoreNote && !note.hitCausesMiss) { //Added ignoreNote and hitMiss check to stop animations from playing from hurt notes. -Haz

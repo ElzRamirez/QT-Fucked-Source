@@ -20,11 +20,11 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Change Max Sawblade Hits', 'Exit to menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
-	var pauseMusic:FlxSound;
+	public static var pauseMusic:FlxSound;
 	var practiceText:FlxText;
 	//var botplayText:FlxText;
 
@@ -167,6 +167,9 @@ class PauseSubState extends MusicBeatSubstate
 				case 'Change Difficulty':
 					menuItems = difficultyChoices;
 					regenMenu();
+				case 'Change Max Sawblade Hits':
+					FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
+					openSubState(new SelectSawbladesAmountSubState(PlayState.maxSawbladeHits, true));
 				case 'Toggle Practice Mode':
 					PlayState.instance.practiceMode = !PlayState.instance.practiceMode;
 					PlayState.changedDifficulty = true;
