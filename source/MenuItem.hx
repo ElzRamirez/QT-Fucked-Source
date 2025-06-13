@@ -26,6 +26,11 @@ class MenuItem extends FlxSprite
 		isFlashing = true;
 	}
 
+	public function stopFlashing():Void
+	{
+		isFlashing = false;
+	}
+
 	// if it runs at 60fps, fake framerate will be 6
 	// if it runs at 144 fps, fake framerate will be like 14, and will update the graphic every 0.016666 * 3 seconds still???
 	// so it runs basically every so many seconds, not dependant on framerate??
@@ -39,6 +44,8 @@ class MenuItem extends FlxSprite
 
 		if (isFlashing)
 			flashingInt += 1;
+		else
+			flashingInt = 0;
 
 		if (flashingInt % fakeFramerate >= Math.floor(fakeFramerate / 2))
 			color = 0xFF33ffff;

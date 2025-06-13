@@ -34,14 +34,17 @@ class StoryMenuState extends MusicBeatState
 	private static var lastDifficultyName:String = '';
 	var curDifficulty:Int = 1;
 
+	public static var selectedWeek:Bool = false; //Making them public variables so that the new SubState can access them
+	public static var stopspamming:Bool = false;
+
+	public static var curWeek:Int = 0;
+
 	var txtWeekTitle:FlxText;
 	var bgSprite:FlxSprite;
 
-	private static var curWeek:Int = 0;
-
 	var txtTracklist:FlxText;
 
-	var grpWeekText:FlxTypedGroup<MenuItem>;
+	public static var grpWeekText:FlxTypedGroup<MenuItem>;
 	var grpWeekCharacters:FlxTypedGroup<MenuCharacter>;
 
 	var grpLocks:FlxTypedGroup<FlxSprite>;
@@ -60,6 +63,10 @@ class StoryMenuState extends MusicBeatState
 		WeekData.reloadWeekFiles(true);
 		if(curWeek >= WeekData.weeksList.length) curWeek = 0;
 		persistentUpdate = persistentDraw = true;
+
+		selectedWeek = false;
+		stopspamming = false;
+		SelectSawbladesAmountSubState.sawbladesAmountModified = false;
 
 		scoreText = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
 		scoreText.setFormat("VCR OSD Mono", 32);
@@ -267,8 +274,6 @@ class StoryMenuState extends MusicBeatState
 	}
 
 	var movedBack:Bool = false;
-	var selectedWeek:Bool = false;
-	var stopspamming:Bool = false;
 
 	function selectWeek()
 	{
@@ -303,11 +308,25 @@ class StoryMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + diffic, PlayState.storyPlaylist[0].toLowerCase());
 			PlayState.campaignScore = 0;
 			PlayState.campaignMisses = 0;
-			new FlxTimer().start(1, function(tmr:FlxTimer)
+
+			var MIWEEK:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[curWeek]);
+			trace("Current week name: " + MIWEEK.weekName + " | Current week difficulty: " + CoolUtil.difficulties[curDifficulty]);
+
+			if ((MIWEEK.weekName.toLowerCase() == "tutorial" && (curDifficulty == 0 || curDifficulty == 1 || curDifficulty == 2)) || (MIWEEK.weekName.toLowerCase() == "drip week" && CoolUtil.difficulties[curDifficulty].toLowerCase() == "hard"))
 			{
-				LoadingState.loadAndSwitchState(new PlayState(), true);
-				FreeplayState.destroyFreeplayVocals();
-			});
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					LoadingState.loadAndSwitchState(new PlayState(), true);
+					FreeplayState.destroyFreeplayVocals();
+				});
+			}
+			else
+			{
+				new FlxTimer().start(1, function(tmr:FlxTimer)
+				{
+					openSubState(new SelectSawbladesAmountSubState());
+				});
+			}
 		} else {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 		}
@@ -429,6 +448,7 @@ class StoryMenuState extends MusicBeatState
 			curDifficulty = newPos;
 		}
 		updateText();
+		changeDifficulty();
 	}
 
 	function weekIsLocked(weekNum:Int) {

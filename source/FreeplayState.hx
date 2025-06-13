@@ -66,6 +66,8 @@ class FreeplayState extends MusicBeatState
 		PlayState.isStoryMode = false;
 		WeekData.reloadWeekFiles(false);
 
+		SelectSawbladesAmountSubState.sawbladesAmountModified = false;
+
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("In the Menus", null);

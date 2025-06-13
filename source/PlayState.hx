@@ -489,6 +489,9 @@ class PlayState extends MusicBeatState
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
 
+		if (!SelectSawbladesAmountSubState.sawbladesAmountModified)
+			maxSawbladeHits = 8;
+
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
 

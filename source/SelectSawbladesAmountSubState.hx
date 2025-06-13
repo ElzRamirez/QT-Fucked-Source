@@ -26,6 +26,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
     public var canControl:Bool = false;
     public var isClosing:Bool = false;
     public var isFromPauseMenu:Bool = false;
+    public static var sawbladesAmountModified:Bool = false;
 
     var state:String = "select";
     var confirmSelected:Int = 0;
@@ -115,7 +116,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
 
     override function update(elapsed:Float)
     {
-        if (PauseSubState.pauseMusic != null)
+        if (isFromPauseMenu)
         {
             if (PauseSubState.pauseMusic.volume < 0.5)
 		    	PauseSubState.pauseMusic.volume += 0.01 * elapsed;
@@ -140,8 +141,6 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
 
                 if (accepted)
                 {
-                    PlayState.maxSawbladeHits = amountOptions[curSelected];
-
                     if (isFromPauseMenu)
                     {
                         state = "confirm";
@@ -151,6 +150,8 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
                     }
                     else
                     {
+                        PlayState.maxSawbladeHits = amountOptions[curSelected];
+                        sawbladesAmountModified = true;
                         doFadeOut(true);
                         FlxG.sound.music.volume = 0;
                         FreeplayState.destroyFreeplayVocals();
@@ -182,6 +183,8 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
                 {
                     if (confirmSelected == 0)
                     {
+                        PlayState.maxSawbladeHits = amountOptions[curSelected];
+                        sawbladesAmountModified = true;
                         PauseSubState.restartSong();
                     }
                     else
@@ -261,10 +264,16 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
             {
                 if (goToPlayState)
                 {
-                    LoadingState.loadAndSwitchState(new PlayState());
+                    LoadingState.loadAndSwitchState(new PlayState(), PlayState.isStoryMode ? true : false);
                 }
                 else
                 {
+                    if (PlayState.isStoryMode)
+                    {
+                        StoryMenuState.grpWeekText.members[StoryMenuState.curWeek].stopFlashing();
+                        StoryMenuState.selectedWeek = false;
+                        StoryMenuState.stopspamming = false;
+                    }
                     close();
                 }
             }

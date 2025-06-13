@@ -39,6 +39,10 @@ class PauseSubState extends MusicBeatSubstate
 			menuItemsOG.insert(2, 'Toggle Practice Mode');
 			menuItemsOG.insert(3, 'Toggle Botplay');
 		}
+		
+		if (PlayState.isStoryMode)
+			menuItemsOG.remove('Change Max Sawblade Hits');
+
 		menuItems = menuItemsOG;
 
 		for (i in 0...CoolUtil.difficulties.length) {
