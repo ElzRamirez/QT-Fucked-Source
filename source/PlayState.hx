@@ -292,6 +292,7 @@ class PlayState extends MusicBeatState
 	var sawbladeCounter:Int = 0; //For testing purposes
 
 	public static var maxSawbladeHits:Int = 8;
+	public static var songDoesNotHaveSawblades:Bool = false;
 
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
@@ -492,6 +493,8 @@ class PlayState extends MusicBeatState
 		if (!SelectSawbladesAmountSubState.sawbladesAmountModified)
 			maxSawbladeHits = 8;
 
+		songDoesNotHaveSawblades = false;
+
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
 
@@ -569,6 +572,9 @@ class PlayState extends MusicBeatState
 		dadGroup = new FlxSpriteGroup(DAD_X, DAD_Y);
 		gfGroup = new FlxSpriteGroup(GF_X, GF_Y);
 
+		if (FreeplayState.isSongInNoSawbladesList(SONG.song.toLowerCase(), storyDifficulty, noSawbladesSongs))
+			songDoesNotHaveSawblades = true;
+		
 		switch (curStage)
 		{
 			case 'stage': //Week 1
@@ -6794,6 +6800,19 @@ class PlayState extends MusicBeatState
 		"last-smile",
 		"reactor",
 		"double-kill-v2"
+	];
+
+	var noSawbladesSongs:Array<Dynamic> = [
+		["tutorial", [0, 1, 2]],
+		["bad-battle"],
+		["test"],
+		["censory-superdrip", [0]],
+		["fuckedmination-vip", [0]],
+		["fuckedmination-duet-vip", [0]],
+		["fuckedmination-but-funni"],
+		["last-smile"],
+		["reactor", [0]],
+		["redacted"]
 	];
 
 	function opponentNoteHit(note:Note):Void

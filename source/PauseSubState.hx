@@ -20,7 +20,7 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Change Max Sawblade Hits', 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Exit to menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -32,16 +32,27 @@ class PauseSubState extends MusicBeatSubstate
 	{
 		super();
 		//HOLY FUCKING SHIT IM SO LAZY THIS IS FUCKED UP JESUS CHRIST WHAT THE ACTUAL FUCK IS WRONG WITH ME
-		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'termination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope') menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
+		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'termination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope')
+			menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
 
+		if (!PlayState.songDoesNotHaveSawblades && !PlayState.isStoryMode && PlayState.SONG.song.toLowerCase() != 'fuckedmination-corrupted')
+		{
+			var indexExit = menuItemsOG.indexOf('Exit to menu');
+			if(indexExit > -1)
+        		menuItemsOG.insert(indexExit, 'Change Max Sawblade Hits');
+		}
+		
 		if(PlayState.chartingMode)
 		{
 			menuItemsOG.insert(2, 'Toggle Practice Mode');
 			menuItemsOG.insert(3, 'Toggle Botplay');
+			if (!menuItemsOG.contains('Change Max Sawblade Hits'))
+			{
+				var indexExit = menuItemsOG.indexOf('Exit to menu');
+				if(indexExit > -1)
+            		menuItemsOG.insert(indexExit, 'Change Max Sawblade Hits');
+			}
 		}
-		
-		if (PlayState.isStoryMode)
-			menuItemsOG.remove('Change Max Sawblade Hits');
 
 		menuItems = menuItemsOG;
 

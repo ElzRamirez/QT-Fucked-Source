@@ -440,7 +440,7 @@ class FreeplayState extends MusicBeatState
 				isFuckedminationCorrupted = true;
 				openSubState(new SelectSawbladesAmountSubState(0));
 				return;
-			}else if (!isSongInNoSawbladesList(songLowercase, CoolUtil.difficultyString().toLowerCase())){
+			}else if (!isSongInNoSawbladesList(songLowercase, CoolUtil.difficultyString().toLowerCase(), noSawbladesSongsList)){
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				openSubState(new SelectSawbladesAmountSubState());
 				return;
@@ -462,43 +462,49 @@ class FreeplayState extends MusicBeatState
 		super.update(elapsed);
 	}
 
-	public function isSongInNoSawbladesList(songName:String, difficulty:String):Bool
+	public static function isSongInNoSawbladesList(songName:String, difficulty:Dynamic, songList:Array<Dynamic>):Bool
 	{
-	    for (entry in noSawbladesSongsList)
+	    for (entry in songList)
 	    {
 	        var song:String = entry[0];
-	        var bannedDiffsDynamic = entry[1];
-
+	        var bannedDiffsDynamic = (entry.length > 1) ? entry[1] : null;
+		
 	        if (song.toLowerCase() == songName.toLowerCase())
 	        {
-	            var bannedDiffs:Array<String> = [];
-
+	            var bannedDiffs:Array<Dynamic> = [];
+			
 	            if (bannedDiffsDynamic == null)
-	                bannedDiffs = [];
-	            else if (Std.isOfType(bannedDiffsDynamic, String))
-	                bannedDiffs = [cast bannedDiffsDynamic];
+	                return true;
 	            else if (Std.isOfType(bannedDiffsDynamic, Array))
 	                bannedDiffs = cast bannedDiffsDynamic;
 	            else
-	            {
-	                trace('Sawblade list check - Unknown type in noSawbladesSongsList for "$songName"');
-	                bannedDiffs = [];
-	            }
-
+	                bannedDiffs = [bannedDiffsDynamic];
+			
 	            if (bannedDiffs.length == 0 || bannedDiffs.contains(""))
 	                return true;
 
 	            for (diff in bannedDiffs)
 	            {
-	                if (diff != null && diff.toLowerCase() == difficulty.toLowerCase())
-	                    return true;
+	                if (diff != null)
+	                {
+	                    if (Std.isOfType(difficulty, String) && Std.isOfType(diff, String))
+	                    {
+	                        if ((cast diff:String).toLowerCase() == (cast difficulty:String).toLowerCase())
+	                            return true;
+	                    }
+	                    else if (Std.isOfType(difficulty, Int) && Std.isOfType(diff, Int))
+	                    {
+	                        if ((cast diff:Int) == (cast difficulty:Int))
+	                            return true;
+	                    }
+	                }
 	            }
-
+			
 	            return false;
 	        }
 	    }
-		
-		return false;
+	
+	    return false;
 	}
 
 	public static function destroyFreeplayVocals() {

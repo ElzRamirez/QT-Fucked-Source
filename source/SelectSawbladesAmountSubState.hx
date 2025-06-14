@@ -20,6 +20,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
     var titleText:FlxText;
     var optionTexts:Array<FlxText> = [];
     var sawbladeSprites:Array<FlxSprite> = [];
+    var arrowSprite:FlxSprite;
 
     var blackBG:FlxSprite;
 
@@ -55,7 +56,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
         for (i in 0...amountOptions.length)
         {
             var optionText = new FlxText(startX + i * spacing, 480, 0, Std.string(amountOptions[i]));
-            optionText.setFormat(Paths.font("vcr.ttf"), 120, (amountOptions[i] == 0 && FreeplayState.isFuckedminationCorrupted) ? FlxColor.RED : FlxColor.WHITE, CENTER);
+            optionText.setFormat(Paths.font("vcr.ttf"), 120, (amountOptions[i] == 0 && (FreeplayState.isFuckedminationCorrupted && !PlayState.chartingMode)) ? FlxColor.RED : FlxColor.WHITE, CENTER);
             optionText.alpha = 0;
             optionTexts.push(optionText);
             add(optionText);
@@ -68,13 +69,15 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
             sawbladeSprite.alpha = 0;
             sawbladeSprites.push(sawbladeSprite);
             add(sawbladeSprite);
-
-            if (!isFromPauseMenu)
-            {
-                FlxTween.tween(optionText, {alpha: (i == curSelected) ? 1 : 0.5}, 0.25, {ease: FlxEase.circIn});
-                FlxTween.tween(sawbladeSprite, {alpha: (i == curSelected) ? 1 : 0.5}, 0.25, {ease: FlxEase.circIn});
-            }
         }
+
+        arrowSprite = new FlxSprite();
+        arrowSprite.loadGraphic(Paths.image('ArrowDownSelection'));
+        arrowSprite.setGraphicSize(Std.int(arrowSprite.width * 0.4));
+        arrowSprite.updateHitbox();
+        arrowSprite.antialiasing = ClientPrefs.globalAntialiasing;
+        arrowSprite.alpha = isFromPauseMenu ? 1 : 0;
+        add(arrowSprite);
 
         confirmText = new FlxText(0, 130, FlxG.width, "This will restart the current\nsong progress.\n\nAre you sure about that?");
         confirmText.setFormat(Paths.font("vcr.ttf"), 50, FlxColor.WHITE, CENTER);
@@ -94,6 +97,14 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
         if (!isFromPauseMenu)
         {
             FlxTween.tween(blackBG, {alpha: 0.6}, 0.25, {ease: FlxEase.circIn});
+            FlxTween.tween(arrowSprite, {alpha: 1}, 0.25, {ease: FlxEase.circIn});
+
+            for (i in 0...amountOptions.length)
+            {
+                FlxTween.tween(optionTexts[i], {alpha: (i == curSelected) ? 1 : 0.5}, 0.25, {ease: FlxEase.circIn});
+                FlxTween.tween(sawbladeSprites[i], {alpha: (i == curSelected) ? 1 : 0.5}, 0.25, {ease: FlxEase.circIn});
+            }
+            
             FlxTween.tween(titleText, {alpha: 1}, 0.25, {ease: FlxEase.circIn,
                 onComplete: function(twn:FlxTween)
                 {
@@ -206,32 +217,38 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
         {
             optionTexts[i].alpha = (i == curSelected) ? 1 : 0.5;
             sawbladeSprites[i].alpha = (i == curSelected) ? 1 : 0.5;
+
+            arrowSprite.x = sawbladeSprites[curSelected].x + (sawbladeSprites[curSelected].width / 2) - (arrowSprite.width / 2);
+            arrowSprite.y = sawbladeSprites[curSelected].y - arrowSprite.height - 25;
         }
     }
 
     function selectionChange(change:Int)
     {
-        if (!FreeplayState.isFuckedminationCorrupted)
+        if (FreeplayState.isFuckedminationCorrupted && !PlayState.chartingMode)
+        {
+            FlxG.cameras.list[FlxG.cameras.list.length - 1].shake(0.0015, 0.25);
+            FlxG.sound.play(Paths.sound('cancelMenu'), 0.4);
+        }
+        else
         {
             curSelected = (curSelected + change + amountOptions.length) % amountOptions.length;
             FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
             updateVisualSelection();
-        }
-        else
-        {
-            FlxG.camera.shake(0.0015, 0.25);
-            FlxG.sound.play(Paths.sound('cancelMenu'), 0.4);
         }
     }
 
     function updateVisualState()
     {
         titleText.visible = (state == "select") ? true : false;
+
         for (i in 0...optionTexts.length)
         {
             optionTexts[i].visible = (state == "select");
             sawbladeSprites[i].visible = (state == "select");
         }
+
+        arrowSprite.visible = (state == "select");
 
         confirmText.visible = (state == "confirm") ? true : false;
         for (opt in confirmOptions)
@@ -280,14 +297,18 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
         });
 
         FlxTween.tween(titleText, {alpha: 0}, 0.25, {ease: FlxEase.circOut});
+        FlxTween.tween(arrowSprite, {alpha: 0}, 0.25, {ease: FlxEase.circOut});
+
         for (optionText in optionTexts)
         {
             FlxTween.tween(optionText, {alpha: 0}, 0.25, {ease: FlxEase.circOut});
         }
+
         for (sawbladeSprite in sawbladeSprites)
         {
             FlxTween.tween(sawbladeSprite, {alpha: 0}, 0.25, {ease: FlxEase.circOut});
         }
+
         FlxTween.tween(confirmText, {alpha: 0}, 0.25, {ease: FlxEase.circOut});
         for (opt in confirmOptions)
         {
