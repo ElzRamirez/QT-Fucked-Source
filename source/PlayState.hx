@@ -4260,6 +4260,7 @@ class PlayState extends MusicBeatState
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
 						//que verga drkfon, por que tantos putos else? hay una manera de hacer esto mucho más eficiente pero bueno XDDD
+						//Ya lo sé we pero me dio flojera poner tantos if else abajo, mejor le hice copypaste XDD -Drkfon
 						if(maxSawbladeHits == 0 || (maxSawbladeHits == 4 && sawbladeHits > 3) || (maxSawbladeHits == 8 && sawbladeHits > 7)){
 							//MURDER THE BITCH!
 							trace("Instakill sawblade missed");
@@ -6839,7 +6840,7 @@ class PlayState extends MusicBeatState
 
 	var noSawbladesSongs:Array<Dynamic> = [
 		["tutorial", [0, 1, 2]],
-		["bad-battle"],
+		["bad battle"],
 		["test"],
 		["censory-superdrip", [0]],
 		["fuckedmination-vip", [0]],
