@@ -1698,7 +1698,7 @@ class FunkinLua {
 			PlayState.instance.KBATTACK(false);
 		});
 		Lua_helper.add_callback(lua, "qtMod_SawbladeAttack", function(shouldInstakill:Bool) {
-			PlayState.instance.KBATTACK(true, "hazard/attack", shouldInstakill);
+			PlayState.instance.KBATTACK(true, "hazard/attack"/*, shouldInstakill*/);
 		});
 		Lua_helper.add_callback(lua, "qtMod_PincerPrepare", function(laneID:Int,goAway:Bool) {
 			PlayState.instance.KBPINCER_PREPARE(laneID,goAway);

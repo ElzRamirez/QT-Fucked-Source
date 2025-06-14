@@ -1,9 +1,9 @@
 {
 	"song": {
-		"speed": 3.5,
+		"speed": 3.3,
 		"stage": "street-termination",
-		"player1": "zRamirez",
-		"player2": "zramirez-kb",
+		"player1": "zRamirez-legacy",
+		"player2": "kb-angry-alt",
 		"player3": null,
 		"events": [
 			[
@@ -3006,7 +3006,7 @@
 					],
 					[
 						"KB_Pincer",
-						"22",
+						"25",
 						""
 					]
 				]
@@ -3026,7 +3026,7 @@
 				[
 					[
 						"KB_Pincer",
-						"23",
+						"26",
 						""
 					],
 					[
@@ -3406,7 +3406,7 @@
 					],
 					[
 						"KB_Pincer",
-						"24",
+						"27",
 						""
 					],
 					[
@@ -4355,7 +4355,7 @@
 		"notes": [],
 		"splashSkin": null,
 		"validScore": false,
-		"gfVersion": "Ara",
+		"gfVersion": "gf",
 		"bpm": 222,
 		"arrowSkin": null,
 		"needsVoices": true,

@@ -41,12 +41,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false); //Default value
 		addOption(option);
 
-		var option:Option = new Option('Forces Instakill', //Name
+		//te extraño mi hermosa opción, vuelve :sob: (Att: zRamírez :()
+		/*var option:Option = new Option('Forces Instakill', //Name
 			'If checked, forces all saws to be Instakill.', //Description
 			'sawsInstakill', //Save data variable name
 			'bool', //Variable type
 			true); //Default value
-		addOption(option);
+		addOption(option);*/ 
 
 		//I'd suggest using "Downscroll" as an example for making your own option since it is the simplest here
 		var option:Option = new Option('Downscroll', //Name

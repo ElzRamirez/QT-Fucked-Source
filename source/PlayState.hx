@@ -4230,7 +4230,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = 'hazard/attack', sawsInstakill:Bool = false){
+	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = 'hazard/attack'/*, sawsInstakill:Bool = false*/){
 		if(state){
 			if(!qtSawbladeAdded){
 				add(kb_attack_saw);
@@ -4259,6 +4259,7 @@ class PlayState extends MusicBeatState
 
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
+						//que verga drkfon, por que tantos putos else? hay una manera de hacer esto mucho más eficiente pero bueno XDDD
 						if(maxSawbladeHits == 0 || (maxSawbladeHits == 4 && sawbladeHits > 3) || (maxSawbladeHits == 8 && sawbladeHits > 7)){
 							//MURDER THE BITCH!
 							trace("Instakill sawblade missed");
@@ -4335,7 +4336,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	public function KBATTACK(state:Bool = false, soundToPlay:String = 'hazard/attack', sawsInstakill:Bool = false):Void
+	public function KBATTACK(state:Bool = false, soundToPlay:String = 'hazard/attack'/*, sawsInstakill:Bool = false*/):Void
 	{
 		if(state)	FlxG.sound.play(Paths.sound(soundToPlay),0.765);
 
@@ -4345,10 +4346,10 @@ class PlayState extends MusicBeatState
 		}
 
 		if(ClientPrefs.noteOffset <= 0) {
-			kbATTACK_DELAYED(state,soundToPlay,sawsInstakill);
+			kbATTACK_DELAYED(state,soundToPlay/*,sawsInstakill*/);
 		} else {
 			new FlxTimer().start(ClientPrefs.noteOffset / 1000, function(tmr:FlxTimer) {
-				kbATTACK_DELAYED(state,soundToPlay,sawsInstakill);
+				kbATTACK_DELAYED(state,soundToPlay/*,sawsInstakill*/);
 			});
 		}	
 	}
@@ -5087,12 +5088,12 @@ class PlayState extends MusicBeatState
 				}
 
 				//Checking if it should be an insta-kill sawblade.
-				KBATTACK(true, soundToPlay, ClientPrefs.sawsInstakill);
+				KBATTACK(true, soundToPlay/*, ClientPrefs.sawsInstakill*/);
 
 			case 'KB_AttackFireDOUBLE':
 				//Kept for legacy support
 				if (value1 == '1') KBATTACK(false);
-				else KBATTACK(true, "hazard/attack-double", ClientPrefs.sawsInstakill);
+				else KBATTACK(true, "hazard/attack-double"/*, ClientPrefs.sawsInstakill*/);
 			case 'KB_Pincer':
 				var offset:Float = 100;
 				

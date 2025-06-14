@@ -8,7 +8,7 @@ import Controls;
 
 class ClientPrefs {
 	public static var hitsoundVolume:Float = 0;		//Here to make Interlope a bit easier, plus why not?
-	public static var sawsInstakill:Bool = true;	//Forces Saws to be Instakill
+	//public static var sawsInstakill:Bool = true;	//Forces Saws to be Instakill
 	public static var qtOldVocals:Bool = false;		//Here because some people (such as myself) prefer the old vocals from the original mod.
 	public static var qtSkipCutscene:Bool = true; 	//Because the cutscene caused problems in the original mod. This is here in case it causes problems still.
 	public static var qtBonk:Bool = false;			//Switches the sawblade sound back to the original placeholder I was using because the Bonk is fucking hilarious.
@@ -105,7 +105,7 @@ class ClientPrefs {
 
 	public static function saveSettings() {
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
-		FlxG.save.data.sawsInstakill = sawsInstakill;
+		//FlxG.save.data.sawsInstakill = sawsInstakill;
 		FlxG.save.data.qtOldVocals = qtOldVocals;
 		FlxG.save.data.qtBonk = qtBonk;
 		FlxG.save.data.hurtNoteAlpha = hurtNoteAlpha;
@@ -160,9 +160,9 @@ class ClientPrefs {
 		if(FlxG.save.data.hitsoundVolume != null){
 			hitsoundVolume = FlxG.save.data.hitsoundVolume;
 		}
-		if(FlxG.save.data.sawsInstakill != null){
+		/*if(FlxG.save.data.sawsInstakill != null){
 			sawsInstakill = FlxG.save.data.sawsInstakill;
-		}
+		}*/
 		if(FlxG.save.data.qtOldVocals != null){
 			qtOldVocals = FlxG.save.data.qtOldVocals;
 		}
