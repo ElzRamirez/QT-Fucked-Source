@@ -347,6 +347,7 @@ class PlayState extends MusicBeatState
 	public var pincer2:FlxSprite;
 	public var pincer3:FlxSprite;
 	public var pincer4:FlxSprite;
+	public var pincer5:FlxSprite;
 	var qt_gas01:FlxSprite;
 	var qt_gas02:FlxSprite;
 	var hazardRandom:Int = 1; //This integer is randomised upon song start between 1-5.
@@ -1293,8 +1294,13 @@ class PlayState extends MusicBeatState
 		pincer4 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
 		pincer4.antialiasing = ClientPrefs.globalAntialiasing;
 		pincer4.scrollFactor.set();
+
+		pincer5 = new FlxSprite(0, 0).loadGraphic(Paths.image('hazard/qt-port/pincer-close'));
+		pincer5.antialiasing = ClientPrefs.globalAntialiasing;
+		pincer5.scrollFactor.set();
 		
 		if (ClientPrefs.downScroll){
+			pincer5.angle = 270;
 			pincer4.angle = 270;
 			pincer3.angle = 270;
 			pincer2.angle = 270;
@@ -1303,7 +1309,9 @@ class PlayState extends MusicBeatState
 			pincer2.offset.set(192,-75);
 			pincer3.offset.set(192,-75);
 			pincer4.offset.set(192,-75);
+			pincer5.offset.set(192,-75);
 		}else{
+			pincer5.angle = 90;
 			pincer4.angle = 90;
 			pincer3.angle = 90;
 			pincer2.angle = 90;
@@ -1312,6 +1320,7 @@ class PlayState extends MusicBeatState
 			pincer2.offset.set(218,240);
 			pincer3.offset.set(218,240);
 			pincer4.offset.set(218,240);
+			pincer5.offset.set(218,240);
 		}
 		
 		//For the 'alarm' effect. Only added if flashling lights is allowed and low quality is off.
@@ -4355,6 +4364,7 @@ class PlayState extends MusicBeatState
 		pincer2.cameras = [camPincers];
 		pincer3.cameras = [camPincers];
 		pincer4.cameras = [camPincers];
+		pincer5.cameras = [camPincers];
 
 		var offset:Float = 100;
 
@@ -4383,22 +4393,22 @@ class PlayState extends MusicBeatState
 			}
 		}
 		else if(laneID==5){ //Targets far left note for Dad (KB). Used for the screenshake thing
-			pincer1.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
+			pincer5.loadGraphic(Paths.image('hazard/qt-port/pincer-open'), false);
 			if(ClientPrefs.downScroll){
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y+500+offset);
-					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
+					pincer5.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y+500+offset);
+					add(pincer5);
+					FlxTween.tween(pincer5, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer5, {y : strumLineNotes.members[0].y+500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer5);}});
 				}
 			}else{
 				if(!goAway){
-					pincer1.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y-500+offset);
-					add(pincer1);
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
+					pincer5.setPosition(strumLineNotes.members[0].x+offset,strumLineNotes.members[0].y-500+offset);
+					add(pincer5);
+					FlxTween.tween(pincer5, {y : strumLineNotes.members[0].y+offset}, 0.3, {ease: FlxEase.elasticOut});
 				}else{
-					FlxTween.tween(pincer1, {y : strumLineNotes.members[0].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer1);}});
+					FlxTween.tween(pincer5, {y : strumLineNotes.members[0].y-500+offset}, 0.4, {ease: FlxEase.backIn, onComplete: function(twn:FlxTween){remove(pincer5);}});
 				}
 			}
 		}
@@ -4513,7 +4523,7 @@ class PlayState extends MusicBeatState
 	{
 		switch(laneID)
 		{
-			case 1 | 5:
+			case 1:
 				pincer1.loadGraphic(Paths.image('hazard/qt-port/pincer-close'), false);
 			case 2:
 				pincer2.loadGraphic(Paths.image('hazard/qt-port/pincer-close'), false);
@@ -4521,6 +4531,8 @@ class PlayState extends MusicBeatState
 				pincer3.loadGraphic(Paths.image('hazard/qt-port/pincer-close'), false);
 			case 4:
 				pincer4.loadGraphic(Paths.image('hazard/qt-port/pincer-close'), false);
+			case 5:
+				pincer5.loadGraphic(Paths.image('hazard/qt-port/pincer-close'), false);
 			default:
 				trace("Invalid LaneID for pincerGRAB");
 		}
@@ -5251,7 +5263,7 @@ class PlayState extends MusicBeatState
 						else
 							KBPINCER_PREPARE(4,false);
 					case 23: //SHAKEY SHAKEY
-						KBPINCER_GRAB(1);
+						KBPINCER_GRAB(5);
 						if(forceMiddleScroll)
 							KBPINCER_GRAB(2);
 						else
@@ -5263,6 +5275,28 @@ class PlayState extends MusicBeatState
 							KBPINCER_PREPARE(6,true);
 						else
 							KBPINCER_PREPARE(4,true);
+						hazardModChartEffect=0;
+						camHUD.angle=0;
+						camPincers.angle=0;
+					case 25: //Prepare screenshake ALT version
+						KBPINCER_PREPARE(5,false);
+						if(forceMiddleScroll)
+							KBPINCER_PREPARE(6,false);
+						else
+							KBPINCER_PREPARE(1,false);
+					case 26: //SHAKEY SHAKEY alt
+						KBPINCER_GRAB(5);
+						if(forceMiddleScroll)
+							KBPINCER_GRAB(2);
+						else
+							KBPINCER_GRAB(1);
+						hazardModChartEffect=2;
+					case 27: //Screenshake end ALT version
+						KBPINCER_PREPARE(5,true);
+						if(forceMiddleScroll)
+							KBPINCER_PREPARE(6,true);
+						else
+							KBPINCER_PREPARE(1,true);
 						hazardModChartEffect=0;
 						camHUD.angle=0;
 						camPincers.angle=0;
