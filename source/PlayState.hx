@@ -815,7 +815,11 @@ class PlayState extends MusicBeatState
 				add(qt_tv01);
 				qt_tv01.animation.play('idle');
 
-			case 'Stage-Rami' | 'Stage-Rami-test':
+			case 'airship'
+				discordDifficultyOverrideShouldUse = true;
+				discordDifficultyOverride = "Double Idiots";
+			
+			case 'Stage-Rami', 'Stage-Rami-test':
 				dadDrainHealth=0.020;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "You try Vs zRamirez";
@@ -850,14 +854,15 @@ class PlayState extends MusicBeatState
 
 			case 'street-termination':
 				disableArrowIntro = true;
-				discordDifficultyOverrideShouldUse = true;
 				if (SONG.song.toLowerCase()=='fuckedmination'){	
 					if(storyDifficulty==2){
+						discordDifficultyOverrideShouldUse = true;
 						discordDifficultyOverride = "Fuck You";
 						healthLossMultiplier=2.175; //That's alotta damage!
 						healthGainMultiplier=1.085;
 						dadDrainHealth=0.020;
 					}else{
+						discordDifficultyOverrideShouldUse = true;
 						discordDifficultyOverride = "Very Fucked";
 						healthLossMultiplier=1.288;
 						healthGainMultiplier=1.081;
@@ -872,11 +877,13 @@ class PlayState extends MusicBeatState
 
 				if (SONG.song.toLowerCase()=='tutorial'){
 					if(storyDifficulty==4){
+						discordDifficultyOverrideShouldUse = true;
 						discordDifficultyOverride = "Fucked";
 						healthLossMultiplier=1.2;
 						healthGainMultiplier=1.085;
 						dadDrainHealth=0.011;
 					}else if(storyDifficulty==5){
+						discordDifficultyOverrideShouldUse = true;
 						discordDifficultyOverride = "Very Fucked";
 						healthLossMultiplier=1.4;
 						healthGainMultiplier=1.081;
@@ -1361,7 +1368,7 @@ class PlayState extends MusicBeatState
 
 		switch(curStage)
 		{
-			case 'Stage-Rami' | 'Stage-Rami-test':
+			case 'Stage-Rami', 'Stage-Rami-test':
 				add(luz);
 		}
 

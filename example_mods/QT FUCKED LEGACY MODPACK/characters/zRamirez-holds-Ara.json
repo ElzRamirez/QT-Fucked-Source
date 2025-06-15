@@ -1,0 +1,188 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-5,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "BF idle dance"
+		},
+		{
+			"offsets": [
+				-4,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "BF NOTE LEFT0"
+		},
+		{
+			"offsets": [
+				-15,
+				-35
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "BF NOTE DOWN0"
+		},
+		{
+			"offsets": [
+				-33,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "BF NOTE UP0"
+		},
+		{
+			"offsets": [
+				-32,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "BF NOTE RIGHT0"
+		},
+		{
+			"offsets": [
+				-5,
+				93
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "hey",
+			"indices": [],
+			"name": "BF HEY"
+		},
+		{
+			"offsets": [
+				-23,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-alt",
+			"indices": [],
+			"name": "BF NOTE LEFT ALT0"
+		},
+		{
+			"offsets": [
+				-21,
+				-35
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-alt",
+			"indices": [],
+			"name": "BF NOTE DOWN ALT0"
+		},
+		{
+			"offsets": [
+				-33,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-alt",
+			"indices": [],
+			"name": "BF NOTE UP ALT0"
+		},
+		{
+			"offsets": [
+				-32,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-alt",
+			"indices": [],
+			"name": "BF NOTE RIGHT ALT0"
+		},
+		{
+			"offsets": [
+				-7,
+				5
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT-together",
+			"indices": [],
+			"name": "BF NOTE LEFT TOGETHER0"
+		},
+		{
+			"offsets": [
+				-14,
+				-36
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN-together",
+			"indices": [],
+			"name": "BF NOTE DOWN TOGETHER0"
+		},
+		{
+			"offsets": [
+				-33,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP-together",
+			"indices": [],
+			"name": "BF NOTE UP TOGETHER0"
+		},
+		{
+			"offsets": [
+				-31,
+				-2
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT-together",
+			"indices": [],
+			"name": "BF NOTE RIGHT TOGETHER0"
+		},
+		{
+			"offsets": [
+				-11,
+				-7
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "dodge",
+			"indices": [],
+			"name": "boyfriend dodge"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/zRamirez-holds-Ara",
+	"position": [
+		70,
+		335
+	],
+	"healthicon": "araram",
+	"flip_x": true,
+	"healthbar_colors": [
+		175,
+		0,
+		40
+	],
+	"camera_position": [
+		130,
+		-60
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

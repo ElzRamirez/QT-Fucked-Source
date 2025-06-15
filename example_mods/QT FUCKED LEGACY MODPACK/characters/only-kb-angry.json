@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				242,
+				240
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "KB_Left",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-81,
+				60
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "KB_Right",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				187,
+				27
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "KB_Down",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				130,
+				226
+			],
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "KB_Up"
+		},
+		{
+			"offsets": [
+				145,
+				70
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": true,
+			"name": "KB_idleBabyRage"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/only-kb-angry",
+	"position": [
+		-160,
+		230
+	],
+	"healthicon": "kb-dk",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		255,
+		40
+	],
+	"camera_position": [
+		0,
+		-110
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

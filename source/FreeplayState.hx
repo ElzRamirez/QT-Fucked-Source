@@ -269,6 +269,7 @@ class FreeplayState extends MusicBeatState
 		["fuckedmination-but-funni", [""]],
 		["last-smile", [""]],
 		["reactor", ["Hard"]],
+		["double-kill-v2", ["Hard"]],
 		["redacted", [""]]
 	];
 
