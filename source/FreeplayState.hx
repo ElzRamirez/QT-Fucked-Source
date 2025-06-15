@@ -718,6 +718,7 @@ class FreeplayState extends MusicBeatState
 		{
 			curDifficulty = newPos;
 		}
+		changeDiff();
 	}
 
 	private function positionHighscore() {
