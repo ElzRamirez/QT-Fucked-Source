@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				3,
-				0
+				11,
+				-9
 			],
 			"loop": false,
 			"anim": "cheer",
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				-19
+				10,
+				-31
 			],
 			"loop": false,
 			"anim": "singLEFT",
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				-20
+				11,
+				-33
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				4
+				11,
+				-7
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				0,
-				-20
+				11,
+				-31
 			],
 			"loop": false,
 			"anim": "singRIGHT",
@@ -57,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				-2,
-				-21
+				9,
+				-32
 			],
 			"loop": false,
 			"anim": "sad",
@@ -137,47 +137,7 @@
 		},
 		{
 			"offsets": [
-				45,
-				-8
-			],
-			"loop": true,
-			"anim": "hairBlow",
-			"fps": 24,
-			"name": "GF Dancing Beat Hair blowing",
-			"indices": [
-				0,
-				1,
-				2,
-				3
-			]
-		},
-		{
-			"offsets": [
-				0,
-				-9
-			],
-			"loop": false,
-			"anim": "hairFall",
-			"fps": 24,
-			"name": "GF Dancing Beat Hair Landing",
-			"indices": [
-				0,
-				1,
-				2,
-				3,
-				4,
-				5,
-				6,
-				7,
-				8,
 				9,
-				10,
-				11
-			]
-		},
-		{
-			"offsets": [
-				10,
 				-28
 			],
 			"loop": true,

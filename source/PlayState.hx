@@ -433,7 +433,7 @@ class PlayState extends MusicBeatState
 
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
-		PauseSubState.songName = null; //Very Need to works -zRamírez
+		PauseSubState.songName = null;
 
 		dodgeKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge'));
 		tauntKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_taunt'));
