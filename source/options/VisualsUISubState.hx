@@ -134,7 +134,33 @@ class VisualsUISubState extends BaseOptionsMenu
 		option.onChange = onChangeFPSCounter;
 		#end
 
+		var option:Option = new Option('Pause Screen Song:',
+			"What song do you prefer for the Pause Screen?",
+			'pauseMusic',
+			'string',
+			'Breakfast',
+			['None', 'Breakfast', 'zRamirez']);
+		addOption(option);
+		option.onChange = onChangePauseMusic;
+
 		super();
+	}
+
+	var changedMusic:Bool = false;
+	function onChangePauseMusic()
+	{
+		if(ClientPrefs.pauseMusic == 'None')
+			FlxG.sound.music.volume = 0;
+		else
+			FlxG.sound.playMusic(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic == 'Breakfast' ? "breakfast-pixel" : (ClientPrefs.pauseMusic == 'zRamirez' ? "ramirez-week-pause" : ClientPrefs.pauseMusic))));
+
+		changedMusic = true;
+	}
+
+	override function destroy()
+	{
+		if(changedMusic) FlxG.sound.playMusic(Paths.music('qtMenu'));
+		super.destroy();
 	}
 
 	#if !mobile

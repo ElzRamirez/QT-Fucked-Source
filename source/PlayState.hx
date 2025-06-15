@@ -419,6 +419,11 @@ class PlayState extends MusicBeatState
 	var hazardAlarmLeft:BGSprite;
 	var hazardAlarmRight:BGSprite;
 
+	var precacheList:Map<String, String> = new Map<String, String>();
+
+	public var songName:String = null;
+
+
 	override public function create()
 	{
 		Paths.clearStoredMemory();
@@ -428,6 +433,7 @@ class PlayState extends MusicBeatState
 
 		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
+		PauseSubState.songName = null; //Very Need to works -zRamírez
 
 		dodgeKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge'));
 		tauntKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_taunt'));
@@ -815,7 +821,7 @@ class PlayState extends MusicBeatState
 				add(qt_tv01);
 				qt_tv01.animation.play('idle');
 
-			case 'airship'
+			case 'airship':
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "Double Idiots";
 			
@@ -1830,6 +1836,20 @@ class PlayState extends MusicBeatState
 		CoolUtil.precacheSound('missnote1');
 		CoolUtil.precacheSound('missnote2');
 		CoolUtil.precacheSound('missnote3');
+
+		//I DON'T FUCKING IDEA HOW IT WORKS -zRamírez
+		var leSong:String = Paths.formatToSongPath(SONG.song);
+		switch (leSong)
+		{
+			case "bad-battle", 'test', 'last-smile':
+				PauseSubState.songName = 'ramirez-week-pause';
+		}
+
+		if (PauseSubState.songName != null) {
+			precacheList.set(PauseSubState.songName, 'music');
+		} else if(ClientPrefs.pauseMusic != 'None') {
+			precacheList.set(Paths.formatToSongPath(ClientPrefs.pauseMusic == 'Breakfast' ? "breakfast-pixel" : (ClientPrefs.pauseMusic == 'zRamírez' ? "ramirez-week-pause" : ClientPrefs.pauseMusic)), 'music');
+		}
 
 		introSkipSprite = new BGSprite('hazard/inhuman-port/skip-hint', -600, -480, 0.5, 0.5);
 		introSkipSprite.setGraphicSize(Std.int(introSkipSprite.width * 2));
@@ -4266,7 +4286,7 @@ class PlayState extends MusicBeatState
 
 						//Classic Termination sawblade which instakill.
 						//After 3rd sawblade, will guarantee an instakill.
-						//que verga drkfon, por que tantos putos else? hay una manera de hacer esto mucho más eficiente pero bueno XDDD
+						//que verga drkfon, por que tantos putos else? hay una manera de hacer esto mucho más eficiente pero bueno XDDD -zRamírez
 						//Ya lo sé we pero me dio flojera poner tantos if else abajo, mejor le hice copypaste XDD -Drkfon
 						if(maxSawbladeHits == 0 || (maxSawbladeHits == 4 && sawbladeHits > 3) || (maxSawbladeHits == 8 && sawbladeHits > 7)){
 							//MURDER THE BITCH!

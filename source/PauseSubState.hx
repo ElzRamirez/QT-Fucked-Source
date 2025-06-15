@@ -27,12 +27,13 @@ class PauseSubState extends MusicBeatSubstate
 	public static var pauseMusic:FlxSound;
 	var practiceText:FlxText;
 	//var botplayText:FlxText;
+	public static var songName:String = '';
 
 	public function new(x:Float, y:Float)
 	{
 		super();
 		//HOLY FUCKING SHIT IM SO LAZY THIS IS FUCKED UP JESUS CHRIST WHAT THE ACTUAL FUCK IS WRONG WITH ME
-		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'termination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope')
+		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'fuckedmination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope')
 			menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
 
 		if (!PlayState.songDoesNotHaveSawblades && !PlayState.isStoryMode && PlayState.SONG.song.toLowerCase() != 'fuckedmination-corrupted')
@@ -62,7 +63,12 @@ class PauseSubState extends MusicBeatSubstate
 		}
 		difficultyChoices.push('BACK');
 
-		pauseMusic = new FlxSound().loadEmbedded(Paths.music('breakfast'), true, true);
+		pauseMusic = new FlxSound();
+		if(songName != null) {
+			pauseMusic.loadEmbedded(Paths.music(songName), true, true);
+		} else if (songName != 'None') {
+			pauseMusic.loadEmbedded(Paths.music(Paths.formatToSongPath(ClientPrefs.pauseMusic == 'Breakfast' ? "breakfast" : (ClientPrefs.pauseMusic == 'zRamirez' ? "ramirez-week-pause" : ClientPrefs.pauseMusic))), true, true);
+		}
 		pauseMusic.volume = 0;
 		pauseMusic.play(false, FlxG.random.int(0, Std.int(pauseMusic.length / 2)));
 
