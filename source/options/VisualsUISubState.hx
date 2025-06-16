@@ -34,14 +34,15 @@ class VisualsUISubState extends BaseOptionsMenu
 		title = 'Visuals and UI';
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
-		var option:Option = new Option('Note Splashes',
-			"If unchecked, hitting \"Sick!\" notes won't show particles.",
-			'noteSplashes',
-			'bool',
-			true);
+		var option:Option = new Option('Note Skins:',
+			"Choose what texture you want to be used in on the Notes.",
+			'noteSkin',
+			'string',
+			'Vanilla',
+			['Vanilla', 'Future', 'Chip', 'Bar', 'Diamond', 'Square', 'DoritosPizzerola']);
 		addOption(option);
 
-		var option:Option = new Option('Note Splashes Texture:',
+		var option:Option = new Option('Note Splashes:',
 			"Choose what texture you want to be used in the Note Splashes.",
 			'noteSplashesTexture',
 			'string',
@@ -49,12 +50,11 @@ class VisualsUISubState extends BaseOptionsMenu
 			['Vanilla', 'Psych', 'Diamond', 'Electric', 'Sparkles', 'Lightning']);
 		addOption(option);
 
-		var option:Option = new Option('Note Skin Texture:',
-			"Choose what texture you want to be used in on the Notes.",
-			'noteSkin',
-			'string',
-			'Vanilla',
-			['Vanilla', 'Future', 'Chip', 'Bar', 'Diamond', 'Square', 'DoritosPizzerola']);
+		var option:Option = new Option('Note Splashes',
+			"If unchecked, hitting \"Sick!\" notes won't show particles.",
+			'noteSplashes',
+			'bool',
+			true);
 		addOption(option);
 		
 		var option:Option = new Option('Hurt note transparency',
