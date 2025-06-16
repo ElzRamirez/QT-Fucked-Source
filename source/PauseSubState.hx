@@ -34,7 +34,7 @@ class PauseSubState extends MusicBeatSubstate
 	{
 		super();
 		//HOLY FUCKING SHIT IM SO LAZY THIS IS FUCKED UP JESUS CHRIST WHAT THE ACTUAL FUCK IS WRONG WITH ME
-		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'fuckedmination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope')
+		if(CoolUtil.difficulties.length < 2 || PlayState.SONG.song.toLowerCase() == 'fuckinfree' || PlayState.SONG.song.toLowerCase() == 'fuckedless' || PlayState.SONG.song.toLowerCase() == 'censory-fuckedload' || PlayState.SONG.song.toLowerCase() == 'fuckedmination' || PlayState.SONG.song.toLowerCase() == 'cessation' || PlayState.SONG.song.toLowerCase() == 'interlope')
 			menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
 
 		if (!PlayState.songDoesNotHaveSawblades && !PlayState.isStoryMode && PlayState.SONG.song.toLowerCase() != 'fuckedmination-corrupted')
