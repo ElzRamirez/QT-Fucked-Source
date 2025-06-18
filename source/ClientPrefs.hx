@@ -22,7 +22,7 @@ class ClientPrefs {
 	public static var flashing:Bool = true;
 	public static var globalAntialiasing:Bool = true;
 	public static var noteSplashes:Bool = true;
-	public static var noteSplashesTexture:String = 'Vanilla';
+	public static var splashSkin:String = 'Vanilla';
 	public static var lowQuality:Bool = false;
 	public static var framerate:Int = 60;
 	public static var cursing:Bool = true;
@@ -119,7 +119,7 @@ class ClientPrefs {
 		FlxG.save.data.flashing = flashing;
 		FlxG.save.data.globalAntialiasing = globalAntialiasing;
 		FlxG.save.data.noteSplashes = noteSplashes;
-		FlxG.save.data.noteSplashesTexture = noteSplashesTexture;
+		FlxG.save.data.splashSkin = splashSkin;
 		FlxG.save.data.lowQuality = lowQuality;
 		FlxG.save.data.framerate = framerate;
 		//FlxG.save.data.cursing = cursing;
@@ -207,8 +207,8 @@ class ClientPrefs {
 		if(FlxG.save.data.noteSplashes != null) {
 			noteSplashes = FlxG.save.data.noteSplashes;
 		}
-		if(FlxG.save.data.noteSplashesTexture != null) {
-			noteSplashesTexture = FlxG.save.data.noteSplashesTexture;
+		if(FlxG.save.data.splashSkin != null) {
+			splashSkin = FlxG.save.data.splashSkin;
 		}
 		if(FlxG.save.data.lowQuality != null) {
 			lowQuality = FlxG.save.data.lowQuality;

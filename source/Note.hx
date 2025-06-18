@@ -45,7 +45,7 @@ class Note extends FlxSprite
 	public static var RED_NOTE:Int = 3;
 
 	public static var defaultNoteSkin(default, never):String = 'noteShit/Vanilla';
-	private var colArray:Array<String> = ['purple', 'blue', 'green', 'red'];
+	public static var colArray:Array<String> = ['purple', 'blue', 'green', 'red'];
 
 	// Lua shit
 	public var noteSplashDisabled:Bool = false;
