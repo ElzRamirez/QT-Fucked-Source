@@ -824,6 +824,7 @@ class PlayState extends MusicBeatState
 				qt_tv01.animation.play('idle');
 
 			case 'airship':
+				dadDrainHealth=0.020;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "Double Idiots";
 			
@@ -6872,6 +6873,7 @@ class PlayState extends MusicBeatState
 		["bad battle"],
 		["test"],
 		["censory-superdrip", [0]],
+		["double-kill-v2", [0]],
 		["fuckedmination-vip", [0]],
 		["fuckedmination-duet-vip", [0]],
 		["fuckedmination-but-funni"],
