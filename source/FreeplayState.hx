@@ -44,7 +44,7 @@ class FreeplayState extends MusicBeatState
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
 
-	public static var isFuckedminationCorrupted:Bool = false;
+	public static var isSongLockedIn0sawblades:Bool = false;
 
 	private var iconArray:Array<HealthIcon> = [];
 
@@ -264,12 +264,12 @@ class FreeplayState extends MusicBeatState
 		["bad-battle", [""]],
 		["test", [""]],
 		["censory-superdrip", ["Hard"]],
+		["double-kill-v2", ["Hard"]],
 		["fuckedmination-vip", ["No Saws"]],
 		["fuckedmination-duet-vip", ["No Saws"]],
 		["fuckedmination-but-funni", [""]],
 		["last-smile", [""]],
 		["reactor", ["Hard"]],
-		["double-kill-v2", ["Hard"]],
 		["redacted", [""]]
 	];
 
@@ -413,7 +413,7 @@ class FreeplayState extends MusicBeatState
 		else if (accepted && songs[curSelected].songName != "")
 		{
 			persistentUpdate = false;
-			isFuckedminationCorrupted = false;
+			isSongLockedIn0sawblades = false;
 			var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 			var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
 			/*#if MODS_ALLOWED
@@ -436,9 +436,9 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (songLowercase == "fuckedmination-corrupted"){
+			if (((songLowercase == "fuckedmination" || songLowercase == "fuckedmination-vip" || songLowercase == "fuckedmination-duet-vip") && curDifficulty == 2) || songLowercase == "fuckedmination-corrupted"){
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
-				isFuckedminationCorrupted = true;
+				isSongLockedIn0sawblades = true;
 				openSubState(new SelectSawbladesAmountSubState(0));
 				return;
 			}else if (!isSongInNoSawbladesList(songLowercase, CoolUtil.difficultyString().toLowerCase(), noSawbladesSongsList)){

@@ -295,6 +295,7 @@ class PlayState extends MusicBeatState
 
 	public static var maxSawbladeHits:Int = 8;
 	public static var songDoesNotHaveSawblades:Bool = false;
+	public static var cantChangeMaxSawbladeHits:Bool = false;
 
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
@@ -503,6 +504,7 @@ class PlayState extends MusicBeatState
 			maxSawbladeHits = 8;
 
 		songDoesNotHaveSawblades = false;
+		cantChangeMaxSawbladeHits = false;
 
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
@@ -583,6 +585,9 @@ class PlayState extends MusicBeatState
 
 		if (FreeplayState.isSongInNoSawbladesList(SONG.song.toLowerCase(), storyDifficulty, noSawbladesSongs))
 			songDoesNotHaveSawblades = true;
+		
+		if (((SONG.song.toLowerCase() == "fuckedmination" || SONG.song.toLowerCase() == "fuckedmination-vip" || SONG.song.toLowerCase() == "fuckedmination-duet-vip") && storyDifficulty == 2) || SONG.song.toLowerCase() == "fuckedmination-corrupted")
+			cantChangeMaxSawbladeHits = true;
 		
 		switch (curStage)
 		{

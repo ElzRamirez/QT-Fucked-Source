@@ -56,7 +56,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
         for (i in 0...amountOptions.length)
         {
             var optionText = new FlxText(startX + i * spacing, 480, 0, Std.string(amountOptions[i]));
-            optionText.setFormat(Paths.font("vcr.ttf"), 120, (amountOptions[i] == 0 && (FreeplayState.isFuckedminationCorrupted && !PlayState.chartingMode)) ? FlxColor.RED : FlxColor.WHITE, CENTER);
+            optionText.setFormat(Paths.font("vcr.ttf"), 120, (amountOptions[i] == 0 && (FreeplayState.isSongLockedIn0sawblades && !PlayState.chartingMode)) ? FlxColor.RED : FlxColor.WHITE, CENTER);
             optionText.alpha = 0;
             optionTexts.push(optionText);
             add(optionText);
@@ -225,7 +225,7 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
 
     function selectionChange(change:Int)
     {
-        if (FreeplayState.isFuckedminationCorrupted && !PlayState.chartingMode)
+        if (FreeplayState.isSongLockedIn0sawblades && !PlayState.chartingMode)
         {
             FlxG.cameras.list[FlxG.cameras.list.length - 1].shake(0.0015, 0.25);
             FlxG.sound.play(Paths.sound('cancelMenu'), 0.4);
