@@ -39,9 +39,9 @@ class PauseSubState extends MusicBeatSubstate
 
 		if (!PlayState.songDoesNotHaveSawblades && !PlayState.isStoryMode && PlayState.SONG.song.toLowerCase() != 'fuckedmination-corrupted')
 		{
-			var indexExit = menuItemsOG.indexOf('Exit to menu');
-			if(indexExit > -1)
-        		menuItemsOG.insert(indexExit, 'Change Max Sawblade Hits');
+			var indexOptions = menuItemsOG.indexOf('Options');
+			if(indexOptions > -1)
+        		menuItemsOG.insert(indexOptions, 'Change Max Sawblade Hits');
 		}
 		
 		if(PlayState.chartingMode)
@@ -50,9 +50,9 @@ class PauseSubState extends MusicBeatSubstate
 			menuItemsOG.insert(3, 'Toggle Botplay');
 			if (!menuItemsOG.contains('Change Max Sawblade Hits'))
 			{
-				var indexExit = menuItemsOG.indexOf('Exit to menu');
-				if(indexExit > -1)
-            		menuItemsOG.insert(indexExit, 'Change Max Sawblade Hits');
+				var indexOptions = menuItemsOG.indexOf('Options');
+				if(indexOptions > -1)
+            		menuItemsOG.insert(indexOptions, 'Change Max Sawblade Hits');
 			}
 		}
 
