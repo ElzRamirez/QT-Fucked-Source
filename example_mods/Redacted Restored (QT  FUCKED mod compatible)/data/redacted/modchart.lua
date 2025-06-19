@@ -1,7 +1,7 @@
 -- modchart por Slushi & Drkfon
 function onCreatePost()
 	for i = 0,3 do
-		setPropertyFromGroup('strumLineNotes',i,'y',-330)
+        setPropertyFromGroup('strumLineNotes',i,'visible',false)
     end
 end
 
@@ -14,11 +14,7 @@ function onStepHit()
     end
     if curStep == 64 then
         for i = 0,3 do
-            if downscroll then
-                setPropertyFromGroup('strumLineNotes',i,'y',570)
-            else
-                setPropertyFromGroup('strumLineNotes',i,'y',50)
-            end
+            setPropertyFromGroup('strumLineNotes',i,'visible',true)
         end
     end
     if curStep == 800 then

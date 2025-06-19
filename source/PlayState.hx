@@ -4050,7 +4050,7 @@ class PlayState extends MusicBeatState
 				for (timer in modchartTimers) {
 					timer.active = true;
 				}
-				if(SONG.song.toLowerCase()=="interlope"){ //Use INHUMAN gameover screen instead of vanilla.
+				if(SONG.song.toLowerCase()=="interlope" || SONG.song.toLowerCase()=="redacted"){ //Use INHUMAN gameover screen instead of vanilla.
 					BrutalityGameOverSubstate.characterName = 'amelia';
 					openSubState(new BrutalityGameOverSubstate(causeOfDeath, this));
 				}
@@ -6714,7 +6714,7 @@ class PlayState extends MusicBeatState
 
 			//Fuck you, I added a taunt button because it's funny! -Haz
 			//FlxG.keys.justPressed.SHIFT
-			if(!inhumanSong && FlxG.keys.anyJustPressed(tauntKey) && !bfDodging && !controlHoldArray.contains(true) && !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
+			if(!inhumanSong && !(SONG.song.toLowerCase() == 'redacted') && FlxG.keys.anyJustPressed(tauntKey) && !bfDodging && !controlHoldArray.contains(true) && !boyfriend.animation.curAnim.name.endsWith('miss') && boyfriend.specialAnim == false){
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
 				boyfriend.heyTimer = 0.59;
