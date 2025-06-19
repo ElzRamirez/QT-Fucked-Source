@@ -291,6 +291,12 @@ class SelectSawbladesAmountSubState extends MusicBeatSubstate
                         StoryMenuState.selectedWeek = false;
                         StoryMenuState.stopspamming = false;
                     }
+                    else
+                    {
+                        if (!isFromPauseMenu)
+                            PlayState.SONG = null;
+                    }
+
                     close();
                 }
             }
