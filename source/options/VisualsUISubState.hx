@@ -42,6 +42,7 @@ class VisualsUISubState extends BaseOptionsMenu
 		rpcTitle = 'Visuals & UI Settings Menu'; //for Discord Rich Presence
 
 		// for note skins
+		//all shits are from vs zRamírez
 		notes = new FlxTypedGroup<StrumNote>();
 		splashes = new FlxTypedGroup<NoteSplash>();
 		for (i in 0...Note.colArray.length)
@@ -77,6 +78,13 @@ class VisualsUISubState extends BaseOptionsMenu
 		var option:Option = new Option('Note Splashes',
 			"If unchecked, hitting \"Sick!\" notes won't show particles.",
 			'noteSplashes',
+			'bool',
+			true);
+		addOption(option);
+
+		var option:Option = new Option('Disable Sustain Loop',
+			"If unchecked, the looping of singing animations will be disabled, like V-Slice.",
+			'disableSustainLoop',
 			'bool',
 			true);
 		addOption(option);

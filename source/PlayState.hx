@@ -1569,6 +1569,13 @@ class PlayState extends MusicBeatState
 		// startCountdown();
 
 		generateSong(SONG.song);
+		for (note in unspawnNotes) 
+		{
+    		if (note.isSustainNote && ClientPrefs.disableSustainLoop)
+			{
+        		note.noAnimation = true;
+   		 	}
+		}
 		#if LUA_ALLOWED
 		for (notetype in noteTypeMap.keys())
 		{
@@ -7271,6 +7278,14 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (note.isSustainNote && ClientPrefs.disableSustainLoop) {
+    		if (note.gfNote || note.noteType == 'GF Sing') {
+        		gf.holdTimer = 0;
+    		} else {
+        		dad.holdTimer = 0;
+    		}
+		}
+
 		if (SONG.needsVoices && !inhumanSong) //Player2/Opponent can't restore vocals, only player1 can.
 			vocals.volume = 1;
 
@@ -7300,6 +7315,14 @@ class PlayState extends MusicBeatState
 		if (!note.wasGoodHit)
 		{
 			if(cpuControlled && (note.ignoreNote || note.hitCausesMiss)) return;
+
+			if (note.isSustainNote && ClientPrefs.disableSustainLoop) {
+    			if (note.gfNote || note.noteType == 'GF Sing') {
+       		 		gf.holdTimer = 0;
+    			} else {
+        			boyfriend.holdTimer = 0;
+    			}
+			}
 
 			if(note.hitCausesMiss) {
 				noteMiss(note);
@@ -8234,3 +8257,4 @@ class PlayState extends MusicBeatState
 	var curLightEvent:Int = 0;
 }
 //el que haya llego hasta aquí abajo y lea esto es gay
+//Ayudenme, estoy sufriendo internamente, siento tanto dolor cada vez que modifico este codigo de mierda, no puedo más con mi vida, no soporto ver que todo este codigo es tan complejo, por favor acaben con mi sufrimiento o comprenme una pc gamer con una rtx titan y 2 TB en SSD de M.2, 64 GB de Ram y un Intel I9 de la generación más reciente que haya por favor uwu. -zRamírez
