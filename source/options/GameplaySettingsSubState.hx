@@ -64,6 +64,18 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		var option:Option = new Option('Sawblade Volume',
+			'Sets how loud the sawblade sound should be.',
+			'sawbladeVolume',
+			'percent',
+			1);
+		option.scrollSpeed = 1.6;
+		option.minValue = 0.1;
+		option.maxValue = 1;
+		option.changeValue = 0.1;
+		option.decimals = 1;
+		addOption(option);
+
 		var option:Option = new Option('HitSound Volume',
 			'Sets how loud the hitsounds should be. 0 means disabled.',
 			'hitsoundVolume',
