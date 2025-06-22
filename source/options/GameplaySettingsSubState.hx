@@ -35,13 +35,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		rpcTitle = 'Gameplay Settings Menu'; //for Discord Rich Presence
 
 		var option:Option = new Option('Boyfriend Voices', //Name
-			'If checked, will use the BF voices from the original QT FD.', //Description
+			'If checked, will use the BF voices from the older versions from QT Fucked Difficulty.', //Description
 			'qtOldVocals', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
 
-		//te extraño mi hermosa opción, vuelve :sob: (Att: zRamírez :()
+		//te extraño mi hermosa opción, vuelve :sob: -zRamírez
 		/*var option:Option = new Option('Forces Instakill', //Name
 			'If checked, forces all saws to be Instakill.', //Description
 			'sawsInstakill', //Save data variable name
@@ -81,6 +81,14 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			'ghostTapping',
 			'bool',
 			true);
+		addOption(option);
+
+		//this option are from vs zRamírez
+		var option:Option = new Option('Disable Pop Up Score',
+			"If checked, hitting notes won't make \"Sick\", \"Good\".. and combo popups (Useful for low end PCs).\nIf you use botplay, they will be automatically disabled.",
+			'disablePopUp',
+			'bool',
+			false);
 		addOption(option);
 
 		var option:Option = new Option('Disable Reset Button',

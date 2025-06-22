@@ -40,6 +40,7 @@ class ClientPrefs {
 	public static var noReset:Bool = false;
 	public static var healthBarAlpha:Float = 1;
 	public static var controllerMode:Bool = false;
+	public static var disablePopUp:Bool = false;
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
 		'scrolltype' => 'multiplicative', 
@@ -113,6 +114,7 @@ class ClientPrefs {
 		FlxG.save.data.qtBonk = qtBonk;
 		FlxG.save.data.hurtNoteAlpha = hurtNoteAlpha;
 		FlxG.save.data.noShaders = noShaders;
+		FlxG.save.data.disablePopUp = disablePopUp;
 
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
@@ -306,6 +308,11 @@ class ClientPrefs {
 		if (FlxG.save.data.mute != null)
 		{
 			FlxG.sound.muted = FlxG.save.data.mute;
+		}
+
+		if (FlxG.save.data.disablePopUp != null)
+		{
+			disablePopUp = FlxG.save.data.disablePopUp;
 		}
 
 		var save:FlxSave = new FlxSave();
