@@ -235,6 +235,9 @@ class PlayState extends MusicBeatState
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 	var bgGhouls:BGSprite;
 
+	//from test song
+	var healthBarFlipped:Bool = false;
+
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
@@ -829,16 +832,16 @@ class PlayState extends MusicBeatState
 				qt_tv01.animation.play('idle');
 
 			case 'airship':
-				dadDrainHealth=0.020;
+				dadDrainHealth=0.025;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "Double Idiots";
 			
 			case 'Stage-Rami', 'Stage-Rami-test':
-				dadDrainHealth=0.020;
+				dadDrainHealth=0.021;
 				discordDifficultyOverrideShouldUse = true;
 				discordDifficultyOverride = "You try Vs zRamirez";
 				if (SONG.song.toLowerCase()=='test'){	
-					dadDrainHealth=0.020;
+					dadDrainHealth=0.024;
 					discordDifficultyOverrideShouldUse = true;
 					discordDifficultyOverride = "Easter Egg? i don't know";
 				}
@@ -1693,6 +1696,17 @@ class PlayState extends MusicBeatState
 		iconP2.alpha = ClientPrefs.healthBarAlpha;
 		add(iconP2);
 		reloadHealthBarColors();
+
+		if (PlayState.SONG.song.toLowerCase() == 'test')
+		{
+			healthBarFlipped = true;
+
+			healthBar.fillDirection = LEFT_TO_RIGHT;
+
+			iconP1.flipX = true;
+			iconP2.flipX = true;
+		}
+
 
 		scoreTxt = new FlxText(0, healthBarBG.y + 36, FlxG.width, "", 20);
 		scoreTxt.setFormat(Paths.font("PhantomMuff Full Letters 1.1.5.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -3547,8 +3561,18 @@ class PlayState extends MusicBeatState
 
 		var iconOffset:Int = 26;
 
-		iconP1.x = FlxMath.lerp(healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) + (150 * iconP1.scale.x - 150) / 2 - iconOffset, iconP1.x, Math.exp(-elapsed * 9));
-		iconP2.x = FlxMath.lerp(healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01)) - (150 * iconP2.scale.x) / 2 - iconOffset * 2, iconP2.x, Math.exp(-elapsed * 9));
+		if (healthBarFlipped)
+		{
+			var baseX:Float = healthBar.x + (healthBar.width * (healthBar.percent / 100));
+			iconP1.x = FlxMath.lerp(baseX - (150 * iconP1.scale.x) / 2 - iconOffset * 2, iconP1.x, Math.exp(-elapsed * 9));
+			iconP2.x = FlxMath.lerp(baseX + (150 * iconP2.scale.x - 150) / 2 - iconOffset, iconP2.x, Math.exp(-elapsed * 9));
+		}
+		else
+		{
+			var baseX:Float = healthBar.x + (healthBar.width * (FlxMath.remapToRange(healthBar.percent, 0, 100, 100, 0) * 0.01));
+			iconP1.x = FlxMath.lerp(baseX + (150 * iconP1.scale.x - 150) / 2 - iconOffset, iconP1.x, Math.exp(-elapsed * 9));
+			iconP2.x = FlxMath.lerp(baseX - (150 * iconP2.scale.x) / 2 - iconOffset * 2, iconP2.x, Math.exp(-elapsed * 9));
+		}
 		if (health > 2)
 			health = 2;
 		else if (health < maxHealth && godMode){
@@ -6873,6 +6897,7 @@ class PlayState extends MusicBeatState
 		"fuckedless",
 		"censory-fuckedload",
 		"bad-battle",
+		"test",
 		"fuckedmination-corrupted",
 		"fuckedmination",
 		"cessation",
