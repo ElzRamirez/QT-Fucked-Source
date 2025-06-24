@@ -62,7 +62,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			'noteSkin',
 			'string',
 			'Vanilla',
-			['Vanilla', 'Future', 'Chip', 'Bar', 'Diamond', 'Square', 'DoritosPizzerola']);
+			['Vanilla', 'Future', 'Chip', 'Circles-Kade', 'Bar', 'Diamond', 'Square', 'DoritosPizzerola']);
 		addOption(option);
 		option.onChange = onChangeNoteSkin;
 
