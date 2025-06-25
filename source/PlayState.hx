@@ -4152,7 +4152,7 @@ class PlayState extends MusicBeatState
 		switch(alertType){
 			case 2:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertDouble-kb' : 'hazard/alertDouble')), ClientPrefs.sawbladeVolume);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertDouble-kb' : (ClientPrefs.alertSound == 'Default' ? "hazard/alertDouble" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/alertALT" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/alertDouble" : ClientPrefs.alertSound))))), ClientPrefs.sawbladeVolume);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.55,'alertDOUBLE', alertminationTrueAlert);
@@ -4164,7 +4164,7 @@ class PlayState extends MusicBeatState
 				
 			case 3:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertTriple-kb' : 'hazard/alertTriple')), ClientPrefs.sawbladeVolume);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertTriple-kb' : (ClientPrefs.alertSound == 'Default' ? "hazard/alertTriple" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/alertALT2" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/alertTripleHazard" : ClientPrefs.alertSound))))), ClientPrefs.sawbladeVolume);
 
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.5875,'alertTRIPLE', alertminationTrueAlert);
@@ -4176,7 +4176,7 @@ class PlayState extends MusicBeatState
 				
 			case 4:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertQuadruple-kb' : 'hazard/alertQuadruple')), ClientPrefs.sawbladeVolume);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alertQuadruple-kb' : (ClientPrefs.alertSound == 'Default' ? "hazard/alertQuadruple" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/alertALT3" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/alertQuadrupleHazard" : ClientPrefs.alertSound))))), ClientPrefs.sawbladeVolume);
 				
 				if(ClientPrefs.noteOffset <= 0) {
 					kbATTACK_ALERT_PART2(0.6,'alertQUAD', alertminationTrueAlert);
@@ -4188,7 +4188,7 @@ class PlayState extends MusicBeatState
 				
 			default:
 				if(playSound)
-					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alert-kb' : 'hazard/alert')), ClientPrefs.sawbladeVolume);
+					FlxG.sound.play(Paths.sound(customSound != "" ? 'hazard/custom/' + customSound : ((SONG.song.toLowerCase()=="alertmination" || SONG.song.toLowerCase()=="kb") ? 'hazard/custom/alert-kb' : (ClientPrefs.alertSound == 'Default' ? "hazard/alert" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/alert" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/alert" : ClientPrefs.alertSound))))), ClientPrefs.sawbladeVolume);
 				
 				//Not the best way to do offset since I fear lag can lead to an offsync sawblade, but hey I tried at least and it's better then no support at all. -Haz
 				if(ClientPrefs.noteOffset <= 0) {
@@ -4296,7 +4296,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = 'hazard/attack'/*, sawsInstakill:Bool = false*/){
+	function kbATTACK_DELAYED(state:Bool = false, soundToPlay:String = "hazard/attack"/*, sawsInstakill:Bool = false*/){
 		if(state){
 			if(!qtSawbladeAdded){
 				add(kb_attack_saw);
@@ -4403,7 +4403,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	public function KBATTACK(state:Bool = false, soundToPlay:String = 'hazard/attack'/*, sawsInstakill:Bool = false*/):Void
+	public function KBATTACK(state:Bool = false, soundToPlay:String = "hazard/attack"/*, sawsInstakill:Bool = false*/):Void
 	{
 		if(state)	FlxG.sound.play(Paths.sound(soundToPlay),ClientPrefs.sawbladeVolume*0.765);
 
@@ -5147,11 +5147,11 @@ class PlayState extends MusicBeatState
 				//For playing different sounds:
 				var soundToPlay:String = value1.toLowerCase();
 				if(soundToPlay == null || soundToPlay == " "  || soundToPlay == "" || soundToPlay == "single"  || soundToPlay == "1"){
-					soundToPlay = "hazard/attack";
+					soundToPlay = (ClientPrefs.alertSound == 'Default' ? "hazard/attack" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/attack" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/og/attack" : ClientPrefs.alertSound)));
 				}
 				else{
-					soundToPlay = "hazard/attack-"+soundToPlay;
-					trace("sawblade sound file: ", ("hazard/attack-"+soundToPlay));
+					soundToPlay = (ClientPrefs.alertSound == 'Default' ? "hazard/attack-" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/attack-" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/og/attack-" : ClientPrefs.alertSound)))+soundToPlay;
+					trace("sawblade sound file: ", ((ClientPrefs.alertSound == 'Default' ? "hazard/attack-" : (ClientPrefs.alertSound == 'Kade' ? "hazard/kade/attack-" : (ClientPrefs.alertSound == 'Hazard' ? "hazard/og/attack-" : ClientPrefs.alertSound)))+soundToPlay));
 				}
 
 				//Checking if it should be an insta-kill sawblade.

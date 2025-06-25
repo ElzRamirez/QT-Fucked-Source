@@ -76,6 +76,14 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.decimals = 1;
 		addOption(option);
 
+		var option:Option = new Option('Alert Sounds:',
+			"Do you prefer the default sound? Or the classic KadeEngine sound? Or the official Hazard sound? It doesn't matter, it's your choice!",
+			'alertSound',
+			'string',
+			'Default',
+			['Default', 'Hazard', 'Kade']);
+		addOption(option);
+
 		var option:Option = new Option('HitSound Volume',
 			'Sets how loud the hitsounds should be. 0 means disabled.',
 			'hitsoundVolume',

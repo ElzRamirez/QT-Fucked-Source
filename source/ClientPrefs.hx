@@ -12,6 +12,7 @@ class ClientPrefs {
 	public static var pauseMusic:String = 'Breakfast';
 	//public static var sawsInstakill:Bool = true;	//Forces Saws to be Instakill
 	public static var qtOldVocals:Bool = false;		//Here because some people (such as myself) prefer the old vocals from the original mod.
+	public static var alertSound:String = 'Default';
 	public static var qtSkipCutscene:Bool = true; 	//Because the cutscene caused problems in the original mod. This is here in case it causes problems still.
 	public static var qtBonk:Bool = false;			//Switches the sawblade sound back to the original placeholder I was using because the Bonk is fucking hilarious.
 	public static var hurtNoteAlpha:Float = 0.5; 	//Hurt notes transparency. Useful to allow your brain to focus on the more opaque, non-hurt notes.
@@ -113,6 +114,7 @@ class ClientPrefs {
 		FlxG.save.data.pauseMusic = pauseMusic;
 		//FlxG.save.data.sawsInstakill = sawsInstakill;
 		FlxG.save.data.qtOldVocals = qtOldVocals;
+		FlxG.save.data.alertSound = alertSound;
 		FlxG.save.data.qtBonk = qtBonk;
 		FlxG.save.data.hurtNoteAlpha = hurtNoteAlpha;
 		FlxG.save.data.noShaders = noShaders;
@@ -179,6 +181,9 @@ class ClientPrefs {
 		}*/
 		if(FlxG.save.data.qtOldVocals != null){
 			qtOldVocals = FlxG.save.data.qtOldVocals;
+		}
+		if(FlxG.save.data.alertSound != null){
+			alertSound = FlxG.save.data.alertSound;
 		}
 		if(FlxG.save.data.qtSkipCutscene != null || FlxG.save.data.qtSkipCutscene != true){
 			qtSkipCutscene = true;
