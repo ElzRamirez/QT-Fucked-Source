@@ -1278,7 +1278,7 @@ class PlayState extends MusicBeatState
 		
 		//Alert!
 		kb_attack_alert = new FlxSprite();
-		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_NEW');
+		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_' + (ClientPrefs.alertSkin == 'Extreme' ? "EXTREME" : (ClientPrefs.alertSkin == 'Default' ? "NEW" : ClientPrefs.alertSkin)));
 		kb_attack_alert.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
 		kb_attack_alert.animation.addByPrefix('alertDOUBLE', 'kb_attack_animation_alert-double', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
 		kb_attack_alert.animation.addByPrefix('alertTRIPLE', 'kb_attack_animation_alert-triple', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
@@ -4249,10 +4249,14 @@ class PlayState extends MusicBeatState
 			default:
 				if (kb_attack_alert != null)
 				{
-					if (alertminationTrueAlert)
+					if (alertminationTrueAlert){
 						kb_attack_alert.scale.set(1.5,1.5);
-
-					kb_attack_alert.offset.set(0,0);
+					}
+					else if (ClientPrefs.alertSkin == 'Extreme'){
+						kb_attack_alert.offset.set(0,0);
+					}
+					else
+						kb_attack_alert.offset.set(0,0);
 				}
 
 				if (kb_attack_alert_KB != null)
@@ -4264,6 +4268,9 @@ class PlayState extends MusicBeatState
 					{
 						kb_attack_alert.scale.set(2.25,2.25);
 						kb_attack_alert.offset.set(252,53);
+					}
+					else if (ClientPrefs.alertSkin == 'Extreme'){
+						kb_attack_alert.offset.set(200,70);
 					}
 					else
 						kb_attack_alert.offset.set(152,38);
@@ -4278,6 +4285,9 @@ class PlayState extends MusicBeatState
 						kb_attack_alert.scale.set(1.85,1.85);
 						kb_attack_alert.offset.set(235,56);
 					}
+					else if (ClientPrefs.alertSkin == 'Extreme'){
+						kb_attack_alert.offset.set(190,70);
+					}
 					else
 						kb_attack_alert.offset.set(150,56);
 				}
@@ -4286,10 +4296,14 @@ class PlayState extends MusicBeatState
 			case "alertDOUBLE":
 				if (kb_attack_alert != null)
 				{
-					if (alertminationTrueAlert)
+					if (alertminationTrueAlert){
 						kb_attack_alert.scale.set(1.5,1.5);
-
-					kb_attack_alert.offset.set(70,5);
+					}
+					else if (ClientPrefs.alertSkin == 'Extreme'){
+						kb_attack_alert.offset.set(90,5);
+					}
+					else
+						kb_attack_alert.offset.set(70,5);
 				}
 				if (kb_attack_alert_KB != null)
 					kb_attack_alert_KB.offset.set(70,-45);

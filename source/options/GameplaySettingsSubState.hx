@@ -76,6 +76,14 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.decimals = 1;
 		addOption(option);
 
+		var option:Option = new Option('Alert Skin:',
+			"Do you prefer the default skin? Or the classic skin from QT Extreme? It doesn't matter, it's your choice!",
+			'alertSkin',
+			'string',
+			'Default',
+			['Default', 'Extreme']);
+		addOption(option);
+
 		var option:Option = new Option('Alert Sounds:',
 			"Do you prefer the default sound? Or the classic KadeEngine sound? Or the official Hazard sound? It doesn't matter, it's your choice!",
 			'alertSound',
