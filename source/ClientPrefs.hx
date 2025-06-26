@@ -13,7 +13,7 @@ class ClientPrefs {
 	//public static var sawsInstakill:Bool = true;	//Forces Saws to be Instakill
 	public static var qtOldVocals:Bool = false;		//Here because some people (such as myself) prefer the old vocals from the original mod.
 	public static var alertSound:String = 'Default';
-	public static var alertSkin:String = 'Default';
+	public static var alertSkin:String = 'Vanilla';
 	public static var qtSkipCutscene:Bool = true; 	//Because the cutscene caused problems in the original mod. This is here in case it causes problems still.
 	public static var qtBonk:Bool = false;			//Switches the sawblade sound back to the original placeholder I was using because the Bonk is fucking hilarious.
 	public static var hurtNoteAlpha:Float = 0.5; 	//Hurt notes transparency. Useful to allow your brain to focus on the more opaque, non-hurt notes.
