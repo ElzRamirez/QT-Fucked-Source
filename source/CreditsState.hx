@@ -97,7 +97,7 @@ class CreditsState extends MusicBeatState
 			['Iandee',				'iandee',			'Creator of the Original Design of the BF and GF Sprites from the VS Impostor Dialogues and Speaker Sprite used from Ara',		'https://www.youtube.com/channel/UCnoOhpnxHWtayIJUCutfP7w',				'B0B0B0'],
 			['DestrioSZ',			'destriosz',		'Artist of the GF base Sprites used from Ara Sprites',																			'https://gamebanana.com/members/2080836',								'B0B0B0'],
 			['MtH',					'mth',				'Creator of the Original Voices from Test song',																				'https://x.com/emmnyaa',												'B0B0B0'],
-			['AnbyFox',				'snowie',			'Termination Corrupted mod original idea and creator from corrupted assets',													'https://www.youtube.com/channel/UC1_5RkgBEwR8aTaA1gFNg1Q/featured',	'B0B0B0'],
+			['AnbyFox',				'snowie',			'Termination Corrupted mod original, Creator from corrupted assets and Creator from borderless alert skin',						'https://www.youtube.com/channel/UC1_5RkgBEwR8aTaA1gFNg1Q/featured',	'B0B0B0'],
 			[''],
 			[''],
 			['Discord Server'],

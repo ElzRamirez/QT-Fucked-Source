@@ -1278,7 +1278,7 @@ class PlayState extends MusicBeatState
 		
 		//Alert!
 		kb_attack_alert = new FlxSprite();
-		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_' + (ClientPrefs.alertSkin == 'Extreme' ? "EXTREME" : (ClientPrefs.alertSkin == 'Default' ? "NEW" : ClientPrefs.alertSkin)));
+		kb_attack_alert.frames = Paths.getSparrowAtlas('hazard/qt-port/attack_alert_' + (ClientPrefs.alertSkin == 'Extreme' ? "EXTREME" : (ClientPrefs.alertSkin == 'Default' ? "NEW" : (ClientPrefs.alertSkin == 'Classic' ? "ANBY" : ClientPrefs.alertSkin))));
 		kb_attack_alert.animation.addByPrefix('alert', 'kb_attack_animation_alert-single', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
 		kb_attack_alert.animation.addByPrefix('alertDOUBLE', 'kb_attack_animation_alert-double', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
 		kb_attack_alert.animation.addByPrefix('alertTRIPLE', 'kb_attack_animation_alert-triple', SONG.song.toLowerCase() == "reactor" ? 30 : 24, false);	
