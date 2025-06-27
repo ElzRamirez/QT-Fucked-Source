@@ -4252,9 +4252,6 @@ class PlayState extends MusicBeatState
 					if (alertminationTrueAlert){
 						kb_attack_alert.scale.set(1.5,1.5);
 					}
-					else if (ClientPrefs.alertSkin == 'Extreme'){
-						kb_attack_alert.offset.set(0,0);
-					}
 					else
 						kb_attack_alert.offset.set(0,0);
 				}
@@ -4270,11 +4267,12 @@ class PlayState extends MusicBeatState
 						kb_attack_alert.offset.set(252,53);
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
-						kb_attack_alert.offset.set(200,70);
+						kb_attack_alert.offset.set(0,0);
 					}
 					else
 						kb_attack_alert.offset.set(152,38);
 				}
+
 				if (kb_attack_alert_KB != null)
 					kb_attack_alert_KB.offset.set(152,53);
 			case "alertTRIPLE":
@@ -4286,11 +4284,12 @@ class PlayState extends MusicBeatState
 						kb_attack_alert.offset.set(235,56);
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
-						kb_attack_alert.offset.set(190,70);
+						kb_attack_alert.offset.set(0,0);
 					}
 					else
 						kb_attack_alert.offset.set(150,56);
 				}
+
 				if (kb_attack_alert_KB != null)
 					kb_attack_alert_KB.offset.set(150,-4);
 			case "alertDOUBLE":
@@ -4300,11 +4299,12 @@ class PlayState extends MusicBeatState
 						kb_attack_alert.scale.set(1.5,1.5);
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
-						kb_attack_alert.offset.set(90,5);
+						kb_attack_alert.offset.set(0,0);
 					}
 					else
 						kb_attack_alert.offset.set(70,5);
 				}
+				
 				if (kb_attack_alert_KB != null)
 					kb_attack_alert_KB.offset.set(70,-45);
 		}

@@ -41,7 +41,7 @@ end
 
 function onBeatHit()	
 	--Pincer shit. 	
-	if difficulty > 0 then	 --To disable pincers for easy difficulty
+	if difficulty > 2 then	 --To disable pincers for easy, normal and hard difficulty
 		if curBeat == 16 then
 			qtMod_PincerPrepare(1,false)
 		elseif curBeat == 18 then
@@ -91,7 +91,7 @@ function onBeatHit()
 				qtMod_PincerTweenY("NoteMovePincer4",2,(defaultPosY[2]+60)+offset,0.5, quadinout)
 				noteTweenY("NoteMove4",5,defaultPlayerStrumY1+60,0.5, quadinout)
 			else
-				qtMod_PincerTweenY("NoteMovePincer4",2,(defaultPosY[2]+60)-offset,0.5, quadinout)
+				qtMod_PincerTweenY("NoteMovePincer4",2,(defaultPosY[2]-60)+offset,0.5, quadinout)
 				noteTweenY("NoteMove4",5,defaultPlayerStrumY1-60,0.5, quadinout)
 			end
 		elseif curBeat == 40 then
@@ -99,19 +99,16 @@ function onBeatHit()
 			qtMod_PincerPrepare(3,true)
 			
 		--Pincers don't reset strums for troll if on harder difficulty
-		elseif curBeat == 92 and difficulty ~= 3 then
-			qtMod_PincerPrepare(3,false)
 		elseif curBeat == 93 and difficulty ~= 3 then
 			qtMod_PincerPrepare(4,false)
 		elseif curBeat == 94 and difficulty ~= 3 then
-			qtMod_PincerPrepare(1,false)
+			qtMod_PincerPrepare(3,false)
 		elseif curBeat == 95 and difficulty ~= 3 then
 			qtMod_PincerPrepare(2,false)
 		elseif curBeat == 96 and difficulty ~= 3 then
 			qtMod_PincerGrab(4)
 			qtMod_PincerGrab(3)
 			qtMod_PincerGrab(2)
-			qtMod_PincerGrab(1)
 
 			qtMod_PincerTweenX("NoteMovePincerReset1X",1,defaultPlayerStrumX0+offset,1, quadinout)
 			noteTweenX("NoteMoveReset1X",4,defaultPlayerStrumX0,1, quadinout)
@@ -137,7 +134,6 @@ function onBeatHit()
 			qtMod_PincerPrepare(4,true)
 			qtMod_PincerPrepare(3,true)
 			qtMod_PincerPrepare(2,true)
-			qtMod_PincerPrepare(1,true)
 		end
 	end
 end
