@@ -303,7 +303,6 @@ class PlayState extends MusicBeatState
 	//HAZARD SHIT
 	var godMode:Bool = false; //For testing shit.
 
-	private var dodgeKey:Array<FlxKey>;
 	private var tauntKey:Array<FlxKey>;
 
 	var healthLossMultiplier:Float = 1; 
@@ -441,7 +440,6 @@ class PlayState extends MusicBeatState
 		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
 		PauseSubState.songName = null;
 
-		dodgeKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge'));
 		tauntKey = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_taunt'));
 
 		Achievements.loadAchievements();
@@ -6528,11 +6526,15 @@ class PlayState extends MusicBeatState
 	private function onKeyPress(event:KeyboardEvent):Void
 	{
 		var eventKey:FlxKey = event.keyCode;
-		var key:Int = getKeyFromEvent(eventKey);
+		var key:Int = getKeyFromEvent(keysArray, eventKey);
 		//trace('Pressed: ' + eventKey);
 
 		if (!cpuControlled && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode))
 		{
+			
+			if(SONG.dodgeEnabled && getKeyFromEvent(ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge')), event.keyCode) != -1 && !bfDodging && bfCanDodge)
+				bfDodge();
+			
 			if(!boyfriend.stunned && generatedMusic && !endingSong)
 			{
 				//more accurate hit time for the ratings?
@@ -6619,7 +6621,7 @@ class PlayState extends MusicBeatState
 	private function onKeyRelease(event:KeyboardEvent):Void
 	{
 		var eventKey:FlxKey = event.keyCode;
-		var key:Int = getKeyFromEvent(eventKey);
+		var key:Int = getKeyFromEvent(keysArray, eventKey);
 		if(!cpuControlled && !paused && key > -1)
 		{
 			var spr:StrumNote = playerStrums.members[key];
@@ -6641,8 +6643,9 @@ class PlayState extends MusicBeatState
 		//trace('released: ' + controlArray);
 	}
 
-	private function getKeyFromEvent(key:FlxKey):Int
+	private function getKeyFromEvent(keysArray:Array<Dynamic>, keyCode:Int):Int
 	{
+		final key:FlxKey = cast keyCode;
 		if(key != NONE)
 		{
 			for (i in 0...keysArray.length)
@@ -6716,13 +6719,6 @@ class PlayState extends MusicBeatState
 	private function keyShit():Void
 	{
 		var curSection:Int = Math.floor(curStep / 16);
-
-		if(SONG.dodgeEnabled){
-			// FlxG.keys.justPressed.SPACE
-			if(FlxG.keys.anyJustPressed(dodgeKey) && !bfDodging && bfCanDodge){
-				bfDodge();
-			}
-		}
 
 		// HOLDING
 		var up = controls.NOTE_UP;
