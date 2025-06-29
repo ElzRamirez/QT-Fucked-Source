@@ -6529,12 +6529,12 @@ class PlayState extends MusicBeatState
 		var key:Int = getKeyFromEvent(keysArray, eventKey);
 		//trace('Pressed: ' + eventKey);
 
-		if(SONG.dodgeEnabled && getKeyFromEvent(ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge')), event.keyCode) != -1 && !bfDodging && bfCanDodge)
-			if (!cpuControlled && !paused && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode))
-				bfDodge();
-
 		if (!cpuControlled && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode))
-		{	
+		{
+			
+			if(SONG.dodgeEnabled && getKeyFromEvent(ClientPrefs.copyKey(ClientPrefs.keyBinds.get('qt_dodge')), event.keyCode) != -1 && !bfDodging && bfCanDodge)
+				bfDodge();
+			
 			if(!boyfriend.stunned && generatedMusic && !endingSong)
 			{
 				//more accurate hit time for the ratings?
