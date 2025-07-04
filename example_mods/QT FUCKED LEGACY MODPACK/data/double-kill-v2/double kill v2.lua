@@ -156,8 +156,8 @@ function onStepHit()
 
         p2 = true
     end
-    if curStep == 3103 then
-        doTweenAlpha('blackoverlay','blackhudoverlay',1,0.2,'linear')
+    if curStep == 3104 then
+        doTweenAlpha('blackoverlay','blackhudoverlay',1,0.4,'linear')
     end
     if curStep == 3120 then
         setProperty('defeat.alpha',1)
@@ -179,10 +179,10 @@ function onStepHit()
 
         setProperty('blackhudoverlay.alpha',0)
     end
-    if curStep == 3648 then
+    if curStep == 3632 then
         setProperty('blackhudoverlay.alpha',1)
     end
-    if curStep == 3680 then
+    if curStep == 3664 then
 
         setProperty('blackhudoverlay.alpha',0)
         setProperty('cargowalls.alpha',1)
@@ -211,7 +211,7 @@ function onStepHit()
 
         shake = true
     end
-    if curStep == 4192 then
+    if curStep == 4179 then
         setProperty('end1.alpha',1)
 
         setProperty('iconP1.alpha',0);
@@ -220,27 +220,27 @@ function onStepHit()
         setProperty('healthBar.alpha',0);
         setProperty('scoreTxt.alpha',0);
     end
-    if curStep == 4199 then
+    if curStep == 4182 then
         cameraFlash('other','FFFFFF',0.5,true)
         removeLuaSprite('end1',true)
         setProperty('end2.alpha',1)
     end
-    if curStep == 4204 then
+    if curStep == 4188 then
         cameraFlash('other','FFFFFF',0.5,true)
         removeLuaSprite('end2',true)
         setProperty('end3.alpha',1)
     end
-    if curStep == 4224 then
+    if curStep == 4208 then
         cameraFlash('other','FFFFFF',0.5,true)
         setProperty('end4.alpha',1)
         removeLuaSprite('end3',true)
     end
-    if curStep == 4231 then
+    if curStep == 4214 then
         cameraFlash('other','FFFFFF',0.5,true)
         setProperty('end5.alpha',1)
         removeLuaSprite('end4',true)
     end
-    if curStep == 4236 then
+    if curStep == 4220 then
         cameraFlash('other','FFFFFF',0.5,true)
         setProperty('end6.alpha',1)
         removeLuaSprite('end5',true)
