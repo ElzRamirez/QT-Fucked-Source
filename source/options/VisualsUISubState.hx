@@ -86,7 +86,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			"If unchecked, the looping of singing animations will be disabled, like V-Slice.",
 			'disableSustainLoop',
 			'bool',
-			true);
+			false);
 		addOption(option);
 		
 		var option:Option = new Option('Hurt note transparency',

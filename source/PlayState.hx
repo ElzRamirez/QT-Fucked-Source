@@ -4248,7 +4248,11 @@ class PlayState extends MusicBeatState
 				if (kb_attack_alert != null)
 				{
 					if (alertminationTrueAlert){
-						kb_attack_alert.scale.set(1.5,1.5);
+						if (ClientPrefs.alertSkin == 'Extreme'){
+							kb_attack_alert.offset.set(0,0);
+						}
+						else
+							kb_attack_alert.scale.set(1.5,1.5);
 					}
 					else
 						kb_attack_alert.offset.set(0,0);
@@ -4261,8 +4265,13 @@ class PlayState extends MusicBeatState
 				{
 					if (alertminationTrueAlert)
 					{
-						kb_attack_alert.scale.set(2.25,2.25);
-						kb_attack_alert.offset.set(252,53);
+						if (ClientPrefs.alertSkin == 'Extreme'){
+							kb_attack_alert.offset.set(0,0);
+						}
+						else{
+							kb_attack_alert.scale.set(2.25,2.25);
+							kb_attack_alert.offset.set(252,53);
+						}
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
 						kb_attack_alert.offset.set(0,0);
@@ -4278,8 +4287,13 @@ class PlayState extends MusicBeatState
 				{
 					if (alertminationTrueAlert)
 					{
-						kb_attack_alert.scale.set(1.85,1.85);
-						kb_attack_alert.offset.set(235,56);
+						if (ClientPrefs.alertSkin == 'Extreme'){
+							kb_attack_alert.offset.set(0,0);
+						}
+						else{
+							kb_attack_alert.scale.set(1.85,1.85);
+							kb_attack_alert.offset.set(235,56);
+						}
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
 						kb_attack_alert.offset.set(0,0);
@@ -4294,7 +4308,13 @@ class PlayState extends MusicBeatState
 				if (kb_attack_alert != null)
 				{
 					if (alertminationTrueAlert){
-						kb_attack_alert.scale.set(1.5,1.5);
+						if (ClientPrefs.alertSkin == 'Extreme'){
+							kb_attack_alert.offset.set(0,0);
+						}
+						else {
+							kb_attack_alert.scale.set(1.5,1.5);
+							kb_attack_alert.offset.set(35,5);
+						}
 					}
 					else if (ClientPrefs.alertSkin == 'Extreme'){
 						kb_attack_alert.offset.set(0,0);
