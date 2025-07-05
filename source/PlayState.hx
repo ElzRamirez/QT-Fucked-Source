@@ -1582,12 +1582,11 @@ class PlayState extends MusicBeatState
    		 	}
 		}
 
-		if (ClientPrefs.holdSplashes){
-			opponentHoldCovers = new HoldCover(true, false);
-			playerHoldCovers = new HoldCover(true, true);
-			add(opponentHoldCovers);
-			add(playerHoldCovers);
-		}
+		opponentHoldCovers = new HoldCover(ClientPrefs.holdSplashes, false);
+		playerHoldCovers = new HoldCover(ClientPrefs.holdSplashes, true);
+		add(opponentHoldCovers);
+		add(playerHoldCovers);
+
 
 		if (ClientPrefs.middleScroll)
 			opponentHoldCovers.alpha = 0.35;
