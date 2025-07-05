@@ -1247,7 +1247,7 @@ class PlayState extends MusicBeatState
 
 			if (SONG.song.toLowerCase() == "alertmination" || SONG.song.toLowerCase() == "kb")
 			{
-				hazardOverlayShit2 = new BGSprite('hazard/inhuman-port/alert-vignette');
+				hazardOverlayShit2 = new BGSprite('hazard/inhuman-port/alert-vignette' + (ClientPrefs.alertSkin == 'Vanilla-Red' ? "OG" : ""));
 				hazardOverlayShit2.setGraphicSize(FlxG.width, FlxG.height);
 				hazardOverlayShit2.screenCenter();
 				hazardOverlayShit2.x += (FlxG.width/2) - 60; //Mmmmmm scuffed positioning, my favourite!
@@ -1256,6 +1256,7 @@ class PlayState extends MusicBeatState
 				hazardOverlayShit2.alpha=0;
 				hazardOverlayShit2.cameras = [camOther];
 				add(hazardOverlayShit2);
+				//por que drkfon, ¿¿¿POR QUE CHINGADOS HAY 2??? -zRamirez
 			}
 		}
 
