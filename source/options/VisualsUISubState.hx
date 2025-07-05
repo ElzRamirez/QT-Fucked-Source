@@ -82,6 +82,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('Hold Covers',
+			"If unchecked, hitting a Sustain Note won't show particles (also applies to opponent's side).",
+			'holdSplashes',
+			'bool',
+			true);
+		addOption(option);
+
 		var option:Option = new Option('Disable Sustain Loop',
 			"If unchecked, the looping of singing animations will be disabled, like V-Slice.",
 			'disableSustainLoop',

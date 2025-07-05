@@ -154,6 +154,9 @@ class PlayState extends MusicBeatState
 	public var playerStrums:FlxTypedGroup<StrumNote>;
 	public var grpNoteSplashes:FlxTypedGroup<NoteSplash>;
 
+	public var opponentHoldCovers:HoldCover;
+	public var playerHoldCovers:HoldCover;
+
 	public var camZooming:Bool = false;
 	private var curSong:String = "";
 
@@ -1578,6 +1581,16 @@ class PlayState extends MusicBeatState
         		note.noAnimation = true;
    		 	}
 		}
+
+		opponentHoldCovers = new HoldCover();
+	    playerHoldCovers = new HoldCover();
+		add(opponentHoldCovers);
+		add(playerHoldCovers);
+
+		if (ClientPrefs.middleScroll)
+			opponentHoldCovers.alpha = 0.35;
+
+
 		#if LUA_ALLOWED
 		for (notetype in noteTypeMap.keys())
 		{
@@ -1724,6 +1737,8 @@ class PlayState extends MusicBeatState
 			botplayTxt.y = timeBarBG.y - 78;
 		}
 
+		playerHoldCovers.cameras = [camHUD];
+		opponentHoldCovers.cameras = [camHUD];
 		strumLineNotes.cameras = [camHUD];
 		grpNoteSplashes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -3823,6 +3838,8 @@ class PlayState extends MusicBeatState
 					daNote.destroy();
 				}
 			});
+			playerHoldCovers.updateHold(elapsed, true);
+   			opponentHoldCovers.updateHold(elapsed, true);
 		}
 		checkEventNote();
 
@@ -6660,6 +6677,10 @@ class PlayState extends MusicBeatState
 				}
 			}
 			callOnLuas('onKeyRelease', [key]);
+
+			if (playerHoldCovers != null && playerHoldCovers.members[key].animation.curAnim != null && !playerHoldCovers.members[key].animation.curAnim.name.endsWith('p')) //De nada glow
+				playerHoldCovers.despawnOnMiss(strumLineNotes != null && strumLineNotes.members.length > 0 && !startingSong, key);
+
 		}
 		//trace('released: ' + controlArray);
 	}
@@ -6869,6 +6890,10 @@ class PlayState extends MusicBeatState
 			var animToPlay:String = singAnimations[Std.int(Math.abs(daNote.noteData))] + 'miss' + daAlt;
 			char.playAnim(animToPlay, true);
 		}
+		if (daNote != null)
+		{
+			playerHoldCovers.despawnOnMiss(strumLineNotes != null && strumLineNotes.members.length > 0 && !startingSong, daNote.noteData, daNote);
+		}
 
 		callOnLuas('noteMiss', [notes.members.indexOf(daNote), daNote.noteData, daNote.noteType, daNote.isSustainNote]);
 	}
@@ -6885,6 +6910,8 @@ class PlayState extends MusicBeatState
 			}
 
 			if(ClientPrefs.ghostTapping) return;
+
+			playerHoldCovers.despawnOnMiss(strumLineNotes != null && strumLineNotes.members.length > 0 && !startingSong, direction);
 
 			if (combo > 5 && gf.animOffsets.exists('sad') && !ClientPrefs.ghostTapping)
 			{
@@ -7354,6 +7381,7 @@ class PlayState extends MusicBeatState
 					time += 0.15;
 				}
 				StrumPlayAnim(true, Std.int(Math.abs(note.noteData)) % 4, time);
+				opponentHoldCovers.spawnOnNoteHit(note, strumLineNotes != null && strumLineNotes.members.length > 0 && !startingSong);
 			}
 		}
 		note.hitByOpponent = true;
@@ -7507,6 +7535,7 @@ class PlayState extends MusicBeatState
 				});
 			}
 			note.wasGoodHit = true;
+			playerHoldCovers.spawnOnNoteHit(note, strumLineNotes != null && strumLineNotes.members.length > 0 && !startingSong);
 			vocals.volume = 1;
 
 			var isSus:Bool = note.isSustainNote; //GET OUT OF MY HEAD, GET OUT OF MY HEAD, GET OUT OF MY HEAD
