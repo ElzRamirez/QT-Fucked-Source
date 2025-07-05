@@ -1582,10 +1582,12 @@ class PlayState extends MusicBeatState
    		 	}
 		}
 
-		opponentHoldCovers = new HoldCover();
-	    playerHoldCovers = new HoldCover();
-		add(opponentHoldCovers);
-		add(playerHoldCovers);
+		if (ClientPrefs.holdSplashes){
+			opponentHoldCovers = new HoldCover(true, false);
+			playerHoldCovers = new HoldCover(true, true);
+			add(opponentHoldCovers);
+			add(playerHoldCovers);
+		}
 
 		if (ClientPrefs.middleScroll)
 			opponentHoldCovers.alpha = 0.35;
@@ -1647,7 +1649,6 @@ class PlayState extends MusicBeatState
 		eventPushedMap = null;
 
 		// After all characters being loaded, it makes then invisible 0.01s later so that the player won't freeze when you change characters
-		// add(strumLine);
 
 		camFollow = new FlxPoint();
 		camFollowPos = new FlxObject(0, 0, 1, 1);
