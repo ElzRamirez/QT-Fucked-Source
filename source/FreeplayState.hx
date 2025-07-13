@@ -436,7 +436,7 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (((songLowercase == "fuckedmination" || songLowercase == "fuckedmination-vip" || songLowercase == "fuckedmination-duet-vip") && curDifficulty == 2) || songLowercase == "fuckedmination-corrupted"){
+			if (((songLowercase == "fuckedmination") && curDifficulty == 2) || songLowercase == "fuckedmination-corrupted"){
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.4);
 				isSongLockedIn0sawblades = true;
 				openSubState(new SelectSawbladesAmountSubState(0));

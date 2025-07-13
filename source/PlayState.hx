@@ -6803,9 +6803,12 @@ class PlayState extends MusicBeatState
 				boyfriend.playAnim('hey', true);
 				boyfriend.specialAnim = true;
 				boyfriend.heyTimer = 0.59;
-				gf.playAnim('cheer', true);
-				gf.specialAnim = true;
-				gf.heyTimer = 0.59;
+				if (gf.animOffsets.exists('cheer'))
+				{
+					gf.playAnim('cheer', true);
+					gf.specialAnim = true;
+					gf.heyTimer = 0.59;
+				}
 				FlxG.sound.play(Paths.sound('hey'));
 				tauntCounter++;
 				trace("taunts: ",tauntCounter);
